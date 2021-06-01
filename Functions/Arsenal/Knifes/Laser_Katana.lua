@@ -14,4 +14,3 @@ for _=1,5 do
     local b=a.Handle["Meshes/katana_Plane.007_Plane.008"]:Clone()
     b.Parent=a.Handle
 end
-return a.Name
