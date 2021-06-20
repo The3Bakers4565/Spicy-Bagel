@@ -157,6 +157,7 @@ local SpicyTable={
             ["FiremodeValue"]="Auto",
             ["Shotstack"]=false,
             ["ShotstackValue"]=0,
+            ["NoBob"]=false,
         },
     },
     ["Misc"]=
@@ -215,6 +216,7 @@ local SpicyTable={
     ["Wait1"]=true,
     ["Wait2"]=true,
     ["Wait3"]=true,
+    ["Wait4"]=true,
     ["Spinhead"]=0,
     ["Flash"]=nil,
 }
@@ -255,12 +257,12 @@ getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNew
 
 
 
-local OldFold=Instance.new("Folder")
-OldFold.Name=game:GetService("HttpService"):GenerateGUID(false)
+local CUMFOLDER=Instance.new("Folder")
+CUMFOLDER.Name=game:GetService("HttpService"):GenerateGUID(false)
 if syn then
-    syn.protect_gui(OldFold)
+    syn.protect_gui(CUMFOLDER)
 end
-OldFold.Parent=game.ReplicatedStorage.Weapons
+CUMFOLDER.Parent=game.ReplicatedStorage.Weapons
 
 
 
@@ -274,7 +276,7 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             SpicyTable["Nades"][#SpicyTable["Nades"]+1]=v.Name
         end
         local b=v:Clone()
-        b.Parent=OldFold
+        b.Parent=CUMFOLDER
     end
 end
 
@@ -473,14 +475,6 @@ local PlayerCharacter=PlayerTab:CreateSection("Player")
 local PlayerMovement=PlayerTab:CreateSection("Movement")
 PlayerCharacter:CreateToggle("God Mode",function(x)
     SpicyTable["Character"]["Player"]["GodMode"]=x
-    if x and IsAlive()then
-        if game.Players.LocalPlayer.Character.Humanoid.Health~=99.5 then
-            local b=game.Players.LocalPlayer.Character.Humanoid:Clone()
-            game.Players.LocalPlayer.Character.Humanoid:Destroy()
-            b.Parent=game.Players.LocalPlayer.Character
-            b.Health=99.5
-        end
-    end
 end)
 PlayerCharacter:CreateToggle("Player Yaw",function(x)
     SpicyTable["Character"]["Player"]["Spinplayer"]=x
@@ -647,12 +641,6 @@ VisualsEsp:CreateToggle("Health",function(x)
 end)
 VisualsEsp:CreateToggle("Chams",function(x)
     SpicyTable["Visuals"]["Esp"]["Chams"]=x
-end)
-VisualsEsp:CreateColorPicker("Chams Color",Color3.fromRGB(255,255,255),function(x)
-    SpicyTable["Visuals"]["Esp"]["ChamsColor"]=x
-end)
-VisualsEsp:CreateSlider("Chams Transparency",1,10,5,false,function(x)
-    SpicyTable["Visuals"]["Esp"]["ChamsTransparency"]=(10-x)/10
 end)
 VisualsEsp:CreateSlider("Thickness",1,20,10,false,function(x)
     SpicyTable["Visuals"]["Esp"]["Thickness"]=x/5
@@ -877,13 +865,16 @@ end)
 CombatWeapons:CreateSlider("Grenade Gun Power",0,1000,500,false,function(x)
     SpicyTable["Combat"]["Weapon"]["NadeGunPower"]=x
 end)
+CombatWeapons:CreateToggle("No Gun Bob",function(x)
+    SpicyTable["Combat"]["Weapon"]["NoBob"]=x
+end)
 CombatWeapons:CreateToggle("Clip Size",function(x)
     SpicyTable["Combat"]["Weapon"]["Clipsize"]=x
     if not x then
         for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             if v.Name~="Cum"then
                 if v:FindFirstChild("Ammo")then
-                    v.Ammo.Value=OldFold[v.Name].Ammo.Value
+                    v.Ammo.Value=CUMFOLDER[v.Name].Ammo.Value
                 end
             end
         end
@@ -915,7 +906,7 @@ CombatWeapons:CreateToggle("Stored Ammo",function(x)
         for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             if v.Name~="Cum"then
                 if v:FindFirstChild("StoredAmmo")then
-                    v.StoredAmmo.Value=OldFold[v.Name].StoredAmmo.Value
+                    v.StoredAmmo.Value=CUMFOLDER[v.Name].StoredAmmo.Value
                 end
             end
         end
@@ -947,7 +938,7 @@ CombatWeapons:CreateToggle("Fire Rate",function(x)
         for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             if v.Name~="Cum"then
                 if v:FindFirstChild("FireRate")then
-                    v.FireRate.Value=OldFold[v.Name].FireRate.Value
+                    v.FireRate.Value=CUMFOLDER[v.Name].FireRate.Value
                 end
             end
         end
@@ -979,7 +970,7 @@ CombatWeapons:CreateToggle("Shot Stack",function(x)
         for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             if v.Name~="Cum"then
                 if v:FindFirstChild("Bullets")then
-                    v.Bullets.Value=OldFold[v.Name].Bullets.Value
+                    v.Bullets.Value=CUMFOLDER[v.Name].Bullets.Value
                 end
             end
         end
@@ -1011,7 +1002,7 @@ CombatWeapons:CreateToggle("Fire Mode",function(x)
         for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
             if v.Name~="Cum"then
                 if v:FindFirstChild("Auto")then
-                    v.Auto.Value=OldFold[v.Name].Auto.Value
+                    v.Auto.Value=CUMFOLDER[v.Name].Auto.Value
                 end
             end
         end
@@ -1404,6 +1395,13 @@ game.RunService.RenderStepped:Connect(function()
         SpicyTable["Wait3"]=true
     end
 end)
+game.RunService.RenderStepped:Connect(function()
+    if SpicyTable["Wait4"]then
+        SpicyTable["Wait4"]=false
+        wait()
+        SpicyTable["Wait4"]=true
+    end
+end)
 
 
 
@@ -1475,14 +1473,25 @@ game.RunService.RenderStepped:Connect(function()
     if SpicyTable["Character"]["Player"]["Headangle"]and SpicyTable["Character"]["Player"]["HeadangleType"]~="Offset"and SpicyTable["Character"]["Player"]["HeadangleType"]~="Inverted"then
         game.ReplicatedStorage.Events.ControlTurn:FireServer(-math.rad(SpicyTable["Character"]["Player"]["HeadangleValue"]))
     end
-    if SpicyTable["Character"]["Player"]["GodMode"]and IsAlive()then
-        if game.Players.LocalPlayer.Character.Humanoid.Health~=99.5 then
-            local b=game.Players.LocalPlayer.Character.Humanoid:Clone()
-            game.Players.LocalPlayer.Character.Humanoid:Destroy()
-            b.Parent=game.Players.LocalPlayer.Character
-            b.Health=99.5
+        if game.Players.LocalPlayer.Character then
+            if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")then
+                if not game.Players.LocalPlayer.Character:FindFirstChild("GodBRO")then
+                    if game.Players.LocalPlayer.Character.Humanoid.Health~=100 then
+                        local a=Instance.new("Folder")
+                        a.Name="GodBRO"
+                        a.Parent=game.Players.LocalPlayer.Character
+                        game.Players.LocalPlayer.Character.Humanoid.Health=100
+                        game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+                            game.Players.LocalPlayer.Character.Humanoid.Health=100
+                        end)
+                    else
+                        game:GetService("ReplicatedStorage").Events.FallDamage:FireServer(0/0)
+                    end
+                else
+                    game.Players.LocalPlayer.Character.Humanoid.Health=100
+                end
+            end
         end
-    end
 	if SpicyTable["Character"]["Movement"]["Fly"]and IsAlive()then
 		if SpicyTable["Character"]["Movement"]["FlyToggle"]then
 			if w1 and a1 then
@@ -1778,10 +1787,10 @@ game.RunService.RenderStepped:Connect(function()
                                             a.Parent=game.CoreGui
                                             a.AlwaysOnTop=true
                                             a.Visible=true
-                                            a.Transparency=SpicyTable["Visuals"]["Esp"]["ChamsTransparency"]
+                                            a.Transparency=0
                                             a.Adornee=part
                                             a.ZIndex=0
-                                            a.Color3=SpicyTable["Visuals"]["Esp"]["ChamsColor"]
+                                            a.Color3=SpicyTable["Visuals"]["Esp"]["Color"]
                                             coroutine.wrap(function()
                                                 game.RunService.RenderStepped:Wait()
                                                 a:Destroy()
@@ -2138,7 +2147,7 @@ game.RunService.RenderStepped:Connect(function()
             end
         end
     end
-    if SpicyTable["Misc"]["Misc"]["Antidefuse"]and game.Workspace:FindFirstChild("C4")then
+    if SpicyTable["Misc"]["Misc"]["Antidefuse"]and SpicyTable["Wait4"]and game.Workspace:FindFirstChild("C4")then
         game.Players.LocalPlayer.Backpack.PressDefuse:FireServer(game.Workspace.C4)
     end
     if SpicyTable["Character"]["Player"]["Cumlag"]then
@@ -2297,6 +2306,13 @@ mt.__namecall=newcclosure(function(a,b,c,...)
     end
     if tostring(getnamecallmethod())=="FireServer"and SpicyTable["Misc"]["Misc"]["Instantdefuse"]and tostring(a)=="PressDefuse"then
         game.Players.LocalPlayer.Backpack.Defuse:FireServer(game.Workspace.C4)
+    end
+    if tostring(getnamecallmethod())=="SetPrimaryPartCFrame"then
+        if tostring(a)=="Arms"then
+            if SpicyTable["Combat"]["Weapon"]["NoBob"]then
+                b=game.Workspace.CurrentCamera.CFrame
+            end
+        end
     end
 	return oldNamecall(a,b,c,...)
 end)
