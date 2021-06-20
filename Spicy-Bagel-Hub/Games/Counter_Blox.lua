@@ -1473,6 +1473,7 @@ game.RunService.RenderStepped:Connect(function()
     if SpicyTable["Character"]["Player"]["Headangle"]and SpicyTable["Character"]["Player"]["HeadangleType"]~="Offset"and SpicyTable["Character"]["Player"]["HeadangleType"]~="Inverted"then
         game.ReplicatedStorage.Events.ControlTurn:FireServer(-math.rad(SpicyTable["Character"]["Player"]["HeadangleValue"]))
     end
+    if SpicyTable["Character"]["Player"]["GodMode"]then
         if game.Players.LocalPlayer.Character then
             if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")then
                 if not game.Players.LocalPlayer.Character:FindFirstChild("GodBRO")then
@@ -1492,6 +1493,7 @@ game.RunService.RenderStepped:Connect(function()
                 end
             end
         end
+    end
 	if SpicyTable["Character"]["Movement"]["Fly"]and IsAlive()then
 		if SpicyTable["Character"]["Movement"]["FlyToggle"]then
 			if w1 and a1 then
