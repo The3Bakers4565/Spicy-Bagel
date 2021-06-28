@@ -94,6 +94,7 @@ local SpicyTable={
     {
         {
             ["Antiflash"]=false,
+            ["Antifilter"]=false,
             ["Antismoke"]=false,
             ["Thirdperson"]=false,
             ["ThirdpersonValue"]="Third-Person",
@@ -219,6 +220,7 @@ local SpicyTable={
     ["Wait4"]=true,
     ["Spinhead"]=0,
     ["Flash"]=nil,
+    ["HumFalling"]=false,
 }
 
 
@@ -482,7 +484,7 @@ PlayerCharacter:CreateToggle("Player Yaw",function(x)
         game.Players.LocalPlayer.Character.Humanoid.AutoRotate=true
     end
 end)
-PlayerCharacter:CreateDropdown("Player Yaw Type",{"Spinning","Offset","Absolute"},1,function(x)
+PlayerCharacter:CreateDropdown("Player Yaw Type",{"Spinning","Offset","Absolute","Random"},1,function(x)
     SpicyTable["Character"]["Player"]["SpinplayerType"]=x
 end)
 PlayerCharacter:CreateSlider("Player Yaw Value",-180,180,0,false,function(x)
@@ -506,7 +508,7 @@ end)
 PlayerCharacter:CreateToggle("Reversed Arms",function(x)
     SpicyTable["Character"]["Player"]["Armreverse"]=x
 end)
-PlayerCharacter:CreateToggle("Up Side Down",function(x)
+PlayerCharacter:CreateToggle("Upside Down",function(x)
     SpicyTable["Character"]["Player"]["Upsidedown"]=x
 end)
 PlayerCharacter:CreateToggle("No Head",function(x)
@@ -584,6 +586,9 @@ Visuals1:CreateToggle("Anti Flash",function(x)
 end)
 Visuals1:CreateToggle("Anti Smoke",function(x)
     SpicyTable["Visuals"][1]["Antismoke"]=x
+end)
+Visuals1:CreateToggle("No Filter (CLIENT SIDDED)",function(x)
+    SpicyTable["Visuals"][1]["Antifilter"]=x
 end)
 Visuals1:CreateToggle("Camera Offset",function(x)
     SpicyTable["Visuals"][1]["Cameraoffset"]=x
@@ -1052,7 +1057,7 @@ local MiscAmb=MiscTab:CreateSection("Ambience")
 MiscMisc:CreateToggle("Chat Spam",function(x)
     SpicyTable["Misc"]["Misc"]["Advertise"]=x
 end)
-MiscMisc:CreateDropdown("Chat Spam Type",{"Advertise","Emoji","Wack","Custom"},1,function(x)
+MiscMisc:CreateDropdown("Chat Spam Type",{"Advertise","Emoji","PF","Custom"},1,function(x)
     SpicyTable["Misc"]["Misc"]["AdvertiseValue"]=x
 end)
 MiscMisc:CreateTextBox("Chat Spam Custom Text"," ",function(x)
@@ -1306,15 +1311,6 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
                 end
             end)
         end
-        if x.Name=="HumanoidRootPart"then
-            x:GetPropertyChangedSignal("CFrame"):Connect(function()
-                if SpicyTable["Character"]["Player"]["Upsidedown"]and IsAlive()and SpicyTable["Wait2"]then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),0)
-                elseif SpicyTable["Character"]["Player"]["Upsidedown"]then
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),math.rad(180))
-                end
-            end)
-        end
     end)
     repeat wait()until IsAlive()
     game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
@@ -1434,6 +1430,11 @@ game.RunService.RenderStepped:Connect(function()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
             CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
             CFrame.Angles(0,math.rad(-SpicyTable["Character"]["Player"]["SpinplayerSpeed"]),0)
+        elseif SpicyTable["Character"]["Player"]["SpinplayerType"]=="Random"then
+            game.Players.LocalPlayer.Character.Humanoid.AutoRotate=false
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+            CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+            CFrame.Angles(0,math.rad(math.random(-180,180)),0)
         end
     elseif IsAlive()then
         game.Players.LocalPlayer.Character.Humanoid.AutoRotate=true
@@ -1566,11 +1567,16 @@ game.RunService.RenderStepped:Connect(function()
             game.Players.LocalPlayer.Character:FindFirstChild("FakeHead"):Destroy()
         end
     end
-    if SpicyTable["Character"]["Player"]["Upsidedown"]and IsAlive()then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),math.rad(180))
+    SpicyTable["HumFalling"]=false
+    if IsAlive()then
+        if game.Players.LocalPlayer.Character.Humanoid:GetState()==Enum.HumanoidStateType.Ragdoll or game.Players.LocalPlayer.Character.Humanoid:GetState()==Enum.HumanoidStateType.GettingUp then
+            SpicyTable["HumFalling"]=true
+        end
     end
-    if SpicyTable["Character"]["Player"]["Upsidedown"]and IsAlive()and SpicyTable["Wait2"]then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),0)
+    if SpicyTable["Character"]["Player"]["Upsidedown"]and IsAlive()then
+        if not SpicyTable["HumFalling"]then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),math.rad(180))
+        end
     end
     if SpicyTable["Character"]["Player"]["NoHats"]and IsAlive()then
         for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren())do
@@ -1730,23 +1736,10 @@ game.RunService.RenderStepped:Connect(function()
                 b=b..c
             end
             game.ReplicatedStorage.Events.PlayerChatted:FireServer(b,false,false,false)
-            elseif SpicyTable["Misc"]["Misc"]["AdvertiseValue"]=="Custom"then
-                game.ReplicatedStorage.Events.PlayerChatted:FireServer(SpicyTable["Misc"]["Misc"]["AdvertiseValue2"],false,false,false)
-            else
-            local c=""
-            for _=1,30 do
-                local a="wack"
-                local b=""
-                for i=1,string.len(a)do
-                    if math.random(1,2)==1 then
-                        b=b..string.upper(string.sub(a,i,i))
-                    else
-                        b=b..string.sub(a,i,i)
-                    end
-                end
-                c=c..b.." "
-            end
-            game.ReplicatedStorage.Events.PlayerChatted:FireServer(c,false,false,false)
+        elseif SpicyTable["Misc"]["Misc"]["AdvertiseValue"]=="Custom"then
+            game.ReplicatedStorage.Events.PlayerChatted:FireServer(SpicyTable["Misc"]["Misc"]["AdvertiseValue2"],false,false,false)
+        else
+            game.ReplicatedStorage.Events.PlayerChatted:FireServer(_G.PhantomForcesQuotes[math.random(1,#_G.PhantomForcesQuotes)],false,false,false)
         end
 	end
     if SpicyTable["Misc"]["Trolling"]["Antiplant"]then
@@ -2313,6 +2306,13 @@ mt.__namecall=newcclosure(function(a,b,c,...)
         if tostring(a)=="Arms"then
             if SpicyTable["Combat"]["Weapon"]["NoBob"]then
                 b=game.Workspace.CurrentCamera.CFrame
+            end
+        end
+    end
+    if tostring(getnamecallmethod())=="InvokeServer"then
+        if tostring(a)=="Filter"then
+            if SpicyTable["Visuals"][1]["Antifilter"]then
+                return b
             end
         end
     end
