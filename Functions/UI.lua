@@ -1287,6 +1287,8 @@ function Library:CreateTab(name)
                 callback(Color.BackgroundColor3)
                 getgenv().SpicySettings[anny]={SetValue=SetValue,Value=Color.BackgroundColor3}
             end
+            getgenv().Analnum=getgenv().Analnum+1
+            local anny=name..getgenv().Analnum
             local old=presetcolor
             game.RunService.RenderStepped:Connect(function()
                 if old~=Color.BackgroundColor3 then
@@ -1294,8 +1296,6 @@ function Library:CreateTab(name)
                     getgenv().SpicySettings[anny]={SetValue=SetValue,Value=Color.BackgroundColor3}
                 end
             end)
-            getgenv().Analnum=getgenv().Analnum+1
-            local anny=name..getgenv().Analnum
             getgenv().SpicySettings[anny]={SetValue=SetValue,Value=presetcolor}
             table.insert(Library.LibraryColorTable, CheckboxOutline)
             table.insert(Library.LibraryColorTable, CheckboxTicked)
