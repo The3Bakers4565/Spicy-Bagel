@@ -605,6 +605,7 @@ function Library:CreateTab(name)
 				end
 				Toggled=state
                 callback(Toggled)
+                getgenv().SpicySettings[anulynummy]={SetValue=SetState,Value=Toggled}
 			end
             getgenv().Analnum=getgenv().Analnum+1
 			local anulynummy=name..getgenv().Analnum
@@ -1284,6 +1285,7 @@ function Library:CreateTab(name)
                 Color.BackgroundColor3 = color
                 SetRGBValues()
                 callback(Color.BackgroundColor3)
+                getgenv().SpicySettings[anny]={SetValue=SetValue,Value=Color.BackgroundColor3}
             end
             getgenv().Analnum=getgenv().Analnum+1
             local anny=name..getgenv().Analnum
@@ -1393,6 +1395,7 @@ function Library:CreateTab(name)
                     TitleToggle.Text = (name .. " - " .. SelectedOption)
                     TweenService:Create(NameButton, TweenInfo.new(0.35, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {TextColor3 = Library.Theme.MainColor}):Play()
                     callback(NameButton.Text)
+                    getgenv().SpicySettings[anulynummy].Value=NameButton.Text
                 end
                 NameButton.MouseButton1Down:Connect(function()
                     SelectedOption = v
