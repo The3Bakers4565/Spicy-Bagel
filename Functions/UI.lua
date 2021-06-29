@@ -10,7 +10,8 @@ local CoreGui = game:GetService("CoreGui")
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
-
+getgenv().Analnum=0
+getgenv().SpicySettings={}
 local Library = {
     Theme = {
         MainColor = _G.UIMainColor or _G.UIColor or Color3.fromRGB(255, 75, 75),
@@ -602,18 +603,20 @@ function Library:CreateTab(name)
                     TweenService:Create(CheckboxOutline, TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {ImageColor3 = Color3.fromRGB(65, 65, 65)}):Play()
                     TweenService:Create(CheckboxTicked, TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {ImageColor3 = Color3.fromRGB(65, 65, 65)}):Play()
 				end
-				
+				Toggled=state
                 callback(Toggled)
 			end
-			
+            getgenv().Analnum=getgenv().Analnum+1
+			local anulynummy=name..getgenv().Analnum
 			Toggle.MouseButton1Down:Connect(function()
                 Toggled = not Toggled
 				SetState(Toggled)
+                getgenv().SpicySettings[anulynummy]={SetValue=SetState,Value=Toggled}
             end)
 
             table.insert(Library.LibraryColorTable, CheckboxOutline)
             table.insert(Library.LibraryColorTable, CheckboxTicked)
-
+            getgenv().SpicySettings[anulynummy]={SetValue=SetState,Value=false}
             return {
                 SetState = SetState,funct=callback
             }
@@ -714,6 +717,9 @@ function Library:CreateTab(name)
             Value.Text = tostring(StartingValue or precisevalue and tonumber(string.format("%.2f", StartingValue)))
             Value.TextColor3 = Color3.fromRGB(255, 255, 255)
             Value.TextSize = 14.000
+            getgenv().Analnum=getgenv().Analnum+1
+            local anulnuoom=name..getgenv().Analnum
+            getgenv().SpicySettings[anulnuoom]={}
 
             local function Sliding(input)
                 local SliderPosition = UDim2.new(math.clamp((input.Position.X - SliderBackground.AbsolutePosition.X) / SliderBackground.AbsoluteSize.X, 0, 1), 0, 1, 0)
@@ -727,6 +733,7 @@ function Library:CreateTab(name)
     
                 Value.Text = tostring(SlidingValue)
                 callback(SlidingValue)
+                getgenv().SpicySettings[anulnuoom].Value=SlidingValue
             end
     
             Value.FocusLost:Connect(function()
@@ -740,6 +747,7 @@ function Library:CreateTab(name)
     
                 TweenService:Create(SliderIndicator, TweenInfo.new(0.02, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {Size = UDim2.new(((tonumber(Value.Text) or minimumvalue) - minimumvalue) / (maximumvalue - minimumvalue), 0, 1, 0)}):Play()
                 callback(tonumber(Value.Text))
+                getgenv().SpicySettings[anulnuoom].Value=tonumber(Value.Text)
             end)
     
             CircleSelector.InputBegan:Connect(function(input)
@@ -770,11 +778,12 @@ function Library:CreateTab(name)
                 Value.Text = value
                 TweenService:Create(SliderIndicator, TweenInfo.new(0.02, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {Size = UDim2.new(((tonumber(Value.Text) or minimumvalue) - minimumvalue) / (maximumvalue - minimumvalue), 0, 1, 0)}):Play()
                 callback(tonumber(Value.Text))
+                getgenv().SpicySettings[anulnuoom].Value=tonumber(Value.Text)
             end
 
             callback(StartingValue)
             table.insert(Library.LibraryColorTable, SliderIndicator)
-
+            getgenv().SpicySettings[anulnuoom]={SetValue=SetSliderValue,Value=StartingValue}
             return {
                 SetState = SetSliderValue,funct=callback
             }
@@ -837,14 +846,19 @@ function Library:CreateTab(name)
             Value.ClearTextOnFocus=false
     
             local old=""
-            
+            local function SetState(value)
+                Value.Text=value
+            end
+            getgenv().Analnum=getgenv().Analnum+1
+            local anny=name..getgenv().Analnum
             game.RunService.RenderStepped:Connect(function()
                 if old~=Value.Text then
                     old=Value.Text
                     dothatfunction(Value.Text)
+                    getgenv().SpicySettings[anny]={SetValue=SetState,Value=Value.Text}
                 end
             end)
-
+            getgenv().SpicySettings[anny]={SetValue=SetState,Value=startingtext}
             return 
         end
 
@@ -1131,7 +1145,7 @@ function Library:CreateTab(name)
                 ValueB.Text = ("B: " .. math.floor(ColorPickerToggle.ImageColor3.b * 255))
             end
     
-            local function UpdateColorPicker(nope)
+            local function UpdateColorPicker()
                 ColorPickerToggle.ImageColor3 = Color3.fromHSV(ColorH, ColorS, ColorV)
                 Color.BackgroundColor3 = Color3.fromHSV(ColorH, 1, 1)
     
@@ -1265,7 +1279,15 @@ function Library:CreateTab(name)
                     TweenService:Create(ColorPicker, TweenInfo.new(0.5, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {ImageTransparency = 1}):Play()
                 end
             end)
-
+            local function SetValue(color)
+                ColorPickerToggle.ImageColor3 = color
+                Color.BackgroundColor3 = color
+                SetRGBValues()
+                callback(Color.BackgroundColor3)
+            end
+            getgenv().Analnum=getgenv().Analnum+1
+            local anny=name..getgenv().Analnum
+            getgenv().SpicySettings[anny]={SetValue=SetValue,Value=presetcolor}
             table.insert(Library.LibraryColorTable, CheckboxOutline)
             table.insert(Library.LibraryColorTable, CheckboxTicked)
         end
@@ -1340,7 +1362,10 @@ function Library:CreateTab(name)
                 TweenService:Create(NameDropdown, TweenInfo.new(0.5, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {Size = UDim2.new(0, 197, 0, 35)}):Play()
                 TweenService:Create(Dropdown, TweenInfo.new(0.5, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {Size = UDim2.new(0, 165, 0, 0)}):Play()
             end
-
+            local optiooons={}
+            getgenv().Analnum=getgenv().Analnum+1
+			local anulynummy=name..getgenv().Analnum
+			getgenv().SpicySettings[anulynummy]={}
             for i, v in pairs(options) do
                 local NameButton = Instance.new("TextButton")
 
@@ -1362,13 +1387,20 @@ function Library:CreateTab(name)
                 if v == SelectedOption then
                     NameButton.TextColor3 = Library.Theme.MainColor
                 end
-
+                optiooons[v]=function()
+                    SelectedOption = v
+                    ResetAllDropdownItems()
+                    TitleToggle.Text = (name .. " - " .. SelectedOption)
+                    TweenService:Create(NameButton, TweenInfo.new(0.35, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {TextColor3 = Library.Theme.MainColor}):Play()
+                    callback(NameButton.Text)
+                end
                 NameButton.MouseButton1Down:Connect(function()
                     SelectedOption = v
                     ResetAllDropdownItems()
                     TitleToggle.Text = (name .. " - " .. SelectedOption)
                     TweenService:Create(NameButton, TweenInfo.new(0.35, Library.Theme.EasingStyle, Enum.EasingDirection.Out), {TextColor3 = Library.Theme.MainColor}):Play()
                     callback(NameButton.Text)
+                    getgenv().SpicySettings[anulynummy].Value=NameButton.Text
                 end)
 
                 NameButton.InputBegan:Connect(function(input)
@@ -1445,9 +1477,14 @@ function Library:CreateTab(name)
                     end)
                 end
             end
-
+			
+			local function SetState(val)
+			    optiooons[val]()
+            end
+            getgenv().SpicySettings[anulynummy]={SetValue=SetState,Value=options[1]}
+            
             return {
-            options,callback,Refresh
+                options,callback,Refresh
             }
         end
 
@@ -1659,5 +1696,4 @@ function Library:CreateTab(name)
 
     return TabElements
 end
-
 return Library
