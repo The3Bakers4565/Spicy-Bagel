@@ -452,6 +452,7 @@ getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNew
 local HomePage=CoastingLibrary:CreateTab("Home Page")
 local HomePageCredits=HomePage:CreateSection("Credits")
 local HomePageGames=HomePage:CreateSection("Supported Games:")
+local HomePageSave=HomePage:CreateSection("Save/Load")
 HomePageCredits:CreateLabel(""," ")
 HomePageCredits:CreateLabel("","Spicy Bagel Hub")
 HomePageCredits:CreateLabel("","Made By: The3Bakers#4565")
@@ -469,6 +470,46 @@ HomePageGames:CreateLabel(""," ")
 for _,v in pairs(_G.Games)do
     HomePageGames:CreateLabel("",v)
 end
+
+
+
+HomePageSave:CreateLabel(""," ")
+HomePageSave:CreateLabel("","*EXPERIMENTAL*")
+HomePageSave:CreateButton("Save",function()
+    writefile("SpicySetting"..tostring(game.PlaceId)..".lua","return".._G.TableToString(getgenv().SpicySettings))
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).moveOldMessages()
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNewMessage(
+        "Astolfo",
+        "Saved At: "..tostring(math.floor((tick()-TICK)*100)/100),
+        _G.UIMainColor or Color3.fromRGB(255,75,75),
+        Color3.new(1,1,1),
+        .01
+    )
+end)
+HomePageSave:CreateButton("Load",function()
+    local a={}
+    for i,v in pairs(loadfile("SpicySetting"..tostring(game.PlaceId)..".lua")())do
+        if not pcall(function()
+            if getgenv().SpicySettings[i].Value~=v.Value then
+                if not pcall(function()
+                    getgenv().SpicySettings[i].SetValue(v.Value)
+                end)then
+                    table.insert(a,true)
+                end
+            end
+        end)then
+            table.insert(a,true)
+        end
+    end
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).moveOldMessages()
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNewMessage(
+        "Astolfo",
+        "Loaded At: "..tostring(math.floor((tick()-TICK)*100)/100).." With "..#a.." Errors",
+        _G.UIMainColor or Color3.fromRGB(255,75,75),
+        Color3.new(1,1,1),
+        .01
+    )
+end)
 
 
 
