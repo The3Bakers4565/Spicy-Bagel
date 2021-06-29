@@ -591,6 +591,8 @@ function Library:CreateTab(name)
             TickCover.Size = UDim2.new(0, 14, 0, 14)
             TickCover.ZIndex = 5
 
+            getgenv().Analnum=getgenv().Analnum+1
+			local anulynummy=name..getgenv().Analnum
             local function SetState(state)
                 if state then
                     TweenService:Create(Title, TweenInfo.new(0.12, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
@@ -607,8 +609,6 @@ function Library:CreateTab(name)
                 callback(Toggled)
                 getgenv().SpicySettings[anulynummy]={SetValue=SetState,Value=Toggled}
 			end
-            getgenv().Analnum=getgenv().Analnum+1
-			local anulynummy=name..getgenv().Analnum
 			Toggle.MouseButton1Down:Connect(function()
                 Toggled = not Toggled
 				SetState(Toggled)
