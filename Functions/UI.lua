@@ -1287,6 +1287,13 @@ function Library:CreateTab(name)
                 callback(Color.BackgroundColor3)
                 getgenv().SpicySettings[anny]={SetValue=SetValue,Value=Color.BackgroundColor3}
             end
+            local old=presetcolor
+            game.RunService.RenderStepped:Connect(function()
+                if old~=Color.BackgroundColor3 then
+                    old=Color.BackgroundColor3
+                    getgenv().SpicySettings[anny]={SetValue=SetValue,Value=Color.BackgroundColor3}
+                end
+            end)
             getgenv().Analnum=getgenv().Analnum+1
             local anny=name..getgenv().Analnum
             getgenv().SpicySettings[anny]={SetValue=SetValue,Value=presetcolor}
