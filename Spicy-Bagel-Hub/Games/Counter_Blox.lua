@@ -480,7 +480,7 @@ HomePageSave:CreateButton("Save",function()
     getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).moveOldMessages()
     getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNewMessage(
         "Astolfo",
-        "Saved "..#getgenv().SpicySettings.." Features At: "..tostring(math.floor((tick()-TICK)*100)/100),
+        "Saved "..getgenv().Analnum.." Features At: "..tostring(math.floor((tick()-TICK)*100)/100),
         _G.UIMainColor or Color3.fromRGB(255,75,75),
         Color3.new(1,1,1),
         .01
