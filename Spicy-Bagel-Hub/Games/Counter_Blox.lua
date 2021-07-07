@@ -1,8 +1,3 @@
---[[
-No I Didnt Make A Mistake
-Yes I Did Leave Counter Blox Open Source
-This Is Due To Anti Aim And Alot of The Fps Lag Issues In Obfuscation
-]]
 local TICK=tick()
 getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).moveOldMessages()
 getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNewMessage(
