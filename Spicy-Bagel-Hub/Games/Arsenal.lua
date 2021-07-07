@@ -796,7 +796,6 @@ else
 end
 
 for i,v in pairs(SpicyTable["Load"])do
-    print(i)
     if pcall(function()game:HttpGet(v[1])end)then
         if v[2]=="Knife"then
             table.insert(SpicyTable["AllMelees"],i)
@@ -951,7 +950,7 @@ getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Main.Chats.DisplayChat).createNew
 )
 
 
-print("Dot")
+
 SpicyTable["DotPart"].Size=Vector3.new(1,1,1)
 SpicyTable["DotPart"].Anchored=true
 SpicyTable["DotPart"].CanCollide=false
@@ -975,7 +974,6 @@ for _,v in pairs(game.ReplicatedStorage.Melees:GetChildren())do
     end
 end
 for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
-    print(v)
     if v.Name~="Standing"then
         if v.DMG.Value>nut then
             nut=v.DMG.Value
@@ -1026,7 +1024,6 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
         end
     end
 end
-print("end weps")
 for _,v in pairs(game.ReplicatedStorage.ChrModels:GetChildren())do
     table.insert(SpicyTable["Characters"],v.Name)
     if not game.ReplicatedStorage.FavoriteWeapons:FindFirstChild(v.Name)then
@@ -1036,14 +1033,12 @@ for _,v in pairs(game.ReplicatedStorage.ChrModels:GetChildren())do
         a.Name=v.Name
     end
 end
-print("end chars")
 for _,v in pairs(game.ReplicatedStorage.FavoriteWeapons:GetChildren())do
     local a=Instance.new("StringValue")
     a.Parent=v
     a.Value=v.Value
     a.Name="OldValue"
 end
-print("end fav weps")
 for _,v in pairs(SpicyTable["Weapon"])do
     table.insert(SpicyTable["AllWeapons"],v)
 end
@@ -1055,7 +1050,6 @@ for _,v in pairs(game.ReplicatedStorage.Viewmodels.Arms:GetChildren())do
         table.insert(SpicyTable["Arms"],v.Name)
     end
 end
-print("end arms")
 for _,v in pairs(game.ReplicatedStorage.Viewmodels:GetChildren())do
     if v:FindFirstChild("HumanoidRootPart")then
         if v.HumanoidRootPart:IsA("BasePart")then
@@ -1063,19 +1057,15 @@ for _,v in pairs(game.ReplicatedStorage.Viewmodels:GetChildren())do
         end
     end
 end
-print("end hum fix")
 for i,v in pairs(game:GetService("ReplicatedFirst").Voices.ROBLOXZombie.Attack:GetChildren())do
     v.Name="TrooperPain"..tostring(i)
 end
-print("end zom att")
 for i,v in pairs(game:GetService("ReplicatedFirst").Voices.Clown.Death:GetChildren())do
     v.Name="TrooperPain"..tostring(i)
 end
-print("end clown dea")
 for i,v in pairs(game:GetService("ReplicatedFirst").Voices.Clown.Hurt:GetChildren())do
     v.Name="TrooperPain"..tostring(i)
 end
-print("end clown hurt")
 --[[SpicyTable["FESoundEffects"]={
     ["Eeerm THUD"]=game:GetService("ReplicatedFirst").Voices.ROBLOX.Tohoho.Dead,
     ["Oof"]=game:GetService("ReplicatedFirst").Voices.ROBLOX.Death.TrooperPain1,
@@ -1177,7 +1167,6 @@ print("end clown hurt")
 for i in pairs(SpicyTable["FESoundEffects"])do
     table.insert(SpicyTable["SoundNames"],i)
 end]]
-print("end sound eff")
 
 
 
