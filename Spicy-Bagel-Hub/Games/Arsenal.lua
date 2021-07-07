@@ -1,5 +1,22 @@
 local TICK=tick()
---Script Before Update https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/Arsenal/OLD__.lua
+local a=false
+for i,v in pairs(_G)do
+    if 
+    string.find(i,"SCYCHKTRU")and
+    string.find(i,"SPRINSNlocaCHC1337")and
+    string.find(v,"@Eryon_ys_tru")and
+    string.find(v,"ast6322w34kldfu")then
+        a=true
+    end
+end
+if not a then
+    game.Players.LocalPlayer:Kick([[
+
+Error _G Encrytion Failed
+if This Keeps Happening Report it To The Discord
+https://discord.gg/erdtnTSgng]])
+    return
+end
 
 
 
