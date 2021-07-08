@@ -1,0 +1,93 @@
+--Made By: The3Bakers#4565
+--discord.gg/erdtnTSgng
+local uilib=loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/CoastingUI.lua"))()
+--Takes A Few Seconds To Trap People But Works In The End
+local tab=uilib:CreateTab("Gun Hack")
+local section=tab:CreateSection("Loadout Changer Hack 2021")
+local primarys={}
+local melees={}
+for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
+    if v.Name~="Influencer Launcher"and v.Name~="Admin Launcher"and v.Name~="Standing"then
+        if v:FindFirstChild("Melee")then
+            table.insert(melees,v.Name)
+        else
+            table.insert(primarys,v.Name)
+        end
+    end
+end
+local Loadout={
+    Primary=primarys[1],
+    Secondary=primarys[1],
+    Melee=melees[1],
+}
+section:CreateDropdown("Primary",primarys,1,function(x)
+    Loadout.Primary=x
+end)
+section:CreateDropdown("Secondary",primarys,1,function(x)
+    Loadout.Secondary=x
+end)
+section:CreateDropdown("Melee",melees,1,function(x)
+    Loadout.Melee=x
+end)
+section:CreateButton("Update Loadout",function()
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,40,"fakeadmin")
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,Loadout.Secondary)
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)
+    local mt=getrawmetatable(game)
+    local oldIndex=mt.__index
+    setreadonly(mt,false)
+    mt.__index=newcclosure(function(a,b)
+        if tostring(a)=="primary"and tostring(b)=="Value"then
+            return Loadout.Primary
+        end
+        return oldIndex(a,b)
+    end)
+    game.ReplicatedStorage.Events.LoadCharacter:FireServer()
+end)
+coroutine.wrap(function()
+    while wait(.1)do
+        pcall(function()
+            if game.Players.LocalPlayer.Status.Team.Value~="Spectator"and not(game.ReplicatedStorage.wkspc.Status.RoundOver.Value or game.ReplicatedStorage.wkspc.Status.Preparation.Value)then
+                for _,v in pairs(game.Players:GetChildren())do
+                    if v~=game.Players.LocalPlayer then
+                        if v.Team~=game.Players.LocalPlayer.Team or game.ReplicatedStorage.wkspc.FFA.Value then
+                            if v.Character then
+                                if v.Character:FindFirstChild("IsAPlayer")and not v.Character:FindFirstChild("ShuckyHAX")and v.Character:FindFirstChild("Spawned")and v.Character.HumanoidRootPart:FindFirstChild("Engulfed")then
+                                    game:GetService("ReplicatedStorage").Events.Burn:FireServer(
+                                        {
+                                            ["Parent"]=v.Character,
+                                            ["CFrame"]=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                                        },
+                                        game:GetService("ReplicatedStorage").Weapons.AWP,
+                                        0
+                                    )
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)()
+local mt=getrawmetatable(game)
+local oldNamecall=mt.__namecall
+local oldIndex=mt.__index
+local oldnewIndex=mt.__newindex
+setreadonly(mt,false)
+mt.__namecall=newcclosure(function(a,b,...)
+    local method=getnamecallmethod()
+    if tostring(method)=="FireServer"and tostring(a)=="HitPart"then
+        game:GetService("ReplicatedStorage").Events.Burn:FireServer(
+            {
+                ["Parent"]=b.Parent,
+                ["CFrame"]=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame+Vector3.new(math.random(),math.random(),math.random())
+            },
+            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value,
+            1
+        )
+    end
+    return oldNamecall(a,b,...)
+end)
