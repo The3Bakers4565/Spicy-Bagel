@@ -1,3 +1,5 @@
+--Made By: The3Bakers#4565
+--Epic Discord: discord.gg/erdtnTSgng
 --main stuff to spoof stuff without server side detection yaknow?
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo,13,"StoredAmmo_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getsecondaryammo,7,"StoredAmmo_Spicy")
