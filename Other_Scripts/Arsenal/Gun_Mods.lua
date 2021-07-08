@@ -46,6 +46,10 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
         a.Parent=v
         a.Value=0
     end)
+    pcall(function()
+        --knife range
+        v.Range.Value=10000
+    end)
 end
 --better scope
 for i=1,4 do
