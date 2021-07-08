@@ -1,3 +1,4 @@
+--I Will Now Be Using HttpGet Because Look Alot Better On Forums
 while game.RunService.RenderStepped:Wait()do
     pcall(function()
         if game.Players.LocalPlayer.Character then
