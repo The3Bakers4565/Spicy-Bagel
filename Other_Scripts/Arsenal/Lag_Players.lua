@@ -1,3 +1,5 @@
+--Made By: The3Bakers#4565
+--discord.gg/erdtnTSgng
 if _G.lag then
     return
 end
