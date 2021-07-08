@@ -1,11 +1,11 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
 local uilib=loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/CoastingUI.lua"))()
---Takes A Few Seconds To Trap People But Works In The End
 local tab=uilib:CreateTab("Gun Hack")
 local section=tab:CreateSection("Loadout Changer Hack 2021")
 local primarys={}
 local melees={}
+--get weapons and sort them
 for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
     if v.Name~="Influencer Launcher"and v.Name~="Admin Launcher"and v.Name~="Standing"then
         if v:FindFirstChild("Melee")then
@@ -15,6 +15,7 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
         end
     end
 end
+-- main loady weapony thingy
 local Loadout={
     Primary=primarys[1],
     Secondary=primarys[1],
@@ -29,25 +30,27 @@ end)
 section:CreateDropdown("Melee",melees,1,function(x)
     Loadout.Melee=x
 end)
+local section=tab:CreateSection("So You Dont Have To Scroll")
 section:CreateButton("Update Loadout",function()
-    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true
+    --update stuff
+    getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true--secondary changer
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,40,"fakeadmin")
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,Loadout.Secondary)
-    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)--melee changer
     local mt=getrawmetatable(game)
     local oldIndex=mt.__index
     setreadonly(mt,false)
     mt.__index=newcclosure(function(a,b)
         if tostring(a)=="primary"and tostring(b)=="Value"then
-            return Loadout.Primary
+            return Loadout.Primary--primary changer
         end
         return oldIndex(a,b)
     end)
     game.ReplicatedStorage.Events.LoadCharacter:FireServer()
 end)
 coroutine.wrap(function()
-    while wait(.1)do
+    while wait(.1)do--so that people dont get burn damage
         pcall(function()
             if game.Players.LocalPlayer.Status.Team.Value~="Spectator"and not(game.ReplicatedStorage.wkspc.Status.RoundOver.Value or game.ReplicatedStorage.wkspc.Status.Preparation.Value)then
                 for _,v in pairs(game.Players:GetChildren())do
@@ -80,6 +83,7 @@ setreadonly(mt,false)
 mt.__namecall=newcclosure(function(a,b,...)
     local method=getnamecallmethod()
     if tostring(method)=="FireServer"and tostring(a)=="HitPart"then
+        --uses flames to deal damage
         game:GetService("ReplicatedStorage").Events.Burn:FireServer(
             {
                 ["Parent"]=b.Parent,
