@@ -38,6 +38,7 @@ section:CreateButton("Update Loadout",function()
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,Loadout.Secondary)
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)--melee changer
+    game.ReplicatedStorage.Events.LoadCharacter:FireServer()
     if _G.Didthat then
         return
     end
@@ -51,7 +52,6 @@ section:CreateButton("Update Loadout",function()
         end
         return oldIndex(a,b)
     end)
-    game.ReplicatedStorage.Events.LoadCharacter:FireServer()
 end)
 coroutine.wrap(function()
     while wait(.1)do--so that people dont get burn damage
