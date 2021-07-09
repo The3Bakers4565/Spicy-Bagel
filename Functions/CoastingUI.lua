@@ -250,6 +250,13 @@ local function ToggleUI()
     end
 end
 
+UserInputService.InputBegan:Connect(function(x,c)
+    if not c then
+        if x.KeyCode==Enum.KeyCode.P or x.KeyCode==Enum.KeyCode.RightShift then
+            ToggleUI()
+        end
+    end
+end)
 coroutine.wrap(function()
     while wait() do
         Library.RainbowColorValue = Library.RainbowColorValue + 1/255
