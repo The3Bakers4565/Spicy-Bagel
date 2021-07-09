@@ -38,6 +38,10 @@ section:CreateButton("Update Loadout",function()
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,Loadout.Secondary)
     debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)--melee changer
+    if _G.Didthat then
+        return
+    end
+    _G.Didthat=true
     local mt=getrawmetatable(game)
     local oldIndex=mt.__index
     setreadonly(mt,false)
