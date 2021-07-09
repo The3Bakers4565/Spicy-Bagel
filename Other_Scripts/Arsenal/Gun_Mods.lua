@@ -6,6 +6,7 @@ debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Function
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getprimaryammo,7,"StoredAmmo_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).countammo,61,"StoredAmmo_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,347,"FireRate_Spicy")
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,344,"FireRate_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,357,"Auto_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,119,"RecoilControl_Spicy")
 debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,88,"ReloadTime_Spicy")
@@ -50,6 +51,9 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
         --knife range
         v.Range.Value=10000
     end)
+    local a=Instance.new("Folder")
+    a.Parent=v
+    a.Name="Scoped"
 end
 --better scope
 for i=1,4 do
