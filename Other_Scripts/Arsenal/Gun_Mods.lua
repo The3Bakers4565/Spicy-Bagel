@@ -1,47 +1,48 @@
 --Made By: The3Bakers#4565
 --Epic Discord: discord.gg/erdtnTSgng
---main stuff to spoof stuff without server side detection yaknow?
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo,13,"StoredAmmo_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getsecondaryammo,7,"StoredAmmo_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getprimaryammo,7,"StoredAmmo_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).countammo,61,"StoredAmmo_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,347,"FireRate_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,344,"FireRate_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,357,"Auto_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,119,"RecoilControl_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,88,"ReloadTime_Spicy")
-debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,415,"EquipTime_Spicy")
-debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,114,"StoredAmmo_Spicy")
-debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).updtprimary,9,"StoredAmmo_Spicy")
---999 clipsize (999 is the max)
-require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo=function()return 999 end
---add the spoofed stuff
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo,13,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getsecondaryammo,7,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getprimaryammo,7,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).countammo,61,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,347,"FireRate_Spicy")--spoof fire rate detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,344,"FireRate_Spicy")--spoof fire rate detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,119,"RecoilControl_Spicy")--spoofs recoil detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,88,"ReloadTime_Spicy")--spoofs reload time detector with a new value
+debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,415,"EquipTime_Spicy")--spoofs equip time detector with a new value
+debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,114,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).updtprimary,9,"StoredAmmo_Spicy")--spoof stored ammo detector with a new value
+require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo=function()return 999 end --spoofs clip size (999 is the max)
 for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
     pcall(function()
+        --adds the spoofed stored ammo value
         local a=v.StoredAmmo:Clone()
         a.Name="StoredAmmo_Spicy"
         a.Parent=v
         a.Value=199
     end)
     pcall(function()
+        --adds the spoofed fire rate value
         local a=v.FireRate:Clone()
         a.Name="FireRate_Spicy"
         a.Parent=v
         a.Value=0
     end)
     pcall(function()
+        --adds the spoofed recoil value
         local a=v.RecoilControl:Clone()
         a.Name="RecoilControl_Spicy"
         a.Parent=v
         a.Value=0
     end)
     pcall(function()
+        --adds the spoofed reload time value
         local a=v.ReloadTime:Clone()
         a.Name="ReloadTime_Spicy"
         a.Parent=v
         a.Value=0
     end)
     pcall(function()
+        --adds the spoofed equip time value
         local a=v.EquipTime:Clone()
         a.Name="EquipTime_Spicy"
         a.Parent=v
@@ -49,13 +50,14 @@ for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
     end)
     pcall(function()
         --knife range
-        v.Range.Value=10000
+        v.Range.Value=1000000
     end)
+    --adds scopes to all guns
     local a=Instance.new("Folder")
     a.Parent=v
     a.Name="Scoped"
 end
---better scope
+--removes black stuff on ur scope
 for i=1,4 do
     game:GetService("Players").LocalPlayer.PlayerGui.GUI.Crosshairs["Frame"..i].Transparency=1
 end
@@ -78,7 +80,7 @@ game.RunService.RenderStepped:Connect(function()
         end
     end
 end)
---no animation
+--custom no animation
 local noanim=Instance.new("Animation")
 noanim.AnimationId="rbxassetid://0"
 local mt=getrawmetatable(game)
@@ -105,12 +107,12 @@ mt.__namecall=newcclosure(function(a,b,...)
         end
     elseif tostring(method)=="SetPrimaryPartCFrame"then
         if tostring(a)=="Arms"then
-            --no gun bob
+            --removes gun bob
             b=game.Workspace.CurrentCamera.CFrame*CFrame.new(offset)
         end
     elseif tostring(method)=="Play"then
         if tostring(a)=="idle"then
-            --remove hip sway
+            --removes hip sway
             a:AdjustSpeed(0)
         end
     end
