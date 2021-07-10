@@ -1,6 +1,5 @@
 repeat wait()until game:IsLoaded()
-repeat wait()until game.Workspace:FindFirstChild("MenuLobby")
-repeat wait()until game.Workspace:FindFirstChild("Map")
+repeat wait()until game.Players.LocalPlayer.PlayerGui:FindFirstChild("Leaderboard")
 repeat wait()until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadScreen")
 repeat
 if not game.Players.LocalPlayer.Character then
