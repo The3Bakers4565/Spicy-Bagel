@@ -84,13 +84,13 @@ game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(x)
     end
 end)
 local a={}
+game.Players.LocalPlayer:Kick("Teleporting...")
 --server hop
 for _,v in pairs(game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?limit=100")).data)do
     if v.playing<v.maxPlayers then
         table.insert(a,v.id)
     end
 end
-game.Players.LocalPlayer:Kick("Teleporting...")
 while wait(1)do
     game.TeleportService:TeleportToPlaceInstance(game.PlaceId,a[math.random(1,#a)])
 end
