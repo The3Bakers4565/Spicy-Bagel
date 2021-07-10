@@ -1,9 +1,9 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
 getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true
-debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,40,"fakeadmin")
-debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
-debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,"Trowel")
+debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,32,"fakeadmin")
+debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,35,game.Players.LocalPlayer.Name)
+debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,"Trowel")
 local mt=getrawmetatable(game)
 local oldNamecall=mt.__namecall
 setreadonly(mt,false)
