@@ -1,5 +1,3 @@
---Made By: The3Bakers#4565
---discord.gg/erdtnTSgng
 local uilib=loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/CoastingUI.lua"))()
 local tab=uilib:CreateTab("Gun Hack")
 local section=tab:CreateSection("Loadout Changer Hack 2021")
@@ -34,10 +32,10 @@ local section=tab:CreateSection("So You Dont Have To Scroll")
 section:CreateButton("Update Loadout",function()
     --update stuff
     getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true--secondary changer
-    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,40,"fakeadmin")
-    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,43,game.Players.LocalPlayer.Name)
-    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,45,Loadout.Secondary)
-    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Melee)--melee changer
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,32,"fakeadmin")
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,35,game.Players.LocalPlayer.Name)
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,37,Loadout.Secondary)
+    debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,29,Loadout.Melee)--melee changer
     game.ReplicatedStorage.Events.LoadCharacter:FireServer()
     if _G.Didthat then
         return
