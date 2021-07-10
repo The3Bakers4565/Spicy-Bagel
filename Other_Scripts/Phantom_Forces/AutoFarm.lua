@@ -1,6 +1,7 @@
 repeat wait()until game:IsLoaded()
 repeat wait()until game.Workspace:FindFirstChild("MenuLobby")
 repeat wait()until game.Workspace:FindFirstChild("Map")
+repeat wait()until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadScreen")
 repeat
 if not game.Players.LocalPlayer.Character then
     repeat game:GetService("ControllerService").RemoteEvent:FireServer("spawn")wait(1)until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:IsDescendantOf(game.Workspace.Players)
