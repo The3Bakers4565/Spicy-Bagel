@@ -1,4 +1,5 @@
 repeat wait()until game:IsLoaded()
+
 game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("Leaderboard"):WaitForChild("Main")[game.Players.LocalPlayer.Team.Name]:WaitForChild("DataFrame"):WaitForChild("Data")[game.Players.LocalPlayer.Name]:WaitForChild("Kills")
 repeat
 if not game.Players.LocalPlayer.Character then
