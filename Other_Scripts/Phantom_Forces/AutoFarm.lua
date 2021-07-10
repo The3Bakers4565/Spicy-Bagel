@@ -91,6 +91,79 @@ for _,v in pairs(game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.
         table.insert(a,v.id)
     end
 end
+pcall(function()
+    local data={
+        Rank=0,
+        Kills=0,
+        Deaths=0,
+        KDR=0
+    }
+    for _,v in pairs(game.Players.LocalPlayer.PlayerGui.Menu:GetChildren())do
+        if v:FindFirstChild("Frame")and v.Name=="Frame"then
+            for _,c in pairs(v:GetChildren())do
+                if c:FindFirstChild("Frame")and c.Name=="Frame"then
+                    for _,z in pairs(c:GetChildren())do
+                        if z:FindFirstChild("Frame")and z.Name=="Frame"then
+                            for _,x in pairs(z:GetChildren())do
+                                if x:FindFirstChild("Frame")and x.Name=="Frame"then
+                                    for _,b in pairs(x:GetChildren())do
+                                        if b:FindFirstChild("Frame")and b.Name=="Frame"then
+                                            for _,n in pairs(b:GetChildren())do
+                                                if n:FindFirstChild("Frame")and n.Name=="Frame"then
+                                                    for _,m in pairs(n:GetChildren())do
+                                                        if m:IsA("TextLabel")then
+                                                            if m.Text=="Name"then
+                                                                for _,l in pairs(m:GetChildren())do
+                                                                    if l:IsA("TextLabel")then
+                                                                        if data.Rank==0 then
+                                                                            if l.Text=="Rank"then
+                                                                                data.Rank=data.Rank+1
+                                                                            end
+                                                                        elseif data.Rank==1 then
+                                                                            data.Rank=l.Text
+                                                                        end
+                                                                        if data.Kills==0 then
+                                                                            if l.Text=="Kills"then
+                                                                                data.Kills=data.Kills+1
+                                                                            end
+                                                                        elseif data.Kills==1 then
+                                                                            data.Kills=l.Text
+                                                                        end
+                                                                        if data.Deaths==0 then
+                                                                            if l.Text=="Deaths"then
+                                                                                data.Deaths=data.Deaths+1
+                                                                            end
+                                                                        elseif data.Deaths==1 then
+                                                                            data.Deaths=l.Text
+                                                                        end
+                                                                        if data.KDR==0 then
+                                                                            if l.Text=="KDR"then
+                                                                                data.KDR=data.KDR+1
+                                                                            end
+                                                                        elseif data.KDR==1 then
+                                                                            data.KDR=l.Text
+                                                                        end
+                                                                    end
+                                                                end
+                                                                break
+                                                            end
+                                                        end
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    local ttos=loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/TabelToString.lua"))()
+    writefile("PhantomForcesData.lua",ttos(data))
+end)
 while wait(1)do
     game.TeleportService:TeleportToPlaceInstance(game.PlaceId,a[math.random(1,#a)])
 end
