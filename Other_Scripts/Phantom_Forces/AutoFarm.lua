@@ -31,7 +31,7 @@ pcall(function()
                                                     for _,m in pairs(n:GetChildren())do
                                                         if m:IsA("TextLabel")then
                                                             if m.Text=="Name"then
-                                                                for _,l in pairs(m:GetChildren())do
+                                                                for _,l in pairs(n:GetChildren())do
                                                                     if l:IsA("TextLabel")then
                                                                         if data.Rank==0 then
                                                                             if l.Text=="Rank"then
