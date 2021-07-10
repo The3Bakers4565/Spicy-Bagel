@@ -5,7 +5,7 @@ local primarys={}
 local melees={}
 --get weapons and sort them
 for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do
-    if v.Name~="Influencer Launcher"and v.Name~="Admin Launcher"and v.Name~="Standing"then
+    if v.Name~="Standing"and not v:FindFirstChild("AdminWeapon")and v.Name~="Admin Launcher"and v.Name~="Influencer Launcher"then
         if v:FindFirstChild("Melee")then
             table.insert(melees,v.Name)
         else
