@@ -1,4 +1,5 @@
 repeat wait()until game:IsLoaded()
+repeat wait()until pcall(function()print(game:GetService("Players").LocalPlayer.PlayerGui.Leaderboard.Main[game.Players.LocalPlayer.Team.Name].DataFrame.Data[game.Players.LocalPlayer.Name].Kills.Text)end)
 repeat wait()until not game.Players.LocalPlayer.PlayerGui:FindFirstChild("Loadscreen")
 repeat
 if not game.Players.LocalPlayer.Character then
