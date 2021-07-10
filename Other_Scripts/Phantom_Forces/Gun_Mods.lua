@@ -1,3 +1,5 @@
+--Made By The3Bakers#4565
+--discord.gg/erdtnTSgng
 for _,v in pairs(getgc(true))do
     if type(v)=="function"then
         --remove gun bob
@@ -85,16 +87,29 @@ for _,v in pairs(getgc(true))do
         end
     end
 end
+local ismelee=false
 local mt=getrawmetatable(game)
+local oldNamecall=mt.__namecall
 local oldnewIndex=mt.__newindex
 setreadonly(mt,false)
+mt.__namecall=newcclosure(function(a,b,c,...)
+    local method=getnamecallmethod()
+    if tostring(method)=="FireServer"and b=="equip"then
+        if c==3 then
+            ismelee=true
+        else
+            ismelee=false
+        end
+    end
+    return oldNamecall(a,b,c,...)
+end)
 mt.__newindex=newcclosure(function(a,b,c)
     if tostring(a)=="Motor6D"and tostring(b)=="C0"then
-        if tostring(a.Part1)=="Trigger"then
+        if tostring(a.Part1)=="Trigger"and not ismelee then
             --remove gun rotation sway
             c=CFrame.new(c.Position)*CFrame.Angles(require(game.ReplicatedFirst.ClientModules.Old.framework.camera).angles.X,0,0)
         end
-        if tostring(a.Part1)=="Arm"then
+        if tostring(a.Part1)=="Arm"and not ismelee then
             --remove arms (because they look weird if u dont
             c=CFrame.new(0,-5,0)*CFrame.Angles(0,math.rad(180),0)
         end
