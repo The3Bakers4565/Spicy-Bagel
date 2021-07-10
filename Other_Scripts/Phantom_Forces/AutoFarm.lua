@@ -90,7 +90,7 @@ elseif not game.Players.LocalPlayer.Character:IsDescendantOf(game.Workspace.Play
     repeat game:GetService("ControllerService").RemoteEvent:FireServer("spawn")wait(1)until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:IsDescendantOf(game.Workspace.Players)
 end
 --get a enemy location without using getgc and getplayerhit bs
-local a=Vector3.new()
+local a
 for _,v in pairs(game.Workspace.Players:GetChildren())do
     if v.Name~=game.Players.LocalPlayer.Team.Name then
         if v:FindFirstChild("Player")then
@@ -99,6 +99,7 @@ for _,v in pairs(game.Workspace.Players:GetChildren())do
         end
     end
 end
+    if a then
 --summons frag at position
 game:GetService("ControllerService").RemoteEvent:FireServer(
     "newgrenade",
@@ -150,7 +151,7 @@ game:GetService("ControllerService").RemoteEvent:FireServer(
         ["blowuptime"] = 0
     }
         --stop fragging at 2 kills
-)wait(1)until tonumber(game:GetService("Players").LocalPlayer.PlayerGui.Leaderboard.Main[game.Players.LocalPlayer.Team.Name].DataFrame.Data[game.Players.LocalPlayer.Name].Kills.Text)>1
+)end wait(1)until tonumber(game:GetService("Players").LocalPlayer.PlayerGui.Leaderboard.Main[game.Players.LocalPlayer.Team.Name].DataFrame.Data[game.Players.LocalPlayer.Name].Kills.Text)>1
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(x)
     if x==Enum.TeleportState.Started then
             --execute script after teleported
