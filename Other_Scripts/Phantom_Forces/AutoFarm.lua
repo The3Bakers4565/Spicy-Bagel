@@ -67,7 +67,7 @@ game:GetService("ControllerService").RemoteEvent:FireServer(
 )wait(1)until tonumber(game:GetService("Players").LocalPlayer.PlayerGui.Leaderboard.Main[game.Players.LocalPlayer.Team.Name].DataFrame.Data[game.Players.LocalPlayer.Name].Kills.Text)>1
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(x)
     if x==Enum.TeleportState.Started then
-        (syn and syn.queue_on_teleport or queue_on_teleport)("loadstring(game:HttpGet('https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Other_Scripts/Phantom_Forces/Auto_Farm.lua'))()")
+        (syn and syn.queue_on_teleport or queue_on_teleport)("loadstring(game:HttpGet('https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Other_Scripts/Phantom_Forces/AutoFarm.lua'))()")
     end
 end)
 local a={}
