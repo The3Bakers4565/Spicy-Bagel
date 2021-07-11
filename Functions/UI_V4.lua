@@ -2,7 +2,7 @@
 --Edited By: The3Bakers#4565
 local Library = {}
 
-function Library:Window(Name, Color, SizeY)
+function Library:Window(Name, Color, SizeY,TextColor)
     local CoreGui = game:GetService("CoreGui")
     local UserInput = game:GetService("UserInputService")
     local RunService = game:GetService("RunService")
@@ -13,7 +13,7 @@ function Library:Window(Name, Color, SizeY)
     local Heading = Instance.new("Frame")
     local LabelListLayout = Instance.new("UIListLayout")
     local Title = Instance.new("TextLabel")
-    local Background = Instance.new("Frame")
+    local Background = Instance.new("ScrollingFrame")
     local Content = Instance.new("Frame")
     local TabsListLayout = Instance.new("UIListLayout")
     local Tabs = Instance.new("Frame")
@@ -86,7 +86,7 @@ function Library:Window(Name, Color, SizeY)
     Title.Font = Enum.Font.Code
     Title.Text = Name
     Title.TextSize = 14
-    Title.TextColor3 = Color3.new(0.490196, 0.490196, 0.490196)
+    Title.TextColor3 = TextColor or Color3.new(0.490196, 0.490196, 0.490196)
     Title.TextStrokeTransparency = 0.4
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -96,6 +96,7 @@ function Library:Window(Name, Color, SizeY)
     Background.BorderColor3 = Color3.new(0, 0, 0)
     Background.Position = UDim2.new(0.0155808367, 0, 0.0434783697, 0)
     Background.Size = UDim2.new(0, 483, 0, Frame.Size.Y.Offset - 34)
+    Background.ScrollBarImageTransparency=1
 
     Content.Name = "Content"
     Content.Parent = Background
@@ -294,7 +295,7 @@ function Library:Window(Name, Color, SizeY)
 
             SectionListLayout.Parent = SectionContents
             SectionListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-            SectionListLayout.Padding = UDim.new(0.100000001, 0)
+            SectionListLayout.Padding = UDim.new(.1, 0)
 
             RunService.RenderStepped:Connect(function()
                 FuncSize = 0
