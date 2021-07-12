@@ -13,7 +13,6 @@ function Library:Window(Name, Color, SizeY,TextColor)
     local Heading = Instance.new("Frame")
     local LabelListLayout = Instance.new("UIListLayout")
     local Title = Instance.new("TextLabel")
-    local Background = Instance.new("ScrollingFrame")
     local Content = Instance.new("Frame")
     local TabsListLayout = Instance.new("UIListLayout")
     local Tabs = Instance.new("Frame")
@@ -89,14 +88,25 @@ function Library:Window(Name, Color, SizeY,TextColor)
     Title.TextColor3 = TextColor or Color3.new(0.490196, 0.490196, 0.490196)
     Title.TextStrokeTransparency = 0.4
     Title.TextXAlignment = Enum.TextXAlignment.Left
-
+    
+    local Background = Instance.new("Frame")
     Background.Name = "Background"
     Background.Parent = Frame
     Background.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
     Background.BorderColor3 = Color3.new(0, 0, 0)
     Background.Position = UDim2.new(0.0155808367, 0, 0.0434783697, 0)
-    Background.Size = UDim2.new(0, 483, 0, Frame.Size.Y.Offset - 34)
+    Background.Size = UDim2.new(0, 485, 0, Frame.Size.Y.Offset - 34)
+
+    local Background = Instance.new("ScrollingFrame")
+    Background.Name = "Background"
+    Background.Parent = Frame
+    Background.BackgroundColor3 = Color3.new(0.141176, 0.141176, 0.141176)
+    Background.BackgroundTransparency = 1
+    Background.BorderColor3 = Color3.new(0, 0, 0)
+    Background.Position = UDim2.new(0.0155808367, 0, 0.0434783697, 0)
+    Background.Size = UDim2.new(0, 495, 0, Frame.Size.Y.Offset - 34)
     Background.ScrollBarImageTransparency=1
+    Background.CanvasSize=UDim2.new(0, 495, 0, Frame.Size.Y.Offset+100)
 
     Content.Name = "Content"
     Content.Parent = Background
@@ -692,7 +702,10 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 local Button = Instance.new("TextButton")
                 local Frame = Instance.new("Frame")
                 local UIListLayout = Instance.new("UIListLayout")
-
+                local FuncType
+                local FuncData
+                local Func
+                local Name
                 for _, Data in next, {...} do
                     FuncType = type(Data)
                     if FuncType == "table" then
@@ -921,6 +934,12 @@ function Library:Window(Name, Color, SizeY,TextColor)
                         Func(togglecum)
                     end
                 end)
+                UserInput.InputEnded:Connect(function(InputObject)
+                    if InputObject == bindcum or InputObject.KeyCode == Enum.KeyCode[SetVal] then
+                        togglecum = not togglecum
+                        Func(togglecum)
+                    end
+                end)
                 if SetVal then
                     KeyCodeName = SetVal
                     if string.find(KeyCodeName, "Right") then
@@ -1083,7 +1102,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 local held = false
                 local cummynumber
                 Max = Max - Min
-                getgenv()[Name.."TOGGLE_SLIDER"] = false
+                local toggleslideaaa = false
 
                 Slider.Name = "Slider"
                 Slider.Parent = SectionContents
@@ -1158,15 +1177,15 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 end)
 
                 Toggle.MouseButton1Click:Connect(function()
-                    if getgenv()[Name.."TOGGLE_SLIDER"] then
+                    if toggleslideaaa then
                         tweenProp(Toggle, {BackgroundColor3 = Color3.fromRGB(45, 45, 45)})
                         tweenProp(Slider, {TextColor3 = Color3.fromRGB(77, 77, 77)})
                     else
                         tweenProp(Toggle, {BackgroundColor3 = getgenv().WindowThemeColor})
                         tweenProp(Slider, {TextColor3 = Color3.fromRGB(255, 255, 255)})
                     end
-                    getgenv()[Name.."TOGGLE_SLIDER"] = not getgenv()[Name.."TOGGLE_SLIDER"]
-                    Func(getgenv()[Name.."TOGGLE_SLIDER"], tonumber(Num.Text))
+                    toggleslideaaa = not toggleslideaaa
+                    Func(toggleslideaaa, tonumber(Num.Text))
                 end)
                 
                 function snap(number, factor)
@@ -1214,7 +1233,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                         end
                         if cummynumber~=tonumber(Num.Text)then
                             cummynumber=tonumber(Num.Text)
-                            Func(getgenv()[Name.."TOGGLE_SLIDER"],tonumber(Num.Text))
+                            Func(toggleslideaaa,tonumber(Num.Text))
                         end
                     end
                 end)
@@ -1233,7 +1252,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                     else
                         Num.Text = est
                     end
-                    Func(getgenv()[Name.."TOGGLE_SLIDER"],tonumber(Num.Text))
+                    Func(toggleslideaaa,tonumber(Num.Text))
                 end
             end
 
