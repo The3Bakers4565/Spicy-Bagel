@@ -643,11 +643,9 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Rainbow.MouseButton1Click:Connect(function()
                     if cummy then
                         tweenProp(Rainbow, {BackgroundColor3 = Color3.fromRGB(45, 45, 45)})
-                        tweenProp(TextLabel, {TextColor3 = Color3.fromRGB(77, 77, 77)})
                         counter = 0
                     else
                         tweenProp(Rainbow, {BackgroundColor3 = getgenv().WindowThemeColor})
-                        tweenProp(TextLabel, {TextColor3 = Color3.fromRGB(255, 255, 255)})
                     end
                     cummy = not cummy
                 end)
