@@ -726,7 +726,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Dropdown.ZIndex = 2
                 Dropdown.Font = Enum.Font.Code
                 Dropdown.Text = Name
-                Dropdown.TextColor3 = Color3.new(1, 1, 1)
+                Dropdown.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
                 Dropdown.TextSize = 14
                 Dropdown.TextStrokeTransparency = 0.40000000596046
                 Dropdown.TextXAlignment = Enum.TextXAlignment.Left
@@ -845,7 +845,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Keybind.Size = UDim2.new(0, 102, 0, 12)
                 Keybind.Font = Enum.Font.Code
                 Keybind.Text = Name
-                Keybind.TextColor3 = Color3.new(1, 1, 1)
+                Keybind.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
                 Keybind.TextSize = 14
                 Keybind.TextStrokeTransparency = 0.4
                 Keybind.TextXAlignment = Enum.TextXAlignment.Left
@@ -961,7 +961,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 local Toggle = Instance.new("TextButton")
                 local Slide = Instance.new("TextButton")
                 local TextButton = Instance.new("TextButton")
-                local Num = Instance.new("TextLabel")
+                local Num = Instance.new("TextBox")
                 local held = false
                 local cummynumber
                 Max = Max - Min
@@ -974,7 +974,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Slider.Size = UDim2.new(0, 178, 0, 39)
                 Slider.Font = Enum.Font.Code
                 Slider.Text = Name
-                Slider.TextColor3 = Color3.new(255, 255, 255)
+                Slider.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
                 Slider.TextSize = 14
                 Slider.TextStrokeTransparency = 0.4
                 Slider.TextXAlignment = Enum.TextXAlignment.Left
@@ -1007,17 +1007,45 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 TextButton.TextStrokeTransparency = 0.4
 
                 Num.Name = "Num"
-                Num.Parent = TextButton
+                Num.Parent = Slider
                 Num.Active = true
                 Num.BackgroundColor3 = Color3.new(1, 1, 1)
                 Num.BackgroundTransparency = 1
-                Num.Position = UDim2.new(0, 112, 0, 0)
-                Num.Size = UDim2.new(0, 0, 0, 18)
+                Num.Position = UDim2.new(0, 110, 0, 0)
+                Num.Size = UDim2.new(0, 113, 0, 18)
                 Num.Font = Enum.Font.Code
                 Num.Text = tostring(Min)
                 Num.TextColor3 = Color3.new(1, 1, 1)
                 Num.TextSize = 14
                 Num.TextStrokeTransparency = 0.4
+                Num.TextXAlignment=1
+                Num.FocusLost:Connect(function()
+                    if not tonumber(Num.Text)then
+                        local BtnPos = TextButton.Position
+                        local pos = (SetVal*(100/Max))/100
+                        percentage = math.clamp(pos,0,1)
+                        TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
+                        local est = math.floor((math.floor((Max * percentage) * Max) / Max)) + Min
+                        if Min == est then
+                            Num.Text = Min
+                        else
+                            Num.Text = est
+                        end
+                        Func(tonumber(Num.Text))
+                    else
+                        local BtnPos = TextButton.Position
+                        local pos = ((tonumber(Num.Text)-Min)*(100/Max))/100
+                        percentage = math.clamp(pos,0,1)
+                        TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
+                        local est = math.floor((math.floor((Max * percentage) * Max) / Max)) + Min
+                        if Min == est then
+                            Num.Text = Min
+                        else
+                            Num.Text = est
+                        end
+                        Func(tonumber(Num.Text))
+                    end
+                end)
 
                 function snap(number, factor)
                     if factor == 0 then
@@ -1074,11 +1102,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                     end
                 end)
                 if SetVal then
-                    local MousePos = UserInput:GetMouseLocation().X
                     local BtnPos = TextButton.Position
-                    local aBtnPos = TextButton.AbsolutePosition.X
-                    local SliderSize = Slide.AbsoluteSize.X
-                    local SliderPos = Slide.AbsolutePosition.X
                     local pos = (SetVal*(100/Max))/100
                     percentage = math.clamp(pos,0,1)
                     TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
@@ -1098,7 +1122,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 local Toggle = Instance.new("TextButton")
                 local Slide = Instance.new("TextButton")
                 local TextButton = Instance.new("TextButton")
-                local Num = Instance.new("TextLabel")
+                local Num = Instance.new("TextBox")
                 local held = false
                 local cummynumber
                 Max = Max - Min
@@ -1158,17 +1182,45 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 TextButton.TextStrokeTransparency = 0.4
 
                 Num.Name = "Num"
-                Num.Parent = TextButton
+                Num.Parent = Slider
                 Num.Active = true
                 Num.BackgroundColor3 = Color3.new(1, 1, 1)
                 Num.BackgroundTransparency = 1
-                Num.Position = UDim2.new(0, 112, 0, 0)
-                Num.Size = UDim2.new(0, 0, 0, 18)
+                Num.Position = UDim2.new(0, 110, 0, 0)
+                Num.Size = UDim2.new(0, 95, 0, 13)
                 Num.Font = Enum.Font.Code
                 Num.Text = tostring(Min)
                 Num.TextColor3 = Color3.new(1, 1, 1)
                 Num.TextSize = 14
                 Num.TextStrokeTransparency = 0.4
+                Num.TextXAlignment=1
+                Num.FocusLost:Connect(function()
+                    if not tonumber(Num.Text)then
+                        local BtnPos = TextButton.Position
+                        local pos = (SetVal*(100/Max))/100
+                        percentage = math.clamp(pos,0,1)
+                        TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
+                        local est = math.floor((math.floor((Max * percentage) * Max) / Max)) + Min
+                        if Min == est then
+                            Num.Text = Min
+                        else
+                            Num.Text = est
+                        end
+                        Func(toggleslideaaa,tonumber(Num.Text))
+                    else
+                        local BtnPos = TextButton.Position
+                        local pos = ((tonumber(Num.Text)-Min)*(100/Max))/100
+                        percentage = math.clamp(pos,0,1)
+                        TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
+                        local est = math.floor((math.floor((Max * percentage) * Max) / Max)) + Min
+                        if Min == est then
+                            Num.Text = Min
+                        else
+                            Num.Text = est
+                        end
+                        Func(toggleslideaaa,tonumber(Num.Text))
+                    end
+                end)
                 
                 UserInput.InputEnded:Connect(function(x)
                     if x.UserInputType==Enum.UserInputType.MouseButton1 then
@@ -1238,11 +1290,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                     end
                 end)
                 if SetVal then
-                    local MousePos = UserInput:GetMouseLocation().X
                     local BtnPos = TextButton.Position
-                    local aBtnPos = TextButton.AbsolutePosition.X
-                    local SliderSize = Slide.AbsoluteSize.X
-                    local SliderPos = Slide.AbsolutePosition.X
                     local pos = (SetVal*(100/Max))/100
                     percentage = math.clamp(pos,0,1)
                     TextButton:TweenSizeAndPosition(UDim2.new(percentage,0,1,0), UDim2.new(percentage/100,-2,(BtnPos.Y.Scale), BtnPos.Y.Offset), nil, nil, 0.08)
@@ -1270,7 +1318,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Textbox.Size = UDim2.new(0, 178, 0, 36)
                 Textbox.Font = Enum.Font.Code
                 Textbox.Text = Name
-                Textbox.TextColor3 = Color3.new(1, 1, 1)
+                Textbox.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
                 Textbox.TextSize = 14
                 Textbox.TextStrokeTransparency = 0.4
                 Textbox.TextXAlignment = Enum.TextXAlignment.Left
