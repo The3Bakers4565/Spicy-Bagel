@@ -368,13 +368,6 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 TextLabel.TextXAlignment = Enum.TextXAlignment.Left
                 local cummy=getgenv()[Name.."TOGGLE"..math.random()]
                 Toggle.MouseButton1Click:Connect(function()
-                    if cummy then
-                        tweenProp(Toggle, {BackgroundColor3 = Color3.fromRGB(45, 45, 45)})
-                        tweenProp(TextLabel, {TextColor3 = Color3.fromRGB(77, 77, 77)})
-                    else
-                        tweenProp(Toggle, {BackgroundColor3 = getgenv().WindowThemeColor})
-                        tweenProp(TextLabel, {TextColor3 = Color3.fromRGB(255, 255, 255)})
-                    end
                     cummy = not cummy
                     Func(cummy)
                 end)
@@ -1229,13 +1222,6 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 end)
 
                 Toggle.MouseButton1Click:Connect(function()
-                    if toggleslideaaa then
-                        tweenProp(Toggle, {BackgroundColor3 = Color3.fromRGB(45, 45, 45)})
-                        tweenProp(Slider, {TextColor3 = Color3.fromRGB(77, 77, 77)})
-                    else
-                        tweenProp(Toggle, {BackgroundColor3 = getgenv().WindowThemeColor})
-                        tweenProp(Slider, {TextColor3 = Color3.fromRGB(255, 255, 255)})
-                    end
                     toggleslideaaa = not toggleslideaaa
                     Func(toggleslideaaa, tonumber(Num.Text))
                 end)
