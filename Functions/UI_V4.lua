@@ -106,7 +106,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
     Background.Position = UDim2.new(0.0155808367, 0, 0.0434783697, 0)
     Background.Size = UDim2.new(0, 495, 0, Frame.Size.Y.Offset - 34)
     Background.ScrollBarImageTransparency=1
-    Background.CanvasSize=UDim2.new(0, 495, 0, Frame.Size.Y.Offset+100)
+    Background.CanvasSize=UDim2.new(0, 495, 0, Frame.Size.Y.Offset+150)
 
     Content.Name = "Content"
     Content.Parent = Background
@@ -403,7 +403,7 @@ function Library:Window(Name, Color, SizeY,TextColor)
                 Color.ZIndex = 2
                 Color.Font = Enum.Font.Code
                 Color.Text = Name
-                Color.TextColor3 = Color3.new(1, 1, 1)
+                Color.TextColor3 = Color3.new(0.301961, 0.301961, 0.301961)
                 Color.TextSize = 14
                 Color.TextStrokeTransparency = 0.40000000596046
                 Color.TextXAlignment = Enum.TextXAlignment.Left
