@@ -36,7 +36,9 @@ for _,v in pairs(getgc(true))do
         --add 100 more firerate
         if rawget(v,"firerate")then
             if type(v.firerate)=="table"then
-                v.firerate={v.firerate[1]+100,v.firerate[1]+100,v.firerate[1]+100}
+                for _,c in pairs(v.firerate)do
+                    c=c+100
+                end
             else
                 v.firerate=v.firerate+100
             end
@@ -111,7 +113,7 @@ mt.__newindex=newcclosure(function(a,b,c)
         end
         if tostring(a.Part1)=="Arm"and not ismelee then
             --remove arms (because they look weird if u dont
-            c=CFrame.new(0,-5,0)*CFrame.Angles(0,math.rad(180),0)
+            c=CFrame.new(0,1000,0)
         end
     end
     if tostring(a)=="Camera"and tostring(b)=="CFrame"then
