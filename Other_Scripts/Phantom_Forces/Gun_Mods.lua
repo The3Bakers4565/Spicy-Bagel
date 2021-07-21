@@ -36,7 +36,7 @@ for _,v in pairs(getgc(true))do
         --add 100 more firerate
         if rawget(v,"firerate")then
             if type(v.firerate)=="table"then
-                v.firerate={v.firerate[1]+100,v.firerate[2]+100,v.firerate[3]+100}
+                v.firerate={v.firerate[1]+100,v.firerate[1]+100,v.firerate[1]+100}
             else
                 v.firerate=v.firerate+100
             end
