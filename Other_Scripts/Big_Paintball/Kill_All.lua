@@ -10,14 +10,14 @@ while wait(.1)do
                     workspace.__THINGS.__REMOTES["new projectile"]:FireServer(
                         {
                             game.Workspace.CurrentCamera.CFrame,
-                            a,
+                            tostring(a),
                             math.floor(game.Workspace.DistributedGameTime)
                         }
                     )
                     workspace.__THINGS.__REMOTES["do damage"]:FireServer(
                         {
                             v.Character.Humanoid,
-                            a,
+                            tostring(a),
                             235,
                             v.Character.HumanoidRootPart.Position,
                             false
