@@ -6,7 +6,7 @@ end
 _G.AA=true
 game.RunService.RenderStepped:Connect(function()
     --Keep Player Proned
-    game.ControllerService.RemoteEvent:FireServer("stance","prone")
+    game:GetService("ControllerService").RemoteEvent:FireServer("stance","prone")
     --Set Hip Hieght To Basic Under Ground Anti Aim
     game.Players.LocalPlayer.Character.Humanoid.HipHeight=-1.5
 end)
