@@ -1,3 +1,4 @@
+return game.Players.LocalPlayer:Kick("Patched Do Not Use")--[[
 local uilib=loadstring(game:HttpGet("https://raw.githubusercontent.com/The3Bakers4565/Spicy-Bagel/main/Functions/CoastingUI.lua"))()
 local tab=uilib:CreateTab("Gun Hack")
 local section=tab:CreateSection("Loadout Changer Hack 2021")
@@ -97,3 +98,4 @@ mt.__namecall=newcclosure(function(a,b,...)
     end
     return oldNamecall(a,b,...)
 end)
+]]
