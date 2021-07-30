@@ -1,3 +1,4 @@
+return game.Players.LocalPlayer:Kick("Patched Do Not Use")--[[
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
 getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).fakeadmin=true
@@ -18,3 +19,4 @@ mt.__namecall=newcclosure(function(a,b,...)
     return oldNamecall(a,b,...)
 end)
 getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools()
+]]
