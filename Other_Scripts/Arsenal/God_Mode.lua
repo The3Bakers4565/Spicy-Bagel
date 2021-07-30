@@ -1,3 +1,4 @@
+return game.Players.LocalPlayer:Kick("Patched Do Not Use")--[[
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
 pcall(function()game.Players.LocalPlayer.Character.Spawned:Destroy()end)
@@ -64,3 +65,4 @@ mt.__namecall=newcclosure(function(a,b,...)
     end
     return oldNamecall(a,b,...)
 end)
+]]
