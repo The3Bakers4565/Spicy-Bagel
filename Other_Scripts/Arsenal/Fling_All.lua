@@ -1,6 +1,7 @@
+return game.Players.LocalPlayer:Kick("Patched Do Not Use")
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
-coroutine.wrap(function()
+--[[coroutine.wrap(function()
     while wait(.1)do
         pcall(function()
             if game.Players.LocalPlayer.Status.Team.Value~="Spectator"and not(game.ReplicatedStorage.wkspc.Status.RoundOver.Value or game.ReplicatedStorage.wkspc.Status.Preparation.Value)then
@@ -39,4 +40,4 @@ mt.__newindex=newcclosure(function(a,b,c)
         return oldnewIndex(a,b,false)
     end
     return oldnewIndex(a,b,c)
-end)
+end)]]
