@@ -1,5 +1,6 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
+--imagine obfuscating scripts smh
 if _G.Arsonia then
     return
 end
