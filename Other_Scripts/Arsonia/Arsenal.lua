@@ -289,12 +289,12 @@ if _G.Funnynames then
     local Names={"Astolfo","Baker","Thigh","Breast","Femboy","Hentai","Aim","Tits","Arsenal","Rolve"}
     local Suffix={"sense","ware"," Hub"," Hack","-Ware"}
     local Version=tostring(math.random(1,9))
+    local VersionSuffix={"a","A","b","B","c","C",""}
     for _=1,math.random(0,3)do
         Version=Version.."."..tostring(math.random(0,9))
     end
     name=Names[math.random(1,#Names)]..Suffix[math.random(1,#Suffix)].." V"..Version..VersionSuffix[math.random(1,#VersionSuffix)]
 end
-local VersionSuffix={"a","A","b","B","c","C",""}
 local Window=Library:Window(name,Color3.fromRGB(255,0,175),650,Color3.new(1,0,175/255),160)
 local PlayerTab=Window:Tab("Player")
 local PlayerTabAntiAimSection=PlayerTab:Section("Anti Aim")
