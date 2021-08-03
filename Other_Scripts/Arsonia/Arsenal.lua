@@ -1,7 +1,7 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
 --imagine obfuscating scripts smh
---scroll down further to view the script i "obfuscated" the ui lib because fuck u i want credits
+--scroll down further to view the script, i "obfuscated" the ui lib because fuck u i want credits
 if _G.Arsonia then
     return
 end
