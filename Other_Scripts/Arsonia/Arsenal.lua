@@ -1,7 +1,5 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
---imagine obfuscating scripts smh
---scroll down further to view the script, i "obfuscated" the ui lib because fuck u i want credits
 if _G.Arsonia then
     return
 end
@@ -287,7 +285,7 @@ local ArsoniaTable={
 
 local name="Arsonia"
 if _G.Funnynames then
-    local Names={"Astolfo","Baker","Thigh","Breast","Femboy","Hentai","Aim","Tits","Arsenal","Rolve","Loli"}
+    local Names={"Astolfo","Baker","Thigh","Breast","Femboy","Hentai","Aim","Tits","Arsenal","Rolve"}
     local Suffix={"sense","ware"," Hub"," Hack","-Ware"}
     local Version=tostring(math.random(1,9))
     local VersionSuffix={"a","A","b","B","c","C",""}
