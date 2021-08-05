@@ -799,7 +799,7 @@ end)
 CombatTabMainSection:Toggle("Kill All",function(x)
     ArsoniaTable.Combat.Main.Killall=x
 end)
-CombatTabMainSection:Dropdown("Kill All Method",{"Max Crits","Spoofed","Equipped"},function(x)
+CombatTabMainSection:Dropdown("Kill All Method",{"Spoofed","Equipped"},function(x)
     ArsoniaTable.Combat.Main.KillallMethod=x
 end)
 CombatTabMainSection:Toggle("Death Kill",function(x)
@@ -2313,7 +2313,7 @@ game.RunService.RenderStepped:Connect(function()
                         "Autobow",
                         1,--headshot=1 none=0
                         0,--unknown
-                        0,--backstab=1 none=0
+                        1,--backstab=1 none=0
                         0,--forcecrit=1 none=0
                         0,--morecrit=1 none=0
                         0,--spoof=2 none=0
