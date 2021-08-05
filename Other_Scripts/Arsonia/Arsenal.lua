@@ -2313,7 +2313,7 @@ game.RunService.RenderStepped:Connect(function()
                         "Autobow",
                         1,--headshot=1 none=0
                         0,--unknown
-                        1,--backstab=1 none=0
+                        0,--backstab=1 none=0
                         0,--forcecrit=1 none=0
                         0,--morecrit=1 none=0
                         0,--spoof=2 none=0
