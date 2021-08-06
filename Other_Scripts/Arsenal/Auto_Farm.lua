@@ -58,29 +58,15 @@ local getenemys=function()--simple get enemys function (with proper ffa detectio
     end
     return a
 end
-local Hitparter=debug.getconstant(require(game:GetService("ReplicatedStorage").Modules.ClientFunctions).CreateProjectile,105)
 repeat game.RunService.RenderStepped:Wait()
     for _,v in pairs(getenemys())do
-        local Partpos=v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random())--get head pos with random position to prevent ss detection(old kill all had it so i added it)
-        local Packedstring=string.pack(
-            Hitparter,
-            Partpos.X,
-            Partpos.Y,
-            Partpos.Z,
-            "Bow",
-            0,--headshot=1 none=0
-            0,--unknown
-            0,--backstab=1 none=0
-            0,--forcecrit=1 none=0
-            0,--morecrit=1 none=0
-            0,--spoof=2 none=0
-            0,--unkown
-            0,--Player Distance
-            1,--Current Spell
-            0,--scope=1 noscope=0
-            0--aircrit=1 none=0
-        )
-        game.ReplicatedStorage.Events.HitPart:FireServer(v.Character.Head,Packedstring)
+        game.ReplicatedStorage.Events.Burn:FireServer(
+                    v.Character.Head,
+                    game.ReplicatedStorage.Weapons["Flame Thrower"],
+                    1,
+                    v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random()))
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                v.Character.HumanoidRootPart.CFrame break
     end
 until game.ReplicatedStorage.wkspc.Status.RoundOver.Value
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(x)--execute scripts when the player joines a new server
