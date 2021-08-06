@@ -58,11 +58,12 @@ local getenemys=function()--simple get enemys function (with proper ffa detectio
     end
     return a
 end
+local Hitparter=debug.getconstant(require(game:GetService("ReplicatedStorage").Modules.ClientFunctions).CreateProjectile,105)
 repeat game.RunService.RenderStepped:Wait()
     for _,v in pairs(getenemys())do
         local Partpos=v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random())--get head pos with random position to prevent ss detection(old kill all had it so i added it)
         local Packedstring=string.pack(
-            debug.getconstant(require(game:GetService("ReplicatedStorage").Modules.ClientFunctions).CreateProjectile,105),
+            Hitparter,
             Partpos.X,
             Partpos.Y,
             Partpos.Z,
