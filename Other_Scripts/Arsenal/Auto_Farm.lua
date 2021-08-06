@@ -62,11 +62,11 @@ repeat game.RunService.RenderStepped:Wait()
     for _,v in pairs(getenemys())do
         game.ReplicatedStorage.Events.Burn:FireServer(
                     v.Character.Head,
-                    game.ReplicatedStorage.Weapons["Flame Thrower"],
+                    game.ReplicatedStorage.Weapons.AWP,
                     1,
                     v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random()))
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                v.Character.HumanoidRootPart.CFrame break
+                v.Character.HumanoidRootPart.CFrame
     end
 until game.ReplicatedStorage.wkspc.Status.RoundOver.Value
 game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(x)--execute scripts when the player joines a new server
