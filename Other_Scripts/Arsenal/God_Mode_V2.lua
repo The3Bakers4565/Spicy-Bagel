@@ -99,7 +99,7 @@ mt.__namecall=newcclosure(function(a,b,c,d,e,...)
                     Partpos.Z,
                     unpack(finddamage(game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value.DMG.Value))--get gun damage
                 )
-                oldNamecall(a,b,Packedstring)
+                return oldNamecall(a,b,Packedstring)
             end
         end
     end
