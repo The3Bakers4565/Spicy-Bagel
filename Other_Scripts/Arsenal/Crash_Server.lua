@@ -1,6 +1,7 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
-game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+return game.Players.LocalPlayer:Kick("Do Not Use Patched")
+--[[game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
     game:GetService("ReplicatedStorage").Weapons.Bomb--arsenals shitty anti cheat for bombs bypass
 )
 for _=1,10000 do--summon lots of bombs
@@ -15,3 +16,4 @@ for _=1,10000 do--summon lots of bombs
         0.15--time
     )
 end
+]]
