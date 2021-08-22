@@ -1,10 +1,12 @@
 --Made By: The3Bakers#4565
 --discord.gg/erdtnTSgng
+_G.Funnynames=false
 if _G.Arsonia then
     return
 end
 _G.Arsonia=true
-local Library={}function Library:Window(b,c,d,e,f)local g=game:GetService("CoreGui")local h=game:GetService("UserInputService")local i=game:GetService("RunService")local j=Instance.new("ScreenGui")local k=Instance.new("Frame")local l=Instance.new("Frame")local m=Instance.new("Frame")local n=Instance.new("Frame")local o=Instance.new("UIListLayout")local p=Instance.new("TextLabel")local q=Instance.new("Frame")local r=Instance.new("UIListLayout")local s=Instance.new("Frame")local t;getgenv().ArsoniaSettings={}getgenv().ArsoniaNum=1;getgenv().WindowThemeColor=c;for u,v in next,g:GetChildren()do if v.Name==b then v:Destroy()end end;j.Name=b;j.Parent=g;j.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;j.DisplayOrder=1;j.ResetOnSpawn=false;h.InputBegan:Connect(function(w,x)if not x then if w.KeyCode==Enum.KeyCode.P or w.KeyCode==Enum.KeyCode.RightShift then j.Enabled=not j.Enabled end end end)k.Name="Drag"k.Parent=j;k.Active=true;k.Draggable=true;k.BackgroundColor3=Color3.new(0.0509804,0.0509804,0.0509804)k.BorderColor3=Color3.new(0,0,0)k.Position=UDim2.new(0.355398446,0,0.184466019,0)k.Size=UDim2.new(0,513,0,27)l.Name="Main"l.Parent=k;l.Active=true;l.BackgroundColor3=Color3.new(0.0509804,0.0509804,0.0509804)l.BorderColor3=Color3.new(0,0,0)l.Position=UDim2.new(-0.001,0,0.023466019,0)l.Size=UDim2.new(0,513,0,d)m.Parent=l;m.BackgroundColor3=Color3.new(0.0862745,0.0862745,0.0862745)m.BorderColor3=Color3.new(0,0,0)m.Position=UDim2.new(0.0137524558,0,0.0470383018,0)m.Size=UDim2.new(0,499,0,l.Size.Y.Offset-38)n.Name="Heading"n.Parent=l;n.BackgroundColor3=Color3.new(1,1,1)n.BackgroundTransparency=1;n.BorderColor3=Color3.new(0,0,0)n.BorderSizePixel=0;n.Position=UDim2.new(0.023499012,0,0,0)n.Size=UDim2.new(0,494,0,27)o.Parent=n;o.FillDirection=Enum.FillDirection.Horizontal;o.SortOrder=Enum.SortOrder.LayoutOrder;o.Padding=UDim.new(0,9)p.Name="Title"p.Parent=n;p.BackgroundColor3=Color3.new(1,1,1)p.BackgroundTransparency=1;p.Position=UDim2.new(0.0137524558,0,0.00199999125,0)p.Size=UDim2.new(0,#b*6.833333333333333,0,23)p.Font=Enum.Font.Code;p.Text=b;p.TextSize=14;p.TextColor3=e or Color3.new(0.490196,0.490196,0.490196)p.TextStrokeTransparency=0.4;p.TextXAlignment=Enum.TextXAlignment.Left;local y=Instance.new("Frame")y.Name="Background"y.Parent=m;y.BackgroundColor3=Color3.new(0.141176,0.141176,0.141176)y.BorderColor3=Color3.new(0,0,0)y.Position=UDim2.new(0.0155808367,0,0.0434783697,0)y.Size=UDim2.new(0,485,0,m.Size.Y.Offset-34)local y=Instance.new("ScrollingFrame")y.Name="Background"y.Parent=m;y.BackgroundColor3=Color3.new(0.141176,0.141176,0.141176)y.BackgroundTransparency=1;y.BorderColor3=Color3.new(0,0,0)y.Position=UDim2.new(0.0155808367,0,0.0434783697,0)y.Size=UDim2.new(0,495,0,m.Size.Y.Offset-21)y.ScrollBarImageTransparency=1;y.CanvasSize=UDim2.new(0,495,0,m.Size.Y.Offset+f)q.Name="Content"q.Parent=y;q.BackgroundColor3=Color3.new(0,0,0)q.BackgroundTransparency=1;q.BorderSizePixel=0;q.Position=UDim2.new(0.0124223605,0,0.0099593997,0)q.Size=UDim2.new(0,470,0,y.CanvasSize.Y.Offset)s.Parent=m;s.BackgroundColor3=Color3.new(1,1,1)s.BackgroundTransparency=1;s.BorderColor3=Color3.new(0,0,0)s.BorderSizePixel=0;s.Position=UDim2.new(0.0276048928,0,0,0)s.Size=UDim2.new(0,476,0,23)r.Parent=s;r.FillDirection=Enum.FillDirection.Horizontal;r.SortOrder=Enum.SortOrder.LayoutOrder;r.Padding=UDim.new(0,5)local function z(A,B)return game:GetService("TweenService"):Create(A,TweenInfo.new(0.5,Enum.EasingStyle.Quint),B):Play()end;getgenv()["Is Bolts Pasting? ->"]="Duh"i.RenderStepped:Connect(function()framePosLeft=1;framePosRight=1;for u,C in next,q:GetChildren()do C.Position=UDim2.new(-0.00377,0,0,framePosLeft-2)framePosLeft=framePosLeft+C.Size.Y.Offset+5;if q.Size.Y.Offset-framePosLeft+7<0 then C.Position=UDim2.new(0.507,0,0,-1)end;if C.Position.X.Scale>=0.507 then C.Position=UDim2.new(0.507,0,0,framePosRight-2)framePosRight=framePosRight+C.Size.Y.Offset+5 end end;ZIndexNum=0;ZIndexMax=0;for u,D in next,q:GetDescendants()do if D.Name=="Section"or D.Name=="Dropdown"or D.Name=="Color"then ZIndexMax=ZIndexMax+1 end end;for u,D in next,q:GetDescendants()do if D.Name=="Section"or D.Name=="Dropdown"or D.Name=="Color"then D.ZIndex=2+ZIndexMax-ZIndexNum;ZIndexNum=ZIndexNum+1 end end end)local E=Instance.new("TextLabel")local F=Instance.new("TextLabel")F.Name="Differ"F.Parent=n;F.BackgroundColor3=Color3.new(1,1,1)F.BackgroundTransparency=1;F.Position=UDim2.new(0.0137524558,0,0.00199999125,0)F.Size=UDim2.new(0,6,0,23)F.Font=Enum.Font.Code;F.Text="|"F.TextColor3=Color3.fromRGB(255,255,255)getgenv()["I".."s".." ".."B".."o".."l".."t".."s".." ".."P".."a".."s".."t".."i".."n".."g".."?".." ".."-"..">"]=true;F.TextSize=14;F.TextStrokeTransparency=0.4;F.TextXAlignment=Enum.TextXAlignment.Left;E.Name="Label"E.Parent=n;E.BackgroundColor3=Color3.new(1,1,1)E.BackgroundTransparency=1;E.Position=UDim2.new(0.0137524558,0,0.00199999125,0)E.Size=UDim2.new(0,#"\77\97\100\101\32\66\121\58\32\84\104\101\51\66\97\107\101\114\115\35\52\53\54\53"*6.833333333333333,0,23)E.Font=Enum.Font.Code;E.Text="\77\97\100\101\32\66\121\58\32\84\104\101\51\66\97\107\101\114\115\35\52\53\54\53"E:GetPropertyChangedSignal("Text"):Connect(function()while true do print("uh oh bolts is pasting again")end end)E.TextColor3=Color3.new(1,1,1)E.TextSize=14;E.TextStrokeTransparency=0.4;local E=Instance.new("TextLabel")local F=Instance.new("TextLabel")F.Name="Differ"F.Parent=n;F.BackgroundColor3=Color3.new(1,1,1)F.BackgroundTransparency=1;F.Position=UDim2.new(0.0137524558,0,0.00199999125,0)F.Size=UDim2.new(0,6,0,23)F.Font=Enum.Font.Code;F.Text="|"F.TextColor3=Color3.fromRGB(255,255,255)getgenv()["I".."s".." ".."B".."o".."l".."t".."s".." ".."P".."a".."s".."t".."i".."n".."g".."?".." ".."-"..">"]="Obv"F.TextSize=14;F.TextStrokeTransparency=0.4;F.TextXAlignment=Enum.TextXAlignment.Left;E.Name="Label"E.Parent=n;E.BackgroundColor3=Color3.new(1,1,1)E.BackgroundTransparency=1;E.Position=UDim2.new(0.0137524558,0,0.00199999125,0)E.Size=UDim2.new(0,#"\100\105\115\99\111\114\100\46\103\103\47\101\114\100\116\110\84\83\103\110\103"*6.833333333333333,0,23)E.Font=Enum.Font.Code;E.Text="\100\105\115\99\111\114\100\46\103\103\47\101\114\100\116\110\84\83\103\110\103"E.TextColor3=Color3.new(1,1,1)E.TextSize=14;E.TextStrokeTransparency=0.4;E:GetPropertyChangedSignal("Text"):Connect(function()while true do print("uh oh bolts is pasting again")end end)spawn(function()TabCounter=0;function altersize(G)textcounter=0;for H=1,#G.Text do textcounter=textcounter+7.9 end;G.Size=UDim2.new(0,textcounter,0,G.Size.Y.Offset)end;E.TextXAlignment=Enum.TextXAlignment.Left;while TabCounter==0 do for u,G in next,s:GetChildren()do if G:IsA("TextButton")then altersize(G)TabCounter=TabCounter+1;if TabCounter==1 then G.TextColor3=Color3.fromRGB(255,255,255)for u,I in next,G.Contents:GetChildren()do t=G;I.Visible=true;I.Parent=q end else G.TextColor3=Color3.fromRGB(125,125,125)end end end end end)local J={}function J:Label(b,c)local K=Instance.new("TextLabel")local L=Instance.new("TextLabel")L.Name="Differ"L.Parent=n;L.BackgroundColor3=Color3.new(1,1,1)L.BackgroundTransparency=1;L.Position=UDim2.new(0.0137524558,0,0.00199999125,0)L.Size=UDim2.new(0,6,0,23)L.Font=Enum.Font.Code;L.Text="|"L.TextColor3=Color3.fromRGB(255,255,255)L.TextSize=14;L.TextStrokeTransparency=0.4;L.TextXAlignment=Enum.TextXAlignment.Left;K.Name="Label"K.Parent=n;K.BackgroundColor3=Color3.new(1,1,1)K.BackgroundTransparency=1;K.Position=UDim2.new(0.0137524558,0,0.00199999125,0)K.Size=UDim2.new(0,#b*6.833333333333333,0,23)K.Font=Enum.Font.Code;K.Text=b;K.TextColor3=c;K.TextSize=14;K.TextStrokeTransparency=0.4;K.TextXAlignment=Enum.TextXAlignment.Left end;function J:Tab(b)local M=Instance.new("TextButton")local N=Instance.new("Folder")M.Name="Tab"M.Parent=s;M.BackgroundColor3=Color3.new(1,1,1)M.BackgroundTransparency=1;M.Size=UDim2.new(0,24,0,23)M.AutoButtonColor=false;M.Font=Enum.Font.Code;M.Text=b;M.TextColor3=Color3.new(1,1,1)M.TextSize=14;M.TextStrokeTransparency=0.4;N.Name="Contents"N.Parent=M;M.MouseButton1Click:Connect(function()for u,G in next,s:GetChildren()do if G:IsA("TextButton")then if G~=M then z(G,{TextColor3=Color3.fromRGB(125,125,125)})for u,I in next,q:GetChildren()do if I:IsA("Frame")then I.Visible=false;I.Parent=t.Contents end end end end end;z(M,{TextColor3=Color3.fromRGB(255,255,255)})for u,I in next,N:GetChildren()do t=M;I.Visible=true;I.Parent=q end end)local O={}function O:Section(b)local P=Instance.new("Frame")local Q=Instance.new("Frame")local R=Instance.new("TextLabel")local S=Instance.new("UIListLayout")P.Name="Section"P.Parent=N;P.BackgroundColor3=Color3.new(0.0862745,0.0862745,0.0862745)P.BorderColor3=Color3.new(0,0,0)P.Position=UDim2.new(0.0120000001,0,0.00899999961,0)P.Size=UDim2.new(0,235,0,247)P.ZIndex=0;P.Visible=false;Q.Name="Contents"Q.Parent=P;Q.BackgroundColor3=Color3.new(0.145098,0.145098,0.145098)Q.BackgroundTransparency=1;Q.BorderSizePixel=0;Q.Position=UDim2.new(0.0278463159,0,0.0322874375,0)Q.Size=UDim2.new(0,220,0,84)R.Name="Title"R.Parent=Q;R.BackgroundColor3=Color3.new(1,1,1)R.BackgroundTransparency=1;R.Position=UDim2.new(0.0260000005,0,-1.05768967,0)R.Size=UDim2.new(0,178,0,12)R.Font=Enum.Font.Code;R.Text=b;R.TextColor3=Color3.new(1,1,1)R.TextSize=14;R.TextStrokeTransparency=0.4;R.TextXAlignment=Enum.TextXAlignment.Left;S.Parent=Q;S.SortOrder=Enum.SortOrder.LayoutOrder;S.Padding=UDim.new(.1,0)i.RenderStepped:Connect(function()FuncSize=0;for u,D in next,Q:GetChildren()do if D:IsA("TextLabel")or D:IsA("TextButton")then FuncSize=FuncSize+9+D.Size.Y.Offset end end;P.Size=UDim2.new(0,P.Size.X.Offset,0,FuncSize)end)local T={}function T:Button(b,U)local V=Instance.new("TextButton")V.Name="Button"V.Parent=Q;V.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)V.BorderColor3=Color3.new(0,0,0)V.Position=UDim2.new(-0.00888097659,0,0.284795314,0)V.Size=UDim2.new(0,223,0,18)V.AutoButtonColor=false;V.Font=Enum.Font.Code;V.Text=b;V.TextColor3=Color3.new(1,1,1)V.TextSize=14;V.TextStrokeTransparency=0.4;V.MouseButton1Click:Connect(U)end;function T:Toggle(b,U)local W=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;local X=Instance.new("TextButton")local Y=Instance.new("TextLabel")X.Name="Toggle"X.Parent=Q;X.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)X.BorderColor3=Color3.new(0,0,0)X.Position=UDim2.new(-0.00888097659,0,0.284795314,0)X.Size=UDim2.new(0,13,0,13)X.AutoButtonColor=false;X.Font=Enum.Font.Code;X.Text=""X.TextColor3=Color3.new(1,1,1)X.TextSize=14;X.TextStrokeTransparency=0.4;Y.Parent=X;Y.BackgroundColor3=Color3.new(1,1,1)Y.BackgroundTransparency=1;Y.Position=UDim2.new(1.67999995,0,-0.0149999997,0)Y.Size=UDim2.new(0,199,0,13)Y.Font=Enum.Font.Code;Y.Text=b;Y.TextColor3=Color3.new(0.301961,0.301961,0.301961)Y.TextSize=14;Y.TextStrokeTransparency=0.4;Y.TextXAlignment=Enum.TextXAlignment.Left;local Z=false;local funnn2=function(_)if not _ then z(X,{BackgroundColor3=Color3.fromRGB(45,45,45)})else z(X,{BackgroundColor3=getgenv().WindowThemeColor})end;U(_)getgenv().ArsoniaSettings[W]={SetVal=funnn2,Val={_}}Z=_ end;X.MouseButton1Click:Connect(function()if Z then z(X,{BackgroundColor3=Color3.fromRGB(45,45,45)})else z(X,{BackgroundColor3=getgenv().WindowThemeColor})end;Z=not Z;U(Z)getgenv().ArsoniaSettings[W]={SetVal=funnn2,Val={Z}}end)getgenv().ArsoniaSettings[W]={SetVal=funnn2,Val={Z}}end;function T:Color(b,a0,U)local W=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;local c=Instance.new("TextLabel")local a1=Instance.new("TextButton")local l=Instance.new("Frame")local a2=Instance.new("Frame")local a3=Instance.new("ImageLabel")local a4=Instance.new("Frame")local a5=Instance.new("Frame")local a6=Instance.new("Frame")local a7=Instance.new("TextBox")local a8=Instance.new("TextBox")local a9=Instance.new("TextBox")local aa=Instance.new("TextButton")local Y=Instance.new("TextLabel")c.Name="Color"c.Parent=Q;c.BackgroundColor3=Color3.new(1,1,1)c.BackgroundTransparency=1;c.Position=UDim2.new(1.67999995,0,-0.0149999997,0)c.Size=UDim2.new(0,199,0,11)c.ZIndex=2;c.Font=Enum.Font.Code;c.Text=b;c.TextColor3=Color3.new(0.301961,0.301961,0.301961)c.TextSize=14;c.TextStrokeTransparency=0.40000000596046;c.TextXAlignment=Enum.TextXAlignment.Left;a1.Parent=c;a1.BackgroundColor3=Color3.new(1,1,1)a1.BorderColor3=Color3.new(0,0,0)a1.Position=UDim2.new(1.05142057,0,-0.0228970051,0)a1.Size=UDim2.new(0,13,0,13)a1.AutoButtonColor=false;a1.Font=Enum.Font.Code;a1.Text=""a1.TextColor3=Color3.new(1,1,1)a1.TextSize=14;a1.TextStrokeTransparency=0;l.Name="Main"l.Parent=c;l.BackgroundColor3=Color3.new(1,1,1)l.BackgroundTransparency=1;l.BorderSizePixel=0;l.ClipsDescendants=true;l.Position=UDim2.new(0.562814057,0,1.61538458,0)l.Size=UDim2.new(0,111,0,0)l.Visible=false;a2.Name="Picker"a2.Parent=l;a2.Active=true;a2.AnchorPoint=Vector2.new(0.5,0.5)a2.BackgroundColor3=Color3.new(0.121569,0.121569,0.121569)a2.BorderColor3=Color3.new(0,0,0)a2.Position=UDim2.new(0.5,0,0.5,0)a2.Size=UDim2.new(0,109,0,142)a2.Visible=true;a2.SizeConstraint=Enum.SizeConstraint.RelativeYY;a3.Name="Gradient"a3.Parent=a2;a3.AnchorPoint=Vector2.new(0.5,0.5)a3.BackgroundColor3=Color3.new(1,1,1)a3.BorderColor3=Color3.new(0.627451,0.627451,0.627451)a3.BorderSizePixel=0;a3.ClipsDescendants=true;a3.Position=UDim2.new(0.5,0,0.349999994,0)a3.Size=UDim2.new(0.649999976,0,0.649999976,0)a3.SizeConstraint=Enum.SizeConstraint.RelativeYY;a3.Image="rbxassetid://328298876"a4.Name="Cursor"a4.Parent=a3;a4.BackgroundColor3=Color3.new(1,1,1)a4.BorderColor3=Color3.new(0,0,0)a4.BorderSizePixel=0;a4.Position=UDim2.new(1,-1,0,1)a4.ZIndex=2;a5.Name="Vertical"a5.Parent=a4;a5.AnchorPoint=Vector2.new(0.5,0.5)a5.BackgroundColor3=Color3.new(0,0,0)a5.BorderColor3=Color3.new(0,0,0)a5.BorderSizePixel=0;a5.Size=UDim2.new(0,2,0,20)a5.ZIndex=2;a6.Name="Horizontal"a6.Parent=a4;a6.AnchorPoint=Vector2.new(0.5,0.5)a6.BackgroundColor3=Color3.new(0,0,0)a6.BorderColor3=Color3.new(0,0,0)a6.BorderSizePixel=0;a6.Size=UDim2.new(0,20,0,2)a6.ZIndex=2;a7.Name="R"a7.Parent=a2;a7.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a7.BorderColor3=Color3.new(0,0,0)a7.Position=UDim2.new(0.0299999993,0,0.862999976,0)a7.Size=UDim2.new(0,31,0,15)a7.Font=Enum.Font.Code;a7.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a7.PlaceholderText="R"a7.Text=""a7.TextColor3=Color3.new(1,1,1)a7.TextSize=14;a8.Name="G"a8.Parent=a2;a8.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a8.BorderColor3=Color3.new(0,0,0)a8.Position=UDim2.new(0.360000014,0,0.862999976,0)a8.Size=UDim2.new(0,31,0,15)a8.Font=Enum.Font.Code;a8.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a8.PlaceholderText="G"a8.Text=""a8.TextColor3=Color3.new(1,1,1)a8.TextSize=14;a9.Name="B"a9.Parent=a2;a9.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a9.BorderColor3=Color3.new(0,0,0)a9.Position=UDim2.new(0.685000002,0,0.862999976,0)a9.Size=UDim2.new(0,31,0,15)a9.Font=Enum.Font.Code;a9.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a9.PlaceholderText="B"a9.Text=""a9.TextColor3=Color3.new(1,1,1)a9.TextSize=14;aa.Name="Rainbow"aa.Parent=a2;aa.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)aa.BorderColor3=Color3.new(0,0,0)aa.Position=UDim2.new(0.0469999984,0,0.720000029,0)aa.Size=UDim2.new(0,13,0,13)aa.AutoButtonColor=false;aa.Font=Enum.Font.Code;aa.Text=""aa.TextColor3=Color3.new(1,1,1)aa.TextSize=14;aa.TextStrokeTransparency=0;Y.Parent=aa;Y.BackgroundColor3=Color3.new(1,1,1)Y.BackgroundTransparency=1;Y.Position=UDim2.new(1.83384347,0,-0.0150005631,0)Y.Size=UDim2.new(0,67,0,13)Y.Font=Enum.Font.Code;Y.Text="Rainbow"Y.TextColor3=Color3.new(0.301961,0.301961,0.301961)Y.TextSize=14;Y.TextStrokeTransparency=0.40000000596046;Y.TextXAlignment=Enum.TextXAlignment.Left;local ab=game:GetService("Players").LocalPlayer;local ac=ab:GetMouse()local ad=false;local function ae(af,ag,ah)if af then af=af~=af and 0 or(tonumber(af)or 0)if ah then return math.clamp(af,0,360)else return math.clamp(af,0,ag and 255 or 1)end end end;local function ai()local aj=Color3.fromRGB(tonumber(a7.Text),tonumber(a8.Text),tonumber(a9.Text))a1.BackgroundColor3=aj;U(aj)return aj end;local function ak(aj)if aj then local al,am,an=Color3.toHSV(aj)local ao,ap,F=math.floor(aj.r*255+0.5),math.floor(aj.g*255+0.5),math.floor(aj.b*255+0.5)a7.Text=ao;a8.Text=ap;a9.Text=F;local aq=a3.AbsoluteSize;local ar=360/aq.X;a4.Position=UDim2.new(0,aq.X-al*360/ar,0,aq.Y-am*360/ar)end end;local as=false;local function at(E,F)a1.BackgroundColor3=E;U(E)if not F then z(aa,{BackgroundColor3=Color3.fromRGB(45,45,45)})counter=0 else z(aa,{BackgroundColor3=getgenv().WindowThemeColor})end;as=F or false;getgenv().ArsoniaSettings[W]={SetVal=at,Val={a1.BackgroundColor3,as}}end;local function au()local av=Vector2.new(ac.X,ac.Y)local aw=a3.AbsolutePosition;local aq=a3.AbsoluteSize;if av.X<aw.X+aq.X and av.X>aw.X and(av.Y<aw.Y+aq.Y and av.Y>aw.Y)then local aq=a3.AbsoluteSize;h.MouseIconEnabled=false;local ar=360/aq.X;local ax=Vector2.new(ac.X,ac.Y)-(a3.AbsolutePosition+aq/2)local ay=math.abs((ax.X*ar-180)/360)local az=math.abs((ax.Y*ar-180)/360)local aj=Color3.fromHSV(ay,az,1)a1.BackgroundColor3=aj;U(aj)a4.Position=UDim2.new(0,math.clamp(ax.X+aq.X/2,0,aq.X),0,math.clamp(ax.Y+aq.Y/2,0,aq.Y))getgenv().ArsoniaSettings[W]={SetVal=at,Val={a1.BackgroundColor3,as}}return aj end;h.MouseIconEnabled=true;return nil end;if not getgenv().Rainbowd then getgenv().Rainbowd=true;spawn(function()repeat game.RunService.RenderStepped:Wait()for aA=0,1,0.0023 do game.RunService.RenderStepped:Wait()getgenv()["RainbowCum"]=Color3.fromHSV(aA,1,1)end until nil end)end;if a0 and type(a0)=="userdata"then ak(a0)else U=a0;ak(Color3.fromRGB(255,255,255))end;ai()a1.MouseButton1Click:Connect(function()if l.Visible then z(l,{Size=UDim2.new(0,111,0,0)})wait(0.4)l.Visible=false else l.Visible=true;z(l,{Size=UDim2.new(0,111,0,144)})end end)aa.MouseButton1Click:Connect(function()if as then z(aa,{BackgroundColor3=Color3.fromRGB(45,45,45)})counter=0 else z(aa,{BackgroundColor3=getgenv().WindowThemeColor})end;as=not as;getgenv().ArsoniaSettings[W]={SetVal=at,Val={a1.BackgroundColor3,as}}end)getgenv().ArsoniaSettings[W]={SetVal=at,Val={a1.BackgroundColor3,as}}spawn(function()i.RenderStepped:Connect(function()if as then ak(getgenv()["RainbowCum"])end end)end)ac.Move:Connect(function()if h:IsMouseButtonPressed(0)and l.Visible then ak(au())else h.MouseIconEnabled=true end end)a7:GetPropertyChangedSignal("Text"):Connect(function()local aB=a7.Text;if#aB~=0 then a7.Text=ae(aB,true)ak(ai())end end)a8:GetPropertyChangedSignal("Text"):Connect(function()local aB=a8.Text;if#aB~=0 then a8.Text=ae(aB,true)ak(ai())end end)a9:GetPropertyChangedSignal("Text"):Connect(function()local aB=a9.Text;if#aB~=0 then a9.Text=ae(aB,true)ak(ai())end end)end;function T:Dropdown(...)local aC=Instance.new("TextLabel")local V=Instance.new("TextButton")local m=Instance.new("Frame")local aD=Instance.new("UIListLayout")local aE;local aF;local U;local b;for u,aG in next,{...}do aE=type(aG)if aE=="table"then aF=aG elseif aE=="function"then U=aG elseif aE=="string"then b=aG end end;local W=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aC.Name="Dropdown"aC.Parent=Q;aC.BackgroundColor3=Color3.new(1,1,1)aC.BackgroundTransparency=1;aC.Position=UDim2.new(0,0,2.39047599,0)aC.Size=UDim2.new(0,178,0,39)aC.ZIndex=2;aC.Font=Enum.Font.Code;aC.Text=b;aC.TextColor3=Color3.new(0.301961,0.301961,0.301961)aC.TextSize=14;aC.TextStrokeTransparency=0.40000000596046;aC.TextXAlignment=Enum.TextXAlignment.Left;aC.TextYAlignment=Enum.TextYAlignment.Top;V.Name="Button"V.Parent=aC;V.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)V.BorderColor3=Color3.new(0,0,0)V.Position=UDim2.new(-0.0140000004,0,0.48,0)V.Size=UDim2.new(0,223,0,18)V.AutoButtonColor=false;V.Font=Enum.Font.Code;V.Text=" "..aF[1]V.TextColor3=Color3.new(1,1,1)V.TextSize=14;V.TextStrokeTransparency=0.40000000596046;V.TextXAlignment=Enum.TextXAlignment.Left;m.Parent=V;m.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)m.BorderColor3=Color3.new(0,0,0)m.BorderSizePixel=1;m.Position=UDim2.new(0,0,1.05,0)m.Size=UDim2.new(0,223,0,0)m.Visible=false;m.ZIndex=2;aD.Parent=m;aD.SortOrder=Enum.SortOrder.LayoutOrder;local function aH(aI,aJ)z(m,{Size=UDim2.new(0,223,0,(#aF-1)*aI)})for u,a1 in next,m:GetChildren()do if a1:IsA("TextButton")and a1~=V then z(a1,{Size=UDim2.new(0,223,0,aI)})end end;wait(aJ)m.Visible=not m.Visible end;local Z=aF[1]local aK={}local funnn2=function(E)aK[E]()aH(0,0.1)end;function createfunc(b,aL)local V=Instance.new("TextButton")V.Name="Button"V.Parent=m;V.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)V.BorderColor3=Color3.new(0,0,0)V.BorderSizePixel=0;V.Position=UDim2.new(-0.0140000004,0,0.519999981,0)V.Size=UDim2.new(0,223,0,0)V.AutoButtonColor=false;V.Font=Enum.Font.Code;V.Text=" "..b;V.TextColor3=Color3.new(1,1,1)V.TextSize=14;V.TextStrokeTransparency=0.40000000596046;V.TextXAlignment=Enum.TextXAlignment.Left;local function aM()aL(b)Z=b;V.Visible=false;m.Parent.Text=" "..b;aH(0,0.09)for u,a1 in next,m:GetChildren()do if a1:IsA("TextButton")and a1~=V then a1.Visible=true end end;getgenv().ArsoniaSettings[W]={SetVal=funnn2,Val={Z}}end;aK[b]=aM;V.MouseButton1Click:Connect(aM)return V end;U(aF[1])V.MouseButton1Click:Connect(function()if m.Visible then aH(0,0.1)wait(0.15)else aH(18,0.02)end end)for u,a1 in next,m:GetChildren()do if a1:IsA("TextButton")and a1~=V then a1.Visible=true end end;for aN,aO in next,aF do local U=createfunc(aO,U)if aN==1 then U.Visible=false end end;getgenv().ArsoniaSettings[W]={SetVal=funnn2,Val={Z}}end;function T:Keybind(b,aP,U)local aQ=Instance.new("TextLabel")local V=Instance.new("TextButton")local aR=nil;local aS=false;local aT=false;aQ.Name="Keybind"aQ.Parent=Q;aQ.BackgroundColor3=Color3.new(1,1,1)aQ.BackgroundTransparency=1;aQ.Position=UDim2.new(0,0,1.98395073,0)aQ.Size=UDim2.new(0,102,0,12)aQ.Font=Enum.Font.Code;aQ.Text=b;aQ.TextColor3=Color3.new(0.301961,0.301961,0.301961)aQ.TextSize=14;aQ.TextStrokeTransparency=0.4;aQ.TextXAlignment=Enum.TextXAlignment.Left;V.Name="Button"V.Parent=aQ;V.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)V.BackgroundTransparency=1;V.BorderColor3=Color3.new(0,0,0)V.Position=UDim2.new(1.35386384,0,-0.298538178,0)V.Size=UDim2.new(0,82,0,18)V.AutoButtonColor=false;V.Font=Enum.Font.Code;V.Text="None"V.TextColor3=Color3.new(1,1,1)V.TextSize=14;V.TextStrokeTransparency=0.4;V.TextXAlignment=Enum.TextXAlignment.Right;local aU={["One"]="1",["Two"]="2",["Three"]="3",["Four"]="4",["Five"]="5",["Six"]="6",["Seven"]="7",["Eight"]="8",["Nine"]="9",["Zero"]="0",["Semicolon"]=":",["Quote"]='"',["BackSlash"]="\\",["LeftBracket"]="[",["RightBracket"]="]",["Slash"]="/",["Period"]=">",["Comma"]="<",["Backquote"]="`",["Minus"]="-",["Equals"]="=",["Multiply"]="*",["Plus"]="+",["Return"]="Enter",["Delete"]="Del",["Insert"]="Ins"}V.MouseButton1Click:Connect(function()if aT then V.Text="None"else V.Text="..."end;aR=nil;aT=not aT end)h.InputBegan:Connect(function(aV)if aT and aV.UserInputType==Enum.UserInputType.Keyboard then KeyCodeName=aV.KeyCode.Name;if string.find(KeyCodeName,"Keypad")then KeyCodeName=string.gsub(KeyCodeName,"Keypad","")end;if aU[KeyCodeName]then KeyCodeName=aU[KeyCodeName]end;if string.find(KeyCodeName,"Right")then KeyCodeName=string.gsub(KeyCodeName,"Right","R")end;if string.find(KeyCodeName,"Left")then KeyCodeName=string.gsub(KeyCodeName,"Left","L")end;if string.find(KeyCodeName,"Control")then KeyCodeName=string.gsub(KeyCodeName,"Control","Ctrl")end;V.Text=KeyCodeName;aT=false;aR=aV end end)h.InputBegan:Connect(function(aV)if aV==aR or aV.KeyCode==Enum.KeyCode[aR]then aS=true;U(aS)end end)h.InputEnded:Connect(function(aV)if aV==aR or aV.KeyCode==Enum.KeyCode[aR]then aS=false;U(aS)end end)if aP then KeyCodeName=aP;if string.find(KeyCodeName,"Right")then KeyCodeName=string.gsub(KeyCodeName,"Right","R")elseif string.find(KeyCodeName,"Left")then KeyCodeName=string.gsub(KeyCodeName,"Left","L")elseif aU[KeyCodeName]then KeyCodeName=aU[KeyCodeName]end;V.Text=KeyCodeName;aR=aP;aT=false end end;function T:Slider(b,aW,aX,aP,U)local W=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aP=aP-aW;local aY=Instance.new("TextLabel")local X=Instance.new("TextButton")local aZ=Instance.new("TextButton")local a1=Instance.new("TextButton")local a_=Instance.new("TextBox")local b0=false;local b1;aX=aX-aW;aY.Name="Slider"aY.Parent=Q;aY.BackgroundColor3=Color3.new(1,1,1)aY.BackgroundTransparency=1;aY.Position=UDim2.new(0,0,1.86666656,0)aY.Size=UDim2.new(0,178,0,39)aY.Font=Enum.Font.Code;aY.Text=b;aY.TextColor3=Color3.new(0.301961,0.301961,0.301961)aY.TextSize=14;aY.TextStrokeTransparency=0.4;aY.TextXAlignment=Enum.TextXAlignment.Left;aY.TextYAlignment=Enum.TextYAlignment.Top;aZ.Name="Slider"aZ.Parent=aY;aZ.Active=false;aZ.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)aZ.BorderColor3=Color3.new(0,0,0)aZ.ClipsDescendants=true;aZ.Position=UDim2.new(0,0,0.532051325,0)aZ.Size=UDim2.new(0,223,0,18)aZ.AutoButtonColor=false;aZ.Font=Enum.Font.Code;aZ.Text=""aZ.TextColor3=Color3.new(1,1,1)aZ.TextSize=14;aZ.TextStrokeTransparency=0.4;a1.Parent=aZ;a1.BackgroundColor3=getgenv().WindowThemeColor;a1.BorderSizePixel=0;a1.Size=UDim2.new(0,0,1,0)a1.AutoButtonColor=false;a1.Font=Enum.Font.Code;a1.Text=""a1.TextColor3=Color3.new(0,0,0)a1.TextSize=14;a1.TextStrokeTransparency=0.4;a_.Name="Num"a_.Parent=aY;a_.Active=true;a_.BackgroundColor3=Color3.new(1,1,1)a_.BackgroundTransparency=1;a_.Position=UDim2.new(0,110,0,0)a_.Size=UDim2.new(0,113,0,18)a_.Font=Enum.Font.Code;a_.Text=tostring(aW)a_.TextColor3=Color3.new(1,1,1)a_.TextSize=14;a_.TextStrokeTransparency=0.4;a_.TextXAlignment=1;local function b2(E)local b3=a1.Position;local b4=(E-aW)*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={tonumber(a_.Text)}}end;a_.FocusLost:Connect(function()if not tonumber(a_.Text)then local b3=a1.Position;local b4=aP*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={tonumber(a_.Text)}}else local b3=a1.Position;local b4=(tonumber(a_.Text)-aW)*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={tonumber(a_.Text)}}end end)function snap(b6,b7)if b7==0 then return b6 else return math.floor(b6/b7+0.5)*b7 end end;aZ.MouseButton1Up:Connect(function()b0=false end)aZ.MouseEnter:Connect(function()aZ.MouseButton1Down:Connect(function()b0=true end)end)a1.MouseButton1Up:Connect(function()b0=false end)a1.MouseEnter:Connect(function()a1.MouseButton1Down:Connect(function()b0=true end)end)h.InputEnded:Connect(function(w)if w.UserInputType==Enum.UserInputType.MouseButton1 then b0=false end end)i.RenderStepped:Connect(function()if b0 then local b8=h:GetMouseLocation().X;local b3=a1.Position;local b9=aZ.AbsoluteSize.X;local ba=aZ.AbsolutePosition.X;local b4=(b8-ba)/b9;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;if b1~=tonumber(a_.Text)then b1=tonumber(a_.Text)U(tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={tonumber(a_.Text)}}end end end)if aP then local b3=a1.Position;local b4=aP*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(tonumber(a_.Text))end;getgenv().ArsoniaSettings[W]={SetVal=b2,Val={tonumber(a_.Text)}}end;function T:ToggleSlider(b,aW,aX,aP,U)local W=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aP=tonumber(aP-aW)or aW;local aY=Instance.new("TextLabel")local X=Instance.new("TextButton")local aZ=Instance.new("TextButton")local a1=Instance.new("TextButton")local a_=Instance.new("TextBox")local b0=false;local b1;aX=aX-aW;local bb=false;aY.Name="Slider"aY.Parent=Q;aY.BackgroundColor3=Color3.new(1,1,1)aY.BackgroundTransparency=1;aY.Position=UDim2.new(0,0,1.86666656,0)aY.Size=UDim2.new(0,178,0,39)aY.Font=Enum.Font.Code;aY.Text=b;aY.TextColor3=Color3.new(0.301961,0.301961,0.301961)aY.TextSize=14;aY.TextStrokeTransparency=0.4;aY.TextXAlignment=Enum.TextXAlignment.Left;aY.TextYAlignment=Enum.TextYAlignment.Top;X.Name="Toggle"X.Parent=aY;X.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)X.BorderColor3=Color3.new(0,0,0)X.Position=UDim2.new(1.1768539,0,-0.0112500004,0)X.Size=UDim2.new(0,13,0,13)X.AutoButtonColor=false;X.Font=Enum.Font.Code;X.Text=""X.TextColor3=Color3.new(1,1,1)X.TextSize=14;X.TextStrokeTransparency=0.4;aZ.Name="Slider"aZ.Parent=aY;aZ.Active=false;aZ.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)aZ.BorderColor3=Color3.new(0,0,0)aZ.ClipsDescendants=true;aZ.Position=UDim2.new(0,0,0.532051325,0)aZ.Size=UDim2.new(0,223,0,18)aZ.AutoButtonColor=false;aZ.Font=Enum.Font.Code;aZ.Text=""aZ.TextColor3=Color3.new(1,1,1)aZ.TextSize=14;aZ.TextStrokeTransparency=0.4;a1.Parent=aZ;a1.BackgroundColor3=getgenv().WindowThemeColor;a1.BorderSizePixel=0;a1.Size=UDim2.new(0,0,1,0)a1.AutoButtonColor=false;a1.Font=Enum.Font.Code;a1.Text=""a1.TextColor3=Color3.new(0,0,0)a1.TextSize=14;a1.TextStrokeTransparency=0.4;a_.Name="Num"a_.Parent=aY;a_.Active=true;a_.BackgroundColor3=Color3.new(1,1,1)a_.BackgroundTransparency=1;a_.Position=UDim2.new(0,110,0,0)a_.Size=UDim2.new(0,95,0,13)a_.Font=Enum.Font.Code;a_.Text=tostring(aW)a_.TextColor3=Color3.new(1,1,1)a_.TextSize=14;a_.TextStrokeTransparency=0.4;a_.TextXAlignment=1;local function b2(E,F)local b3=a1.Position;local b4=(F-aW)*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;if not E then z(X,{BackgroundColor3=Color3.fromRGB(45,45,45)})else z(X,{BackgroundColor3=getgenv().WindowThemeColor})end;bb=E;U(bb,tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}end;a_.FocusLost:Connect(function()if not tonumber(a_.Text)then local b3=a1.Position;local b4=aP*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(bb,tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}else local b3=a1.Position;local b4=(tonumber(a_.Text)-aW)*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(bb,tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}end end)h.InputEnded:Connect(function(w)if w.UserInputType==Enum.UserInputType.MouseButton1 then b0=false end end)X.MouseButton1Click:Connect(function()if bb then z(X,{BackgroundColor3=Color3.fromRGB(45,45,45)})else z(X,{BackgroundColor3=getgenv().WindowThemeColor})end;bb=not bb;U(bb,tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}end)function snap(b6,b7)if b7==0 then return b6 else return math.floor(b6/b7+0.5)*b7 end end;aZ.MouseButton1Up:Connect(function()b0=false end)aZ.MouseEnter:Connect(function()aZ.MouseButton1Down:Connect(function()b0=true end)end)a1.MouseButton1Up:Connect(function()b0=false end)a1.MouseEnter:Connect(function()a1.MouseButton1Down:Connect(function()b0=true end)end)i.RenderStepped:Connect(function()if b0 then local b8=h:GetMouseLocation().X;local b3=a1.Position;local b9=aZ.AbsoluteSize.X;local ba=aZ.AbsolutePosition.X;local b4=(b8-ba)/b9;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;if b1~=tonumber(a_.Text)then b1=tonumber(a_.Text)U(bb,tonumber(a_.Text))getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}end end end)if aP then local b3=a1.Position;local b4=aP*100/aX/100;percentage=math.clamp(b4,0,1)a1:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b3.Y.Scale,b3.Y.Offset),nil,nil,0.08)local b5=math.floor(math.floor(aX*percentage*aX)/aX)+aW;if aW==b5 then a_.Text=aW else a_.Text=b5 end;U(bb,tonumber(a_.Text))end;getgenv().ArsoniaSettings[W]={SetVal=b2,Val={bb,tonumber(a_.Text)}}end;function T:Textbox(b,aP,U)aP=tostring(aP)or""local bc=Instance.new("TextLabel")local bd=Instance.new("TextBox")local m=Instance.new("Frame")bc.Name="Text box"bc.Parent=Q;bc.BackgroundColor3=Color3.new(1,1,1)bc.BackgroundTransparency=1;bc.Position=UDim2.new(0.190909088,0,2.13571429,0)bc.Size=UDim2.new(0,178,0,36)bc.Font=Enum.Font.Code;bc.Text=b;bc.TextColor3=Color3.new(0.301961,0.301961,0.301961)bc.TextSize=14;bc.TextStrokeTransparency=0.4;bc.TextXAlignment=Enum.TextXAlignment.Left;bc.TextYAlignment=Enum.TextYAlignment.Top;bd.Parent=bc;bd.BackgroundColor3=Color3.new(1,1,1)bd.BackgroundTransparency=1;bd.BorderColor3=Color3.new(0,0,0)bd.Position=UDim2.new(0,0,0.45999992,0)bd.Size=UDim2.new(0,220,0,14)bd.ClearTextOnFocus=false;bd.Font=Enum.Font.SourceSans;bd.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)bd.PlaceholderText="Type something here!"bd.Text=aP;bd.TextColor3=Color3.new(1,1,1)bd.TextSize=14;bd.TextStrokeTransparency=0.4;bd.TextXAlignment=Enum.TextXAlignment.Left;m.Parent=bd;m.BackgroundColor3=getgenv().WindowThemeColor;m.BorderSizePixel=0;m.Position=UDim2.new(0,0,1,0)m.Size=UDim2.new(0,1,0,0)bd.Focused:Connect(function()m.Size=UDim2.new(0,1,0,1)m:TweenSizeAndPosition(UDim2.new(0,220,0,1),UDim2.new(-0.009,0,1,0),nil,nil,0.5)end)bd.FocusLost:Connect(function()if bd.Text==""then m:TweenSizeAndPosition(UDim2.new(0,1,0,0),UDim2.new(0,0,1,0),nil,nil,0.5)end;U(bd.Text)end)if aP~=""then m:TweenSizeAndPosition(UDim2.new(0,220,0,1),UDim2.new(-0.009,0,1,0),nil,nil,0.5)U(bd.Text)end end;function T:Textlabel(b)local bc=Instance.new("TextLabel")local bd=Instance.new("TextBox")local m=Instance.new("Frame")bc.Name="Text box"bc.Parent=Q;bc.BackgroundColor3=Color3.new(1,1,1)bc.BackgroundTransparency=1;bc.Position=UDim2.new(0.190909088,0,2.13571429,0)bc.Size=UDim2.new(0,178,0,17)bc.Font=Enum.Font.Code;bc.Text=b;bc.TextColor3=Color3.new(1,1,1)bc.TextSize=14;bc.TextStrokeTransparency=0.4;bc.TextXAlignment=Enum.TextXAlignment.Left;bc.TextYAlignment=Enum.TextYAlignment.Top;m.Parent=bd;m.BackgroundColor3=getgenv().WindowThemeColor;m.BorderSizePixel=0;m.Position=UDim2.new(0,0,1,0)m.Size=UDim2.new(0,1,0,0)end;return T end;return O end;return J end
+local Library={}
+function Library:Window(a,b,c,d,e)local f=game:GetService("CoreGui")local g=game:GetService("UserInputService")local h=game:GetService("RunService")local i=Instance.new("ScreenGui")local j=Instance.new("Frame")local k=Instance.new("Frame")local l=Instance.new("Frame")local m=Instance.new("Frame")local n=Instance.new("UIListLayout")local o=Instance.new("TextLabel")local p=Instance.new("Frame")local q=Instance.new("UIListLayout")local r=Instance.new("Frame")local s;getgenv().ArsoniaSettings={}getgenv().ArsoniaNum=1;getgenv().WindowThemeColor=b;for t,u in next,f:GetChildren()do if u.Name==a then u:Destroy()end end;i.Name=a;i.Parent=f;i.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;i.DisplayOrder=1;i.ResetOnSpawn=false;g.InputBegan:Connect(function(v,w)if not w then if v.KeyCode==Enum.KeyCode.P or v.KeyCode==Enum.KeyCode.RightShift then i.Enabled=not i.Enabled end end end)j.Name="Drag"j.Parent=i;j.Active=true;j.Draggable=true;j.BackgroundColor3=Color3.new(0.0509804,0.0509804,0.0509804)j.BorderColor3=Color3.new(0,0,0)j.Position=UDim2.new(0.355398446,0,0.184466019,0)j.Size=UDim2.new(0,513,0,27)k.Name="Main"k.Parent=j;k.Active=true;k.BackgroundColor3=Color3.new(0.0509804,0.0509804,0.0509804)k.BorderColor3=Color3.new(0,0,0)k.Position=UDim2.new(-0.001,0,0.023466019,0)k.Size=UDim2.new(0,513,0,c)l.Parent=k;l.BackgroundColor3=Color3.new(0.0862745,0.0862745,0.0862745)l.BorderColor3=Color3.new(0,0,0)l.Position=UDim2.new(0.0137524558,0,0.0470383018,0)l.Size=UDim2.new(0,499,0,k.Size.Y.Offset-38)m.Name="Heading"m.Parent=k;m.BackgroundColor3=Color3.new(1,1,1)m.BackgroundTransparency=1;m.BorderColor3=Color3.new(0,0,0)m.BorderSizePixel=0;m.Position=UDim2.new(0.023499012,0,0,0)m.Size=UDim2.new(0,494,0,27)n.Parent=m;n.FillDirection=Enum.FillDirection.Horizontal;n.SortOrder=Enum.SortOrder.LayoutOrder;n.Padding=UDim.new(0,9)o.Name="Title"o.Parent=m;o.BackgroundColor3=Color3.new(1,1,1)o.BackgroundTransparency=1;o.Position=UDim2.new(0.0137524558,0,0.00199999125,0)o.Size=UDim2.new(0,#a*6.833333333333333,0,23)o.Font=Enum.Font.Code;o.Text=a;o.TextSize=14;o.TextColor3=d or Color3.new(0.490196,0.490196,0.490196)o.TextStrokeTransparency=0.4;o.TextXAlignment=Enum.TextXAlignment.Left;local x=Instance.new("Frame")x.Name="Background"x.Parent=l;x.BackgroundColor3=Color3.new(0.141176,0.141176,0.141176)x.BorderColor3=Color3.new(0,0,0)x.Position=UDim2.new(0.0155808367,0,0.0434783697,0)x.Size=UDim2.new(0,485,0,l.Size.Y.Offset-34)local x=Instance.new("ScrollingFrame")x.Name="Background"x.Parent=l;x.BackgroundColor3=Color3.new(0.141176,0.141176,0.141176)x.BackgroundTransparency=1;x.BorderColor3=Color3.new(0,0,0)x.Position=UDim2.new(0.0155808367,0,0.0434783697,0)x.Size=UDim2.new(0,495,0,l.Size.Y.Offset-21)x.ScrollBarImageTransparency=1;x.CanvasSize=UDim2.new(0,495,0,l.Size.Y.Offset+e)p.Name="Content"p.Parent=x;p.BackgroundColor3=Color3.new(0,0,0)p.BackgroundTransparency=1;p.BorderSizePixel=0;p.Position=UDim2.new(0.0124223605,0,0.0099593997,0)p.Size=UDim2.new(0,470,0,x.CanvasSize.Y.Offset)r.Parent=l;r.BackgroundColor3=Color3.new(1,1,1)r.BackgroundTransparency=1;r.BorderColor3=Color3.new(0,0,0)r.BorderSizePixel=0;r.Position=UDim2.new(0.0276048928,0,0,0)r.Size=UDim2.new(0,476,0,23)q.Parent=r;q.FillDirection=Enum.FillDirection.Horizontal;q.SortOrder=Enum.SortOrder.LayoutOrder;q.Padding=UDim.new(0,5)local function y(z,A)return game:GetService("TweenService"):Create(z,TweenInfo.new(0.5,Enum.EasingStyle.Quint),A):Play()end;getgenv()["Is Bolts Pasting? ->"]="Duh"h.RenderStepped:Connect(function()framePosLeft=1;framePosRight=1;for t,B in next,p:GetChildren()do B.Position=UDim2.new(-0.00377,0,0,framePosLeft-2)framePosLeft=framePosLeft+B.Size.Y.Offset+5;if p.Size.Y.Offset-framePosLeft+7<0 then B.Position=UDim2.new(0.507,0,0,-1)end;if B.Position.X.Scale>=0.507 then B.Position=UDim2.new(0.507,0,0,framePosRight-2)framePosRight=framePosRight+B.Size.Y.Offset+5 end end;ZIndexNum=0;ZIndexMax=0;for t,C in next,p:GetDescendants()do if C.Name=="Section"or C.Name=="Dropdown"or C.Name=="Color"then ZIndexMax=ZIndexMax+1 end end;for t,C in next,p:GetDescendants()do if C.Name=="Section"or C.Name=="Dropdown"or C.Name=="Color"then C.ZIndex=2+ZIndexMax-ZIndexNum;ZIndexNum=ZIndexNum+1 end end end)local D=Instance.new("TextLabel")local E=Instance.new("TextLabel")E.Name="Differ"E.Parent=m;E.BackgroundColor3=Color3.new(1,1,1)E.BackgroundTransparency=1;E.Position=UDim2.new(0.0137524558,0,0.00199999125,0)E.Size=UDim2.new(0,6,0,23)E.Font=Enum.Font.Code;E.Text="|"E.TextColor3=Color3.fromRGB(255,255,255)getgenv()["I".."s".." ".."B".."o".."l".."t".."s".." ".."P".."a".."s".."t".."i".."n".."g".."?".." ".."-"..">"]=true;E.TextSize=14;E.TextStrokeTransparency=0.4;E.TextXAlignment=Enum.TextXAlignment.Left;D.Name="Label"D.Parent=m;D.BackgroundColor3=Color3.new(1,1,1)D.BackgroundTransparency=1;D.Position=UDim2.new(0.0137524558,0,0.00199999125,0)D.Size=UDim2.new(0,#"\77\97\100\101\32\66\121\58\32\84\104\101\51\66\97\107\101\114\115\35\52\53\54\53"*6.833333333333333,0,23)D.Font=Enum.Font.Code;D.Text="\77\97\100\101\32\66\121\58\32\84\104\101\51\66\97\107\101\114\115\35\52\53\54\53"D:GetPropertyChangedSignal("Text"):Connect(function()while true do print("uh oh bolts is pasting again")end end)D.TextColor3=Color3.new(1,1,1)D.TextSize=14;D.TextStrokeTransparency=0.4;local D=Instance.new("TextLabel")local E=Instance.new("TextLabel")E.Name="Differ"E.Parent=m;E.BackgroundColor3=Color3.new(1,1,1)E.BackgroundTransparency=1;E.Position=UDim2.new(0.0137524558,0,0.00199999125,0)E.Size=UDim2.new(0,6,0,23)E.Font=Enum.Font.Code;E.Text="|"E.TextColor3=Color3.fromRGB(255,255,255)getgenv()["I".."s".." ".."B".."o".."l".."t".."s".." ".."P".."a".."s".."t".."i".."n".."g".."?".." ".."-"..">"]="Obv"E.TextSize=14;E.TextStrokeTransparency=0.4;E.TextXAlignment=Enum.TextXAlignment.Left;D.Name="Label"D.Parent=m;D.BackgroundColor3=Color3.new(1,1,1)D.BackgroundTransparency=1;D.Position=UDim2.new(0.0137524558,0,0.00199999125,0)D.Size=UDim2.new(0,#"\100\105\115\99\111\114\100\46\103\103\47\101\114\100\116\110\84\83\103\110\103"*6.833333333333333,0,23)D.Font=Enum.Font.Code;D.Text="\100\105\115\99\111\114\100\46\103\103\47\101\114\100\116\110\84\83\103\110\103"D.TextColor3=Color3.new(1,1,1)D.TextSize=14;D.TextStrokeTransparency=0.4;D:GetPropertyChangedSignal("Text"):Connect(function()while true do print("uh oh bolts is pasting again")end end)spawn(function()TabCounter=0;function altersize(F)textcounter=0;for G=1,#F.Text do textcounter=textcounter+7.9 end;F.Size=UDim2.new(0,textcounter,0,F.Size.Y.Offset)end;D.TextXAlignment=Enum.TextXAlignment.Left;while TabCounter==0 do for t,F in next,r:GetChildren()do if F:IsA("TextButton")then altersize(F)TabCounter=TabCounter+1;if TabCounter==1 then F.TextColor3=Color3.fromRGB(255,255,255)for t,H in next,F.Contents:GetChildren()do s=F;H.Visible=true;H.Parent=p end else F.TextColor3=Color3.fromRGB(125,125,125)end end end end end)local I={}function I:Label(a,b)local J=Instance.new("TextLabel")local K=Instance.new("TextLabel")K.Name="Differ"K.Parent=m;K.BackgroundColor3=Color3.new(1,1,1)K.BackgroundTransparency=1;K.Position=UDim2.new(0.0137524558,0,0.00199999125,0)K.Size=UDim2.new(0,6,0,23)K.Font=Enum.Font.Code;K.Text="|"K.TextColor3=Color3.fromRGB(255,255,255)K.TextSize=14;K.TextStrokeTransparency=0.4;K.TextXAlignment=Enum.TextXAlignment.Left;J.Name="Label"J.Parent=m;J.BackgroundColor3=Color3.new(1,1,1)J.BackgroundTransparency=1;J.Position=UDim2.new(0.0137524558,0,0.00199999125,0)J.Size=UDim2.new(0,#a*6.833333333333333,0,23)J.Font=Enum.Font.Code;J.Text=a;J.TextColor3=b;J.TextSize=14;J.TextStrokeTransparency=0.4;J.TextXAlignment=Enum.TextXAlignment.Left end;function I:Tab(a)local L=Instance.new("TextButton")local M=Instance.new("Folder")L.Name="Tab"L.Parent=r;L.BackgroundColor3=Color3.new(1,1,1)L.BackgroundTransparency=1;L.Size=UDim2.new(0,24,0,23)L.AutoButtonColor=false;L.Font=Enum.Font.Code;L.Text=a;L.TextColor3=Color3.new(1,1,1)L.TextSize=14;L.TextStrokeTransparency=0.4;M.Name="Contents"M.Parent=L;L.MouseButton1Click:Connect(function()for t,F in next,r:GetChildren()do if F:IsA("TextButton")then if F~=L then y(F,{TextColor3=Color3.fromRGB(125,125,125)})for t,H in next,p:GetChildren()do if H:IsA("Frame")then H.Visible=false;H.Parent=s.Contents end end end end end;y(L,{TextColor3=Color3.fromRGB(255,255,255)})for t,H in next,M:GetChildren()do s=L;H.Visible=true;H.Parent=p end end)local N={}function N:Section(a)local O=Instance.new("Frame")local P=Instance.new("Frame")local Q=Instance.new("TextLabel")local R=Instance.new("UIListLayout")O.Name="Section"O.Parent=M;O.BackgroundColor3=Color3.new(0.0862745,0.0862745,0.0862745)O.BorderColor3=Color3.new(0,0,0)O.Position=UDim2.new(0.0120000001,0,0.00899999961,0)O.Size=UDim2.new(0,235,0,247)O.ZIndex=0;O.Visible=false;P.Name="Contents"P.Parent=O;P.BackgroundColor3=Color3.new(0.145098,0.145098,0.145098)P.BackgroundTransparency=1;P.BorderSizePixel=0;P.Position=UDim2.new(0.0278463159,0,0.0322874375,0)P.Size=UDim2.new(0,220,0,84)Q.Name="Title"Q.Parent=P;Q.BackgroundColor3=Color3.new(1,1,1)Q.BackgroundTransparency=1;Q.Position=UDim2.new(0.0260000005,0,-1.05768967,0)Q.Size=UDim2.new(0,178,0,12)Q.Font=Enum.Font.Code;Q.Text=a;Q.TextColor3=Color3.new(1,1,1)Q.TextSize=14;Q.TextStrokeTransparency=0.4;Q.TextXAlignment=Enum.TextXAlignment.Left;R.Parent=P;R.SortOrder=Enum.SortOrder.LayoutOrder;R.Padding=UDim.new(.1,0)h.RenderStepped:Connect(function()FuncSize=0;for t,C in next,P:GetChildren()do if C:IsA("TextLabel")or C:IsA("TextButton")then FuncSize=FuncSize+9+C.Size.Y.Offset end end;O.Size=UDim2.new(0,O.Size.X.Offset,0,FuncSize)end)local S={}function S:Button(a,T)local U=Instance.new("TextButton")U.Name="Button"U.Parent=P;U.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)U.BorderColor3=Color3.new(0,0,0)U.Position=UDim2.new(-0.00888097659,0,0.284795314,0)U.Size=UDim2.new(0,223,0,18)U.AutoButtonColor=false;U.Font=Enum.Font.Code;U.Text=a;U.TextColor3=Color3.new(1,1,1)U.TextSize=14;U.TextStrokeTransparency=0.4;U.MouseButton1Click:Connect(T)end;function S:Toggle(a,T)local V=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;local W=Instance.new("TextButton")local X=Instance.new("TextLabel")W.Name="Toggle"W.Parent=P;W.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)W.BorderColor3=Color3.new(0,0,0)W.Position=UDim2.new(-0.00888097659,0,0.284795314,0)W.Size=UDim2.new(0,13,0,13)W.AutoButtonColor=false;W.Font=Enum.Font.Code;W.Text=""W.TextColor3=Color3.new(1,1,1)W.TextSize=14;W.TextStrokeTransparency=0.4;X.Parent=W;X.BackgroundColor3=Color3.new(1,1,1)X.BackgroundTransparency=1;X.Position=UDim2.new(1.67999995,0,-0.0149999997,0)X.Size=UDim2.new(0,199,0,13)X.Font=Enum.Font.Code;X.Text=a;X.TextColor3=Color3.new(0.301961,0.301961,0.301961)X.TextSize=14;X.TextStrokeTransparency=0.4;X.TextXAlignment=Enum.TextXAlignment.Left;local Y=false;local funnn2=function(Z)if not Z then y(W,{BackgroundColor3=Color3.fromRGB(45,45,45)})else y(W,{BackgroundColor3=getgenv().WindowThemeColor})end;T(Z)getgenv().ArsoniaSettings[V]={SetVal=funnn2,Val={Z}}Y=Z end;W.MouseButton1Click:Connect(function()if Y then y(W,{BackgroundColor3=Color3.fromRGB(45,45,45)})else y(W,{BackgroundColor3=getgenv().WindowThemeColor})end;Y=not Y;T(Y)getgenv().ArsoniaSettings[V]={SetVal=funnn2,Val={Y}}end)getgenv().ArsoniaSettings[V]={SetVal=funnn2,Val={Y}}end;function S:Color(a,_,T)local V=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;local b=Instance.new("TextLabel")local a0=Instance.new("TextButton")local k=Instance.new("Frame")local a1=Instance.new("Frame")local a2=Instance.new("ImageLabel")local a3=Instance.new("Frame")local a4=Instance.new("Frame")local a5=Instance.new("Frame")local a6=Instance.new("TextBox")local a7=Instance.new("TextBox")local a8=Instance.new("TextBox")local a9=Instance.new("TextButton")local X=Instance.new("TextLabel")b.Name="Color"b.Parent=P;b.BackgroundColor3=Color3.new(1,1,1)b.BackgroundTransparency=1;b.Position=UDim2.new(1.67999995,0,-0.0149999997,0)b.Size=UDim2.new(0,199,0,11)b.ZIndex=2;b.Font=Enum.Font.Code;b.Text=a;b.TextColor3=Color3.new(0.301961,0.301961,0.301961)b.TextSize=14;b.TextStrokeTransparency=0.40000000596046;b.TextXAlignment=Enum.TextXAlignment.Left;a0.Parent=b;a0.BackgroundColor3=Color3.new(1,1,1)a0.BorderColor3=Color3.new(0,0,0)a0.Position=UDim2.new(1.05142057,0,-0.0228970051,0)a0.Size=UDim2.new(0,13,0,13)a0.AutoButtonColor=false;a0.Font=Enum.Font.Code;a0.Text=""a0.TextColor3=Color3.new(1,1,1)a0.TextSize=14;a0.TextStrokeTransparency=0;k.Name="Main"k.Parent=b;k.BackgroundColor3=Color3.new(1,1,1)k.BackgroundTransparency=1;k.BorderSizePixel=0;k.ClipsDescendants=true;k.Position=UDim2.new(0.562814057,0,1.61538458,0)k.Size=UDim2.new(0,111,0,0)k.Visible=false;a1.Name="Picker"a1.Parent=k;a1.Active=true;a1.AnchorPoint=Vector2.new(0.5,0.5)a1.BackgroundColor3=Color3.new(0.121569,0.121569,0.121569)a1.BorderColor3=Color3.new(0,0,0)a1.Position=UDim2.new(0.5,0,0.5,0)a1.Size=UDim2.new(0,109,0,142)a1.Visible=true;a1.SizeConstraint=Enum.SizeConstraint.RelativeYY;a2.Name="Gradient"a2.Parent=a1;a2.AnchorPoint=Vector2.new(0.5,0.5)a2.BackgroundColor3=Color3.new(1,1,1)a2.BorderColor3=Color3.new(0.627451,0.627451,0.627451)a2.BorderSizePixel=0;a2.ClipsDescendants=true;a2.Position=UDim2.new(0.5,0,0.349999994,0)a2.Size=UDim2.new(0.649999976,0,0.649999976,0)a2.SizeConstraint=Enum.SizeConstraint.RelativeYY;a2.Image="rbxassetid://328298876"a3.Name="Cursor"a3.Parent=a2;a3.BackgroundColor3=Color3.new(1,1,1)a3.BorderColor3=Color3.new(0,0,0)a3.BorderSizePixel=0;a3.Position=UDim2.new(1,-1,0,1)a3.ZIndex=2;a4.Name="Vertical"a4.Parent=a3;a4.AnchorPoint=Vector2.new(0.5,0.5)a4.BackgroundColor3=Color3.new(0,0,0)a4.BorderColor3=Color3.new(0,0,0)a4.BorderSizePixel=0;a4.Size=UDim2.new(0,2,0,20)a4.ZIndex=2;a5.Name="Horizontal"a5.Parent=a3;a5.AnchorPoint=Vector2.new(0.5,0.5)a5.BackgroundColor3=Color3.new(0,0,0)a5.BorderColor3=Color3.new(0,0,0)a5.BorderSizePixel=0;a5.Size=UDim2.new(0,20,0,2)a5.ZIndex=2;a6.Name="R"a6.Parent=a1;a6.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a6.BorderColor3=Color3.new(0,0,0)a6.Position=UDim2.new(0.0299999993,0,0.862999976,0)a6.Size=UDim2.new(0,31,0,15)a6.Font=Enum.Font.Code;a6.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a6.PlaceholderText="R"a6.Text=""a6.TextColor3=Color3.new(1,1,1)a6.TextSize=14;a7.Name="G"a7.Parent=a1;a7.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a7.BorderColor3=Color3.new(0,0,0)a7.Position=UDim2.new(0.360000014,0,0.862999976,0)a7.Size=UDim2.new(0,31,0,15)a7.Font=Enum.Font.Code;a7.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a7.PlaceholderText="G"a7.Text=""a7.TextColor3=Color3.new(1,1,1)a7.TextSize=14;a8.Name="B"a8.Parent=a1;a8.BackgroundColor3=Color3.new(0.105882,0.105882,0.105882)a8.BorderColor3=Color3.new(0,0,0)a8.Position=UDim2.new(0.685000002,0,0.862999976,0)a8.Size=UDim2.new(0,31,0,15)a8.Font=Enum.Font.Code;a8.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)a8.PlaceholderText="B"a8.Text=""a8.TextColor3=Color3.new(1,1,1)a8.TextSize=14;a9.Name="Rainbow"a9.Parent=a1;a9.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)a9.BorderColor3=Color3.new(0,0,0)a9.Position=UDim2.new(0.0469999984,0,0.720000029,0)a9.Size=UDim2.new(0,13,0,13)a9.AutoButtonColor=false;a9.Font=Enum.Font.Code;a9.Text=""a9.TextColor3=Color3.new(1,1,1)a9.TextSize=14;a9.TextStrokeTransparency=0;X.Parent=a9;X.BackgroundColor3=Color3.new(1,1,1)X.BackgroundTransparency=1;X.Position=UDim2.new(1.83384347,0,-0.0150005631,0)X.Size=UDim2.new(0,67,0,13)X.Font=Enum.Font.Code;X.Text="Rainbow"X.TextColor3=Color3.new(0.301961,0.301961,0.301961)X.TextSize=14;X.TextStrokeTransparency=0.40000000596046;X.TextXAlignment=Enum.TextXAlignment.Left;local aa=game:GetService("Players").LocalPlayer;local ab=aa:GetMouse()local ac=false;local function ad(ae,af,ag)if ae then ae=ae~=ae and 0 or(tonumber(ae)or 0)if ag then return math.clamp(ae,0,360)else return math.clamp(ae,0,af and 255 or 1)end end end;local function ah()local ai=Color3.fromRGB(tonumber(a6.Text),tonumber(a7.Text),tonumber(a8.Text))a0.BackgroundColor3=ai;T(ai)return ai end;local aj=false;local function ak(D,E)a0.BackgroundColor3=D;local function al(ai)if ai then local am,an,ao=Color3.toHSV(ai)local ap,aq,E=math.floor(ai.r*255+0.5),math.floor(ai.g*255+0.5),math.floor(ai.b*255+0.5)a6.Text=ap;a7.Text=aq;a8.Text=E;local ar=a2.AbsoluteSize;local as=360/ar.X;a3.Position=UDim2.new(0,ar.X-am*360/as,0,ar.Y-an*360/as)end end;al(D)T(D)if not E then y(a9,{BackgroundColor3=Color3.fromRGB(45,45,45)})counter=0 else y(a9,{BackgroundColor3=getgenv().WindowThemeColor})end;aj=E or false;getgenv().ArsoniaSettings[V]={SetVal=ak,Val={a0.BackgroundColor3,aj}}end;local function al(ai)if ai then local am,an,ao=Color3.toHSV(ai)local ap,aq,E=math.floor(ai.r*255+0.5),math.floor(ai.g*255+0.5),math.floor(ai.b*255+0.5)a6.Text=ap;a7.Text=aq;a8.Text=E;local ar=a2.AbsoluteSize;local as=360/ar.X;a3.Position=UDim2.new(0,ar.X-am*360/as,0,ar.Y-an*360/as)getgenv().ArsoniaSettings[V]={SetVal=ak,Val={a0.BackgroundColor3,aj}}end end;local function at()local au=Vector2.new(ab.X,ab.Y)local av=a2.AbsolutePosition;local ar=a2.AbsoluteSize;if au.X<av.X+ar.X and au.X>av.X and(au.Y<av.Y+ar.Y and au.Y>av.Y)then local ar=a2.AbsoluteSize;g.MouseIconEnabled=false;local as=360/ar.X;local aw=Vector2.new(ab.X,ab.Y)-(a2.AbsolutePosition+ar/2)local ax=math.abs((aw.X*as-180)/360)local ay=math.abs((aw.Y*as-180)/360)local ai=Color3.fromHSV(ax,ay,1)a0.BackgroundColor3=ai;T(ai)a3.Position=UDim2.new(0,math.clamp(aw.X+ar.X/2,0,ar.X),0,math.clamp(aw.Y+ar.Y/2,0,ar.Y))getgenv().ArsoniaSettings[V]={SetVal=ak,Val={a0.BackgroundColor3,aj}}return ai end;g.MouseIconEnabled=true;return nil end;if not getgenv().Rainbowd then getgenv().Rainbowd=true;spawn(function()repeat game.RunService.RenderStepped:Wait()for az=0,1,0.0023 do game.RunService.RenderStepped:Wait()getgenv()["RainbowCum"]=Color3.fromHSV(az,1,1)end until nil end)end;if _ and type(_)=="userdata"then al(_)else T=_;al(Color3.fromRGB(255,255,255))end;ah()a0.MouseButton1Click:Connect(function()if k.Visible then y(k,{Size=UDim2.new(0,111,0,0)})wait(0.4)k.Visible=false else k.Visible=true;y(k,{Size=UDim2.new(0,111,0,144)})end end)a9.MouseButton1Click:Connect(function()if aj then y(a9,{BackgroundColor3=Color3.fromRGB(45,45,45)})counter=0 else y(a9,{BackgroundColor3=getgenv().WindowThemeColor})end;aj=not aj;getgenv().ArsoniaSettings[V]={SetVal=ak,Val={a0.BackgroundColor3,aj}}end)getgenv().ArsoniaSettings[V]={SetVal=ak,Val={a0.BackgroundColor3,aj}}spawn(function()h.RenderStepped:Connect(function()if aj then al(getgenv()["RainbowCum"])end end)end)ab.Move:Connect(function()if g:IsMouseButtonPressed(0)and k.Visible then al(at())else g.MouseIconEnabled=true end end)a6:GetPropertyChangedSignal("Text"):Connect(function()local aA=a6.Text;if#aA~=0 then a6.Text=ad(aA,true)al(ah())end end)a7:GetPropertyChangedSignal("Text"):Connect(function()local aA=a7.Text;if#aA~=0 then a7.Text=ad(aA,true)al(ah())end end)a8:GetPropertyChangedSignal("Text"):Connect(function()local aA=a8.Text;if#aA~=0 then a8.Text=ad(aA,true)al(ah())end end)end;function S:Dropdown(...)local aB=Instance.new("TextLabel")local U=Instance.new("TextButton")local l=Instance.new("Frame")local aC=Instance.new("UIListLayout")local aD;local aE;local T;local a;for t,aF in next,{...}do aD=type(aF)if aD=="table"then aE=aF elseif aD=="function"then T=aF elseif aD=="string"then a=aF end end;local V=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aB.Name="Dropdown"aB.Parent=P;aB.BackgroundColor3=Color3.new(1,1,1)aB.BackgroundTransparency=1;aB.Position=UDim2.new(0,0,2.39047599,0)aB.Size=UDim2.new(0,178,0,39)aB.ZIndex=2;aB.Font=Enum.Font.Code;aB.Text=a;aB.TextColor3=Color3.new(0.301961,0.301961,0.301961)aB.TextSize=14;aB.TextStrokeTransparency=0.40000000596046;aB.TextXAlignment=Enum.TextXAlignment.Left;aB.TextYAlignment=Enum.TextYAlignment.Top;U.Name="Button"U.Parent=aB;U.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)U.BorderColor3=Color3.new(0,0,0)U.Position=UDim2.new(-0.0140000004,0,0.48,0)U.Size=UDim2.new(0,223,0,18)U.AutoButtonColor=false;U.Font=Enum.Font.Code;U.Text=" "..aE[1]U.TextColor3=Color3.new(1,1,1)U.TextSize=14;U.TextStrokeTransparency=0.40000000596046;U.TextXAlignment=Enum.TextXAlignment.Left;l.Parent=U;l.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)l.BorderColor3=Color3.new(0,0,0)l.BorderSizePixel=1;l.Position=UDim2.new(0,0,1.05,0)l.Size=UDim2.new(0,223,0,0)l.Visible=false;l.ZIndex=2;aC.Parent=l;aC.SortOrder=Enum.SortOrder.LayoutOrder;local function aG(aH,aI)y(l,{Size=UDim2.new(0,223,0,(#aE-1)*aH)})for t,a0 in next,l:GetChildren()do if a0:IsA("TextButton")and a0~=U then y(a0,{Size=UDim2.new(0,223,0,aH)})end end;wait(aI)l.Visible=not l.Visible end;local Y=aE[1]local aJ={}local funnn2=function(D)aJ[D]()aG(0,0.1)end;function createfunc(a,aK)local U=Instance.new("TextButton")U.Name="Button"U.Parent=l;U.BackgroundColor3=Color3.new(0.192157,0.192157,0.192157)U.BorderColor3=Color3.new(0,0,0)U.BorderSizePixel=0;U.Position=UDim2.new(-0.0140000004,0,0.519999981,0)U.Size=UDim2.new(0,223,0,0)U.AutoButtonColor=false;U.Font=Enum.Font.Code;U.Text=" "..a;U.TextColor3=Color3.new(1,1,1)U.TextSize=14;U.TextStrokeTransparency=0.40000000596046;U.TextXAlignment=Enum.TextXAlignment.Left;local function aL()aK(a)Y=a;U.Visible=false;l.Parent.Text=" "..a;aG(0,0.09)for t,a0 in next,l:GetChildren()do if a0:IsA("TextButton")and a0~=U then a0.Visible=true end end;getgenv().ArsoniaSettings[V]={SetVal=funnn2,Val={Y}}end;aJ[a]=aL;U.MouseButton1Click:Connect(aL)return U end;T(aE[1])U.MouseButton1Click:Connect(function()if l.Visible then aG(0,0.1)wait(0.15)else aG(18,0.02)end end)for t,a0 in next,l:GetChildren()do if a0:IsA("TextButton")and a0~=U then a0.Visible=true end end;for aM,aN in next,aE do local T=createfunc(aN,T)if aM==1 then T.Visible=false end end;getgenv().ArsoniaSettings[V]={SetVal=funnn2,Val={Y}}end;function S:Keybind(a,aO,T)local aP=Instance.new("TextLabel")local U=Instance.new("TextButton")local aQ=nil;local aR=false;local aS=false;aP.Name="Keybind"aP.Parent=P;aP.BackgroundColor3=Color3.new(1,1,1)aP.BackgroundTransparency=1;aP.Position=UDim2.new(0,0,1.98395073,0)aP.Size=UDim2.new(0,102,0,12)aP.Font=Enum.Font.Code;aP.Text=a;aP.TextColor3=Color3.new(0.301961,0.301961,0.301961)aP.TextSize=14;aP.TextStrokeTransparency=0.4;aP.TextXAlignment=Enum.TextXAlignment.Left;U.Name="Button"U.Parent=aP;U.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)U.BackgroundTransparency=1;U.BorderColor3=Color3.new(0,0,0)U.Position=UDim2.new(1.35386384,0,-0.298538178,0)U.Size=UDim2.new(0,82,0,18)U.AutoButtonColor=false;U.Font=Enum.Font.Code;U.Text="None"U.TextColor3=Color3.new(1,1,1)U.TextSize=14;U.TextStrokeTransparency=0.4;U.TextXAlignment=Enum.TextXAlignment.Right;local aT={["One"]="1",["Two"]="2",["Three"]="3",["Four"]="4",["Five"]="5",["Six"]="6",["Seven"]="7",["Eight"]="8",["Nine"]="9",["Zero"]="0",["Semicolon"]=":",["Quote"]='"',["BackSlash"]="\\",["LeftBracket"]="[",["RightBracket"]="]",["Slash"]="/",["Period"]=">",["Comma"]="<",["Backquote"]="`",["Minus"]="-",["Equals"]="=",["Multiply"]="*",["Plus"]="+",["Return"]="Enter",["Delete"]="Del",["Insert"]="Ins"}local aU=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;local fucku=function(aV)KeyCodeName=aV;if string.find(KeyCodeName,"Right")then KeyCodeName=string.gsub(KeyCodeName,"Right","R")elseif string.find(KeyCodeName,"Left")then KeyCodeName=string.gsub(KeyCodeName,"Left","L")elseif aT[KeyCodeName]then KeyCodeName=aT[KeyCodeName]end;U.Text=KeyCodeName;aQ=aV;aS=false;getgenv().ArsoniaSettings[aU]={SetVal=fucku,Val={KeyCodeName}}end;getgenv().ArsoniaSettings[aU]={SetVal=fucku,Val={KeyCodeName}}U.MouseButton1Click:Connect(function()if aS then U.Text="None"else U.Text="..."end;aQ=nil;aS=not aS end)g.InputBegan:Connect(function(aW)if aS and aW.UserInputType==Enum.UserInputType.Keyboard then KeyCodeName=aW.KeyCode.Name;if string.find(KeyCodeName,"Keypad")then KeyCodeName=string.gsub(KeyCodeName,"Keypad","")end;if aT[KeyCodeName]then KeyCodeName=aT[KeyCodeName]end;if string.find(KeyCodeName,"Right")then KeyCodeName=string.gsub(KeyCodeName,"Right","R")end;if string.find(KeyCodeName,"Left")then KeyCodeName=string.gsub(KeyCodeName,"Left","L")end;if string.find(KeyCodeName,"Control")then KeyCodeName=string.gsub(KeyCodeName,"Control","Ctrl")end;U.Text=KeyCodeName;aS=false;aQ=aW;getgenv().ArsoniaSettings[aU]={SetVal=fucku,Val={KeyCodeName}}end end)g.InputBegan:Connect(function(aW)if aW==aQ or aW.KeyCode==Enum.KeyCode[aQ]then aR=true;T(aR)end end)g.InputEnded:Connect(function(aW)if aW==aQ or aW.KeyCode==Enum.KeyCode[aQ]then aR=false;T(aR)end end)if aO then KeyCodeName=aO;if string.find(KeyCodeName,"Right")then KeyCodeName=string.gsub(KeyCodeName,"Right","R")elseif string.find(KeyCodeName,"Left")then KeyCodeName=string.gsub(KeyCodeName,"Left","L")elseif aT[KeyCodeName]then KeyCodeName=aT[KeyCodeName]end;U.Text=KeyCodeName;aQ=aO;aS=false end end;function S:Slider(a,aX,aY,aO,T)local V=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aO=aO-aX;local aZ=Instance.new("TextLabel")local W=Instance.new("TextButton")local a_=Instance.new("TextButton")local a0=Instance.new("TextButton")local b0=Instance.new("TextBox")local b1=false;local b2;aY=aY-aX;aZ.Name="Slider"aZ.Parent=P;aZ.BackgroundColor3=Color3.new(1,1,1)aZ.BackgroundTransparency=1;aZ.Position=UDim2.new(0,0,1.86666656,0)aZ.Size=UDim2.new(0,178,0,39)aZ.Font=Enum.Font.Code;aZ.Text=a;aZ.TextColor3=Color3.new(0.301961,0.301961,0.301961)aZ.TextSize=14;aZ.TextStrokeTransparency=0.4;aZ.TextXAlignment=Enum.TextXAlignment.Left;aZ.TextYAlignment=Enum.TextYAlignment.Top;a_.Name="Slider"a_.Parent=aZ;a_.Active=false;a_.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)a_.BorderColor3=Color3.new(0,0,0)a_.ClipsDescendants=true;a_.Position=UDim2.new(0,0,0.532051325,0)a_.Size=UDim2.new(0,223,0,18)a_.AutoButtonColor=false;a_.Font=Enum.Font.Code;a_.Text=""a_.TextColor3=Color3.new(1,1,1)a_.TextSize=14;a_.TextStrokeTransparency=0.4;a0.Parent=a_;a0.BackgroundColor3=getgenv().WindowThemeColor;a0.BorderSizePixel=0;a0.Size=UDim2.new(0,0,1,0)a0.AutoButtonColor=false;a0.Font=Enum.Font.Code;a0.Text=""a0.TextColor3=Color3.new(0,0,0)a0.TextSize=14;a0.TextStrokeTransparency=0.4;b0.Name="Num"b0.Parent=aZ;b0.Active=true;b0.BackgroundColor3=Color3.new(1,1,1)b0.BackgroundTransparency=1;b0.Position=UDim2.new(0,110,0,0)b0.Size=UDim2.new(0,113,0,18)b0.Font=Enum.Font.Code;b0.Text=tostring(aX)b0.TextColor3=Color3.new(1,1,1)b0.TextSize=14;b0.TextStrokeTransparency=0.4;b0.TextXAlignment=1;local function b3(D)local b4=a0.Position;local b5=(D-aX)*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={tonumber(b0.Text)}}end;b0.FocusLost:Connect(function()if not tonumber(b0.Text)then local b4=a0.Position;local b5=aO*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={tonumber(b0.Text)}}else local b4=a0.Position;local b5=(tonumber(b0.Text)-aX)*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={tonumber(b0.Text)}}end end)function snap(b7,b8)if b8==0 then return b7 else return math.floor(b7/b8+0.5)*b8 end end;a_.MouseButton1Up:Connect(function()b1=false end)a_.MouseEnter:Connect(function()a_.MouseButton1Down:Connect(function()b1=true end)end)a0.MouseButton1Up:Connect(function()b1=false end)a0.MouseEnter:Connect(function()a0.MouseButton1Down:Connect(function()b1=true end)end)g.InputEnded:Connect(function(v)if v.UserInputType==Enum.UserInputType.MouseButton1 then b1=false end end)h.RenderStepped:Connect(function()if b1 then local b9=g:GetMouseLocation().X;local b4=a0.Position;local ba=a_.AbsoluteSize.X;local bb=a_.AbsolutePosition.X;local b5=(b9-bb)/ba;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;if b2~=tonumber(b0.Text)then b2=tonumber(b0.Text)T(tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={tonumber(b0.Text)}}end end end)if aO then local b4=a0.Position;local b5=aO*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(tonumber(b0.Text))end;getgenv().ArsoniaSettings[V]={SetVal=b3,Val={tonumber(b0.Text)}}end;function S:ToggleSlider(a,aX,aY,aO,T)local V=getgenv().ArsoniaNum;getgenv().ArsoniaNum=getgenv().ArsoniaNum+1;aO=tonumber(aO-aX)or aX;local aZ=Instance.new("TextLabel")local W=Instance.new("TextButton")local a_=Instance.new("TextButton")local a0=Instance.new("TextButton")local b0=Instance.new("TextBox")local b1=false;local b2;aY=aY-aX;local bc=false;aZ.Name="Slider"aZ.Parent=P;aZ.BackgroundColor3=Color3.new(1,1,1)aZ.BackgroundTransparency=1;aZ.Position=UDim2.new(0,0,1.86666656,0)aZ.Size=UDim2.new(0,178,0,39)aZ.Font=Enum.Font.Code;aZ.Text=a;aZ.TextColor3=Color3.new(0.301961,0.301961,0.301961)aZ.TextSize=14;aZ.TextStrokeTransparency=0.4;aZ.TextXAlignment=Enum.TextXAlignment.Left;aZ.TextYAlignment=Enum.TextYAlignment.Top;W.Name="Toggle"W.Parent=aZ;W.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)W.BorderColor3=Color3.new(0,0,0)W.Position=UDim2.new(1.1768539,0,-0.0112500004,0)W.Size=UDim2.new(0,13,0,13)W.AutoButtonColor=false;W.Font=Enum.Font.Code;W.Text=""W.TextColor3=Color3.new(1,1,1)W.TextSize=14;W.TextStrokeTransparency=0.4;a_.Name="Slider"a_.Parent=aZ;a_.Active=false;a_.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)a_.BorderColor3=Color3.new(0,0,0)a_.ClipsDescendants=true;a_.Position=UDim2.new(0,0,0.532051325,0)a_.Size=UDim2.new(0,223,0,18)a_.AutoButtonColor=false;a_.Font=Enum.Font.Code;a_.Text=""a_.TextColor3=Color3.new(1,1,1)a_.TextSize=14;a_.TextStrokeTransparency=0.4;a0.Parent=a_;a0.BackgroundColor3=getgenv().WindowThemeColor;a0.BorderSizePixel=0;a0.Size=UDim2.new(0,0,1,0)a0.AutoButtonColor=false;a0.Font=Enum.Font.Code;a0.Text=""a0.TextColor3=Color3.new(0,0,0)a0.TextSize=14;a0.TextStrokeTransparency=0.4;b0.Name="Num"b0.Parent=aZ;b0.Active=true;b0.BackgroundColor3=Color3.new(1,1,1)b0.BackgroundTransparency=1;b0.Position=UDim2.new(0,110,0,0)b0.Size=UDim2.new(0,95,0,13)b0.Font=Enum.Font.Code;b0.Text=tostring(aX)b0.TextColor3=Color3.new(1,1,1)b0.TextSize=14;b0.TextStrokeTransparency=0.4;b0.TextXAlignment=1;local function b3(D,E)local b4=a0.Position;local b5=(E-aX)*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;if not D then y(W,{BackgroundColor3=Color3.fromRGB(45,45,45)})else y(W,{BackgroundColor3=getgenv().WindowThemeColor})end;bc=D;T(bc,tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}end;b0.FocusLost:Connect(function()if not tonumber(b0.Text)then local b4=a0.Position;local b5=aO*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(bc,tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}else local b4=a0.Position;local b5=(tonumber(b0.Text)-aX)*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(bc,tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}end end)g.InputEnded:Connect(function(v)if v.UserInputType==Enum.UserInputType.MouseButton1 then b1=false end end)W.MouseButton1Click:Connect(function()if bc then y(W,{BackgroundColor3=Color3.fromRGB(45,45,45)})else y(W,{BackgroundColor3=getgenv().WindowThemeColor})end;bc=not bc;T(bc,tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}end)function snap(b7,b8)if b8==0 then return b7 else return math.floor(b7/b8+0.5)*b8 end end;a_.MouseButton1Up:Connect(function()b1=false end)a_.MouseEnter:Connect(function()a_.MouseButton1Down:Connect(function()b1=true end)end)a0.MouseButton1Up:Connect(function()b1=false end)a0.MouseEnter:Connect(function()a0.MouseButton1Down:Connect(function()b1=true end)end)h.RenderStepped:Connect(function()if b1 then local b9=g:GetMouseLocation().X;local b4=a0.Position;local ba=a_.AbsoluteSize.X;local bb=a_.AbsolutePosition.X;local b5=(b9-bb)/ba;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;if b2~=tonumber(b0.Text)then b2=tonumber(b0.Text)T(bc,tonumber(b0.Text))getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}end end end)if aO then local b4=a0.Position;local b5=aO*100/aY/100;percentage=math.clamp(b5,0,1)a0:TweenSizeAndPosition(UDim2.new(percentage,0,1,0),UDim2.new(percentage/100,-2,b4.Y.Scale,b4.Y.Offset),nil,nil,0.08)local b6=math.floor(math.floor(aY*percentage*aY)/aY)+aX;if aX==b6 then b0.Text=aX else b0.Text=b6 end;T(bc,tonumber(b0.Text))end;getgenv().ArsoniaSettings[V]={SetVal=b3,Val={bc,tonumber(b0.Text)}}end;function S:Textbox(a,aO,T)aO=tostring(aO)or""local bd=Instance.new("TextLabel")local be=Instance.new("TextBox")local l=Instance.new("Frame")bd.Name="Text box"bd.Parent=P;bd.BackgroundColor3=Color3.new(1,1,1)bd.BackgroundTransparency=1;bd.Position=UDim2.new(0.190909088,0,2.13571429,0)bd.Size=UDim2.new(0,178,0,36)bd.Font=Enum.Font.Code;bd.Text=a;bd.TextColor3=Color3.new(0.301961,0.301961,0.301961)bd.TextSize=14;bd.TextStrokeTransparency=0.4;bd.TextXAlignment=Enum.TextXAlignment.Left;bd.TextYAlignment=Enum.TextYAlignment.Top;be.Parent=bd;be.BackgroundColor3=Color3.new(1,1,1)be.BackgroundTransparency=1;be.BorderColor3=Color3.new(0,0,0)be.Position=UDim2.new(0,0,0.45999992,0)be.Size=UDim2.new(0,220,0,14)be.ClearTextOnFocus=false;be.Font=Enum.Font.SourceSans;be.PlaceholderColor3=Color3.new(0.764706,0.764706,0.764706)be.PlaceholderText="Type something here!"be.Text=aO;be.TextColor3=Color3.new(1,1,1)be.TextSize=14;be.TextStrokeTransparency=0.4;be.TextXAlignment=Enum.TextXAlignment.Left;l.Parent=be;l.BackgroundColor3=getgenv().WindowThemeColor;l.BorderSizePixel=0;l.Position=UDim2.new(0,0,1,0)l.Size=UDim2.new(0,1,0,0)be.Focused:Connect(function()l.Size=UDim2.new(0,1,0,1)l:TweenSizeAndPosition(UDim2.new(0,220,0,1),UDim2.new(-0.009,0,1,0),nil,nil,0.5)end)be.FocusLost:Connect(function()if be.Text==""then l:TweenSizeAndPosition(UDim2.new(0,1,0,0),UDim2.new(0,0,1,0),nil,nil,0.5)end;T(be.Text)end)if aO~=""then l:TweenSizeAndPosition(UDim2.new(0,220,0,1),UDim2.new(-0.009,0,1,0),nil,nil,0.5)T(be.Text)end end;function S:Textlabel(a)local bd=Instance.new("TextLabel")local be=Instance.new("TextBox")local l=Instance.new("Frame")bd.Name="Text box"bd.Parent=P;bd.BackgroundColor3=Color3.new(1,1,1)bd.BackgroundTransparency=1;bd.Position=UDim2.new(0.190909088,0,2.13571429,0)bd.Size=UDim2.new(0,178,0,17)bd.Font=Enum.Font.Code;bd.Text=a;bd.TextColor3=Color3.new(1,1,1)bd.TextSize=14;bd.TextStrokeTransparency=0.4;bd.TextXAlignment=Enum.TextXAlignment.Left;bd.TextYAlignment=Enum.TextYAlignment.Top;l.Parent=be;l.BackgroundColor3=getgenv().WindowThemeColor;l.BorderSizePixel=0;l.Position=UDim2.new(0,0,1,0)l.Size=UDim2.new(0,1,0,0)end;return S end;return N end;return I end
 local ArsoniaTable={
     Player={
         Anti_Aim={
@@ -31,6 +33,15 @@ local ArsoniaTable={
             Crouchspam=false,
             CrouchspamVal=0,
             CrouchspamVal2=0,
+            Crouchjumpspam=false,
+            Crouchon=false,
+            FakeLag=false,
+            FakeLagOffTime=1,
+            FakeLagOnTime=1,
+            FakeLagShow=false,
+            FakeLagMaterial="SmoothPlastic",
+            FakeLagTrans=0,
+            FakeLagColor=Color3.new(),
         },
         Movement={
             Enabled=false,
@@ -61,6 +72,9 @@ local ArsoniaTable={
             Headcollide=false,
             Torsocollide=false,
             Removegun=false,
+            CrouchSp=false,
+            CrouchSpval=0,
+            CrouchSpunval=0,
         },
     },
     Visuals={
@@ -75,6 +89,7 @@ local ArsoniaTable={
             ArmoffsetZ=0,
             Antiflash=false,
             Anticrouch=false,
+            Crosshaircol=Color3.new(),
         },
         Viewmodel={
             Enabled=false,
@@ -131,6 +146,7 @@ local ArsoniaTable={
             AutoshootMethod="None",
             Target="HeadHB",
             Onlytarget=false,
+            Fakelock=false,
         },
         Backtrack={
             Enabled=false,
@@ -157,7 +173,7 @@ local ArsoniaTable={
         Main={
             Enabled=false,
             Killall=false,
-            KillallMethod="Max Crits",
+            KillallMethod="Spoofed",
             Deathkill=false,
             DeathkillMethod="Spoofed",
             Killaura=false,
@@ -173,6 +189,9 @@ local ArsoniaTable={
             KnifeauraFakeaim=false,
             KnifeauraAir=0,
             KnifeauraValue="Basic",
+            Bombwalk=false,
+            BombwalkBomb="Bomb",
+            BombwalkTime=0,
         },
         Gunmods={
             Enabled=false,
@@ -193,6 +212,7 @@ local ArsoniaTable={
             Keepfov=false,
             Removescope=false,
             Autospool=false,
+            Infcharge=false,
             Goldenmelee=false,
             Baseballgun=false,
             BaseballgunSpeed=0,
@@ -200,6 +220,7 @@ local ArsoniaTable={
             Lasergun=false,
             LasergunCol=Color3.new(),
             LasergunValue="",
+            ExplosiveBullets=false,
         },
     },
     Misc={
@@ -222,11 +243,11 @@ local ArsoniaTable={
             Flingaura=false,
             Voiceannoy=false,
         },
-        Events={
-            Collectbananas=false,
-        },
     },
     Variables={
+        Croucher=false,
+        Levels=(function()local a={Name=game.Players.LocalPlayer.Name}local Level,StartXp,EndXp,StartBar,EndBar=require(game.ReplicatedStorage.Xp).GetScore(game.Players.LocalPlayer.CareerStatsCache.Score.Value)a.Level=Level a.StartXp=StartXp a.EndXp=EndXp a.StartBar=StartBar a.EndBar=EndBar return a end)(),
+        Levels_OLD=(function()local a={Name=game.Players.LocalPlayer.Name}local Level,StartXp,EndXp,StartBar,EndBar=require(game.ReplicatedStorage.Xp).GetScore(game.Players.LocalPlayer.CareerStatsCache.Score.Value)a.Level=Level a.StartXp=StartXp a.EndXp=EndXp a.StartBar=StartBar a.EndBar=EndBar return a end)(),
         Hitparter=debug.getconstant(require(game:GetService("ReplicatedStorage").Modules.ClientFunctions).CreateProjectile,105),
         WallTargets={},
         Voices=(function()local a={}for _,v in pairs(game:GetService("ReplicatedFirst").Voices:GetDescendants())do if v:FindFirstChild("Looped")and v:FindFirstChild("Volume")and v:FindFirstChild("PlaybackSpeed")then table.insert(a,v)end end return a end)(),
@@ -241,12 +262,13 @@ local ArsoniaTable={
         IsAlive=false,
         Offset_GUN=Vector3.new(),
         Killmethods={Spoofed=game.ReplicatedStorage.Weapons["Admin Launcher"],Demote=game.ReplicatedStorage.Weapons.Knife,Goldify=game.ReplicatedStorage.Weapons["Golden Gun"],["Goldify + Demote"]=game.ReplicatedStorage.Weapons["Golden Knife"],["Freeze + Demote"]=game.ReplicatedStorage.Weapons["Ice Dagger"],Equipped=game.ReplicatedStorage.Weapons.AWP,},
-        Flames={Orange="Flamethrower",Green="Acid Spitter",},
+        Flames={Orange="Flamethrower",Green="Acid Spitter"},
         Yaw=0,
         Pitch=0,
         IsFall=false,
         Torso=0,
         Fly=false,
+        CrouchOffset=0,
         Materials={"SmoothPlastic","Neon","Glass","ForceField"},
         Weapons=(function()local a={}for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do table.insert(a,v.Name)end return a end)(),
         MaxDamage=(function()local a=0 local b="AWP"for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do if v:FindFirstChild("DMG")then if v.DMG.Value>a then a=v.DMG.Value b=v end end end return b end)(),
@@ -262,7 +284,18 @@ local ArsoniaTable={
             CreateProjectile=require(game.ReplicatedStorage.Modules.ClientFunctions).CreateProjectile,
             DoFlame=getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).flamemoment.doflame,
             ColCol=function(a,b)return Color3.new(math.clamp(a.R+b.R,0,1),math.clamp(a.G+b.G,0,1),math.clamp(a.B+b.B,0,1))end,
-            _=(function()if setfpscap then setfpscap(999)end for _,v in pairs(game.ReplicatedStorage.Viewmodels:GetChildren())do if v:FindFirstChild("HumanoidRootPart")then v.HumanoidRootPart.Transparency=1 end end debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,348,"ArsoniaFireRate")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,416,"ArsoniaEquipTime")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,88,"ArsoniaReloadTime")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,117,"ArsoniaEReloadTime")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).countammo,61,"ArsoniaStoredAmmo")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo,13,"ArsoniaStoredAmmo")debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getprimaryammo,7,"ArsoniaStoredAmmo")debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,107,"ArsoniaStoredAmmo")debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).updtprimary,9,"ArsoniaStoredAmmo")for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do if v:FindFirstChild("FireRate")then local a=v.FireRate:Clone()a.Parent=v a.Name="ArsoniaFireRate"end if v:FindFirstChild("ReloadTime")then local a=v.ReloadTime:Clone()a.Parent=v a.Name="ArsoniaReloadTime"end if v:FindFirstChild("EReloadTime")then local a=v.EReloadTime:Clone()a.Parent=v a.Name="ArsoniaEReloadTime"end if v:FindFirstChild("EquipTime")then local a=v.EquipTime:Clone()a.Parent=v a.Name="ArsoniaEquipTime"end if v:FindFirstChild("StoredAmmo")then local a=v.StoredAmmo:Clone()a.Parent=v a.Name="ArsoniaStoredAmmo"end if v:FindFirstChild("Range")and v:FindFirstChild("Melee")and v:FindFirstChild("Backstab")then local a=v.Range:Clone()a.Parent=v a.Name="ArsoniaRange"end end end)(),
+            _=(function()if setfpscap then setfpscap(999)end 
+                for _,v in pairs(game.ReplicatedStorage.Viewmodels:GetChildren())do if v:FindFirstChild("HumanoidRootPart")then 
+                    v.HumanoidRootPart.Transparency=1 end end 
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet,349,"ArsoniaFireRate")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).usethatgun,416,"ArsoniaEquipTime")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,88,"ArsoniaReloadTime")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).reloadwep,117,"ArsoniaEReloadTime")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).countammo,61,"ArsoniaStoredAmmo")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getammo,13,"ArsoniaStoredAmmo")
+                debug.setconstant(require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).getprimaryammo,7,"ArsoniaStoredAmmo")
+                debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).givetools,107,"ArsoniaStoredAmmo")
+                debug.setconstant(getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).updtprimary,9,"ArsoniaStoredAmmo")for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do if v:FindFirstChild("FireRate")then local a=v.FireRate:Clone()a.Parent=v a.Name="ArsoniaFireRate"end if v:FindFirstChild("ReloadTime")then local a=v.ReloadTime:Clone()a.Parent=v a.Name="ArsoniaReloadTime"end if v:FindFirstChild("EReloadTime")then local a=v.EReloadTime:Clone()a.Parent=v a.Name="ArsoniaEReloadTime"end if v:FindFirstChild("EquipTime")then local a=v.EquipTime:Clone()a.Parent=v a.Name="ArsoniaEquipTime"end if v:FindFirstChild("StoredAmmo")then local a=v.StoredAmmo:Clone()a.Parent=v a.Name="ArsoniaStoredAmmo"end if v:FindFirstChild("Range")and v:FindFirstChild("Melee")and v:FindFirstChild("Backstab")then local a=v.Range:Clone()a.Parent=v a.Name="ArsoniaRange"end end end)(),
             Unpacktable=(function()local a={["\a"]="\\a",["\b"]="\\b",["\f"]="\\f",["\n"]="\\n",["\r"]="\\r",["\t"]="\\t",["\v"]="\\v",["\0"]="\\0"}local b={["and"]=true,["break"]=true,["do"]=true,["else"]=true,["elseif"]=true,["end"]=true,["false"]=true,["for"]=true,["function"]=true,["if"]=true,["in"]=true,["local"]=true,["nil"]=true,["not"]=true,["or"]=true,["repeat"]=true,["return"]=true,["then"]=true,["true"]=true,["until"]=true,["while"]=true,["continue"]=true}local c={[DockWidgetPluginGuiInfo.new]="DockWidgetPluginGuiInfo.new",[warn]="warn",[CFrame.fromMatrix]="CFrame.fromMatrix",[CFrame.fromAxisAngle]="CFrame.fromAxisAngle",[CFrame.fromOrientation]="CFrame.fromOrientation",[CFrame.fromEulerAnglesXYZ]="CFrame.fromEulerAnglesXYZ",[CFrame.Angles]="CFrame.Angles",[CFrame.fromEulerAnglesYXZ]="CFrame.fromEulerAnglesYXZ",[CFrame.new]="CFrame.new",[gcinfo]="gcinfo",[os.clock]="os.clock",[os.difftime]="os.difftime",[os.time]="os.time",[os.date]="os.date",[tick]="tick",[bit32.band]="bit32.band",[bit32.extract]="bit32.extract",[bit32.bor]="bit32.bor",[bit32.bnot]="bit32.bnot",[bit32.arshift]="bit32.arshift",[bit32.rshift]="bit32.rshift",[bit32.rrotate]="bit32.rrotate",[bit32.replace]="bit32.replace",[bit32.lshift]="bit32.lshift",[bit32.lrotate]="bit32.lrotate",[bit32.btest]="bit32.btest",[bit32.bxor]="bit32.bxor",[pairs]="pairs",[NumberSequence.new]="NumberSequence.new",[assert]="assert",[tonumber]="tonumber",[Color3.fromHSV]="Color3.fromHSV",[Color3.toHSV]="Color3.toHSV",[Color3.fromRGB]="Color3.fromRGB",[Color3.new]="Color3.new",[Delay]="Delay",[Stats]="Stats",[UserSettings]="UserSettings",[coroutine.resume]="coroutine.resume",[coroutine.yield]="coroutine.yield",[coroutine.running]="coroutine.running",[coroutine.status]="coroutine.status",[coroutine.wrap]="coroutine.wrap",[coroutine.create]="coroutine.create",[coroutine.isyieldable]="coroutine.isyieldable",[NumberRange.new]="NumberRange.new",[PhysicalProperties.new]="PhysicalProperties.new",[PluginManager]="PluginManager",[Ray.new]="Ray.new",[NumberSequenceKeypoint.new]="NumberSequenceKeypoint.new",[Version]="Version",[Vector2.new]="Vector2.new",[Instance.new]="Instance.new",[delay]="delay",[spawn]="spawn",[unpack]="unpack",[string.split]="string.split",[string.match]="string.match",[string.gmatch]="string.gmatch",[string.upper]="string.upper",[string.gsub]="string.gsub",[string.format]="string.format",[string.lower]="string.lower",[string.sub]="string.sub",[string.pack]="string.pack",[string.rep]="string.rep",[string.char]="string.char",[string.packsize]="string.packsize",[string.reverse]="string.reverse",[string.byte]="string.byte",[string.unpack]="string.unpack",[string.len]="string.len",[string.find]="string.find",[CellId.new]="CellId.new",[ypcall]="ypcall",[version]="version",[print]="print",[stats]="stats",[printidentity]="printidentity",[settings]="settings",[UDim2.fromOffset]="UDim2.fromOffset",[UDim2.fromScale]="UDim2.fromScale",[UDim2.new]="UDim2.new",[table.pack]="table.pack",[table.move]="table.move",[table.insert]="table.insert",[table.getn]="table.getn",[table.foreachi]="table.foreachi",[table.maxn]="table.maxn",[table.foreach]="table.foreach",[table.concat]="table.concat",[table.unpack]="table.unpack",[table.find]="table.find",[table.create]="table.create",[table.sort]="table.sort",[table.remove]="table.remove",[TweenInfo.new]="TweenInfo.new",[loadstring]="loadstring",[require]="require",[Vector3.FromNormalId]="Vector3.FromNormalId",[Vector3.FromAxis]="Vector3.FromAxis",[Vector3.fromAxis]="Vector3.fromAxis",[Vector3.fromNormalId]="Vector3.fromNormalId",[Vector3.new]="Vector3.new",[Vector3int16.new]="Vector3int16.new",[setmetatable]="setmetatable",[next]="next",[Wait]="Wait",[wait]="wait",[ipairs]="ipairs",[elapsedTime]="elapsedTime",[time]="time",[rawequal]="rawequal",[Vector2int16.new]="Vector2int16.new",[collectgarbage]="collectgarbage",[newproxy]="newproxy",[Spawn]="Spawn",[PluginDrag.new]="PluginDrag.new",[Region3.new]="Region3.new",[utf8.offset]="utf8.offset",[utf8.codepoint]="utf8.codepoint",[utf8.nfdnormalize]="utf8.nfdnormalize",[utf8.char]="utf8.char",[utf8.codes]="utf8.codes",[utf8.len]="utf8.len",[utf8.graphemes]="utf8.graphemes",[utf8.nfcnormalize]="utf8.nfcnormalize",[xpcall]="xpcall",[tostring]="tostring",[rawset]="rawset",[PathWaypoint.new]="PathWaypoint.new",[DateTime.fromUnixTimestamp]="DateTime.fromUnixTimestamp",[DateTime.now]="DateTime.now",[DateTime.fromIsoDate]="DateTime.fromIsoDate",[DateTime.fromUnixTimestampMillis]="DateTime.fromUnixTimestampMillis",[DateTime.fromLocalTime]="DateTime.fromLocalTime",[DateTime.fromUniversalTime]="DateTime.fromUniversalTime",[Random.new]="Random.new",[typeof]="typeof",[RaycastParams.new]="RaycastParams.new",[math.log]="math.log",[math.ldexp]="math.ldexp",[math.rad]="math.rad",[math.cosh]="math.cosh",[math.random]="math.random",[math.frexp]="math.frexp",[math.tanh]="math.tanh",[math.floor]="math.floor",[math.max]="math.max",[math.sqrt]="math.sqrt",[math.modf]="math.modf",[math.pow]="math.pow",[math.atan]="math.atan",[math.tan]="math.tan",[math.cos]="math.cos",[math.sign]="math.sign",[math.clamp]="math.clamp",[math.log10]="math.log10",[math.noise]="math.noise",[math.acos]="math.acos",[math.abs]="math.abs",[math.sinh]="math.sinh",[math.asin]="math.asin",[math.min]="math.min",[math.deg]="math.deg",[math.fmod]="math.fmod",[math.randomseed]="math.randomseed",[math.atan2]="math.atan2",[math.ceil]="math.ceil",[math.sin]="math.sin",[math.exp]="math.exp",[getfenv]="getfenv",[pcall]="pcall",[ColorSequenceKeypoint.new]="ColorSequenceKeypoint.new",[ColorSequence.new]="ColorSequence.new",[type]="type",[Region3int16.new]="Region3int16.new",[ElapsedTime]="ElapsedTime",[select]="select",[getmetatable]="getmetatable",[rawget]="rawget",[Faces.new]="Faces.new",[Rect.new]="Rect.new",[BrickColor.Blue]="BrickColor.Blue",[BrickColor.White]="BrickColor.White",[BrickColor.Yellow]="BrickColor.Yellow",[BrickColor.Red]="BrickColor.Red",[BrickColor.Gray]="BrickColor.Gray",[BrickColor.palette]="BrickColor.palette",[BrickColor.New]="BrickColor.New",[BrickColor.Black]="BrickColor.Black",[BrickColor.Green]="BrickColor.Green",[BrickColor.Random]="BrickColor.Random",[BrickColor.DarkGray]="BrickColor.DarkGray",[BrickColor.random]="BrickColor.random",[BrickColor.new]="BrickColor.new",[setfenv]="setfenv",[UDim.new]="UDim.new",[Axes.new]="Axes.new",[error]="error",[debug.traceback]="debug.traceback",[debug.profileend]="debug.profileend",[debug.profilebegin]="debug.profilebegin"}function GetHierarchy(d)local e={}local f=1;local g=d;while g do g=g.Parent;f=f+1 end;g=d;local h=0;while g do h=h+1;local i=string.gsub(g.Name,"[%c%z]",a)i=g==game and"game"or i;if b[i]or not string.match(i,"^[_%a][_%w]*$")then i='["'..i..'"]'elseif h~=f-1 then i="."..i end;e[f-h]=i;g=g.Parent end;return table.concat(e)end;local function j(k,l)if l=="string"then return string.format('"%s"',string.gsub(k,"[%c%z]",a))elseif l=="Instance"then return GetHierarchy(k)elseif type(k)~=l then return l..".new("..tostring(k)..")"elseif l=="function"then return c[k]or"'[Unknown "..(pcall(setfenv,k,getfenv(k))and"Lua"or"C").." "..tostring(k).."]'"elseif l=="userdata"then return"newproxy("..tostring(not not getmetatable(k))..")"elseif l=="thread"then return"'"..tostring(k)..", status: "..coroutine.status(k).."'"else return tostring(k)end end;local function m(n,o,p,q)o=o or{}local r=o[n]if r then return(r[1]==p[1]-1 and"'[Cyclic Parent "or"'[Cyclic ")..tostring(n)..", path: "..r[2].."]'"end;q=q or"ROOT"p=p or{0,q}local s=p[1]+1;p[1]=s;p[2]=q;o[n]=p;local t=string.rep("    ",s)local u=string.rep("    ",s-1)local v="{"local w="\n"..t;local x=true;local y=1;local z=true;for A,k in next,n do z=false;if y~=A then x=false else y=y+1 end;local B,C=typeof(A),typeof(k)local D=false;if B=="string"then A=string.gsub(A,"[%c%z]",a)if b[A]or not string.match(A,"^[_%a][_%w]*$")then D=true;A=string.format('["%s"]',A)end else D=true;A="["..(B=="table"and string.gsub(m(A,o,{s,q}),"^%s*(.-)%s*$","%1")or j(A,B)).."]"end;k=C=="table"and m(k,o,{s,q},q..(D and""or".")..A)or j(k,C)v=v..w..(x and k or A.." = "..k)..","end;return z and v.."}"or string.sub(v,1,-2).."\n"..u.."}"end;return m end)(),
             DoFEFlame=function(a,b)getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client).flamemoment.doflame(game.Players.LocalPlayer,a,Vector3.new(),b,0,Vector3.new())game:GetService("ReplicatedStorage").Events.Flames:FireServer(a,Vector3.new(),b,0,Vector3.new())end,
             Shakecam=getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).ShakeCam,
@@ -270,6 +303,7 @@ local ArsoniaTable={
             CalculateSpread=require(game:GetService("ReplicatedStorage").Modules.Spread).calcspread,
             SummonBaseBall=function(a,b)a=(function()local baseballs={}for _,v in pairs(game.ReplicatedStorage.Weapons:GetChildren())do if v:FindFirstChild("Projectile")then if v.Projectile:FindFirstChild("Baseball")then table.insert(baseballs,v.Name)end end end local baseballnames={["Baseball Launcher"]="Baseball",Superball="Superball",Slingshot="Rock",Ornament="Ornament",Ultraball="Yogaball",["Water Balloon"]="Water Balloon",PIZZA="Pizza Slice",Spellbook="Fireball",Snowball="Snowball",Presents="Present",["Ice Stars"]="Ninja Star",["Paintball Gun"]="Paintball",Dispenser="Pez",["TP Launcher"]="Toliet Paper",["Flaming Pumpkin"]="Molotov",["Trash Can"]="Trash Can",["Cone Launcher"]="Ice Cream Cone",}local getfullbaseballnames={}for _,v in pairs(baseballs)do if baseballnames[v]then table.insert(getfullbaseballnames,baseballnames[v])else table.insert(getfullbaseballnames,v)end end local getfullbaseballnameswith={}for _,v in pairs(baseballs)do if baseballnames[v]then getfullbaseballnameswith[baseballnames[v]]=v else getfullbaseballnameswith[v]=v end end return getfullbaseballnameswith end)()[a]or a require(game.ReplicatedStorage.Modules.ClientFunctions).CreateProjectile(game.Players.LocalPlayer.Name,"Baseball",b,game.Workspace.CurrentCamera.CFrame.Position+game.Workspace.CurrentCamera.CFrame.LookVector*500,CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0)),45,0,0,0,a,game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0),false,{},1)game:GetService("ReplicatedStorage").Events.ReplicateProjectile:FireServer({"Baseball",b,game.Workspace.CurrentCamera.CFrame.Position+game.Workspace.CurrentCamera.CFrame.LookVector*500,CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0)),45,0,0,0,a,game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0),false,{},1})end,
             SummonLaser=function(a,b)require(game:GetService("ReplicatedStorage").Modules.ClientFunctions).createtrail(game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.4+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0),game.Workspace.CurrentCamera.CFrame.LookVector,{},a,b,game.Players.LocalPlayer.Character.HumanoidRootPart,game.Players.LocalPlayer.Name)game.ReplicatedStorage.Events.Trail:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5+game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0),game.Workspace.CurrentCamera.CFrame.LookVector,{},a,b,game.Players.LocalPlayer.Character.HumanoidRootPart)end,
+            IsRoundOver=function()if game.ReplicatedStorage.wkspc.Status.RoundOver.Value or game.ReplicatedStorage.wkspc.Status.Preparation.Value then return true end return false end,
         },
         TargetableParts={HeadHB={},Torso={},LeftArm={},RightArm={},LeftLeg={},RightLeg={},Backtrack_HeadHB={},Backtrack_Torso={},Backtrack_LeftArm={},Backtrack_RightArm={},Backtrack_LeftLeg={},Backtrack_RightLeg={}},
         TargetsWithoutFull={HeadHB={{"HeadHB"},"HeadHB"},LeftHand={{"LeftHand","LeftLowerArm","LeftUpperArm"},"LeftArm"},RightHand={{"RightHand","RightLowerArm","RightUpperArm"},"RightArm"},LeftFoot={{"LeftFoot","LeftLowerLeg","LeftUpperLeg"},"LeftLeg"},RightFoot={{"RightFoot","RightLowerLeg","RightUpperLeg"},"RightLeg"},UpperTorso={{"UpperTorso","LowerTorso"},"Torso"},},
@@ -294,7 +328,7 @@ if _G.Funnynames then
     end
     name=Names[math.random(1,#Names)]..Suffix[math.random(1,#Suffix)].." V"..Version..VersionSuffix[math.random(1,#VersionSuffix)]
 end
-local Window=Library:Window(name,Color3.fromRGB(255,0,175),650,Color3.new(1,0,175/255),160)
+local Window=Library:Window(name,Color3.fromRGB(255,0,175),700,Color3.new(1,0,175/255),450)
 local PlayerTab=Window:Tab("Player")
 local PlayerTabAntiAimSection=PlayerTab:Section("Anti Aim")
 PlayerTabAntiAimSection:Toggle("Enabled",function(x)
@@ -349,13 +383,42 @@ end)
 PlayerTabAntiAimSection:Toggle("Crouch Spam",function(x)
     ArsoniaTable.Player.Anti_Aim.Crouchspam=x
 end)
+PlayerTabAntiAimSection:Keybind("Key","V",function(x)
+    ArsoniaTable.Variables.Croucher=x
+end)
+PlayerTabAntiAimSection:Toggle("Allow Crouch Jump",function(x)
+    ArsoniaTable.Player.Anti_Aim.Crouchjumpspam=x
+end)
+PlayerTabAntiAimSection:Toggle("Always On",function(x)
+    ArsoniaTable.Player.Anti_Aim.Crouchon=x
+end)
 PlayerTabAntiAimSection:Slider("Crouch Spam On Time (ms)",0,500,100,function(x)
     ArsoniaTable.Player.Anti_Aim.CrouchspamVal=x/1000
 end)
 PlayerTabAntiAimSection:Slider("Crouch Spam Off Time (ms)",0,500,100,function(x)
     ArsoniaTable.Player.Anti_Aim.CrouchspamVal2=x/1000
 end)
+PlayerTabAntiAimSection:Toggle("Fake Lag",function(x)
+    ArsoniaTable.Player.Anti_Aim.FakeLag=x
+end)
+PlayerTabAntiAimSection:Slider("Fake Lag On Time (ms)",0,5000,2500,function(x)
+    ArsoniaTable.Player.Anti_Aim.FakeLagOnTime=x/1000
+end)
+PlayerTabAntiAimSection:Slider("Fake Lag Off Time (ms)",100,1000,100,function(x)
+    ArsoniaTable.Player.Anti_Aim.FakeLagOffTime=x/1000
+end)
+PlayerTabAntiAimSection:ToggleSlider("Show Fake Lag",0,10,5,function(x,y)
+    ArsoniaTable.Player.Anti_Aim.FakeLagShow=x
+    ArsoniaTable.Player.Anti_Aim.FakeLagTrans=y/10
+end)
+PlayerTabAntiAimSection:Color("Color",Color3.new(1,0,175/255),function(x)
+    ArsoniaTable.Player.Anti_Aim.FakeLagColor=x
+end)
+PlayerTabAntiAimSection:Dropdown("Material",ArsoniaTable.Variables.Materials,function(x)
+    ArsoniaTable.Player.Anti_Aim.FakeLagMaterial=x
+end)
 PlayerTabAntiAimSection:Textlabel("")
+
 
 
 local PlayerTabMovementSection=PlayerTab:Section("Movement")
@@ -437,7 +500,7 @@ PlayerTabMiscSection:Toggle("Small Root Part",function(x)
     ArsoniaTable.Player.Misc.SmallRoot=x
 end)
 --[[PlayerTabMiscSection:Toggle("Slide Walk",function(x)
-    ArsoniaTable.Player.Misc.Slidewalk=x--patched
+    ArsoniaTable.Player.Misc.Slidewalk=x
 end)]]
 PlayerTabMiscSection:Toggle("Remove Jump Animation",function(x)
     ArsoniaTable.Player.Misc.Jumpremove=x
@@ -451,6 +514,12 @@ end)
 PlayerTabMiscSection:Toggle("Remove Visible Gun",function(x)
     ArsoniaTable.Player.Misc.Removegun=x
 end)
+PlayerTabMiscSection:Slider("Crouch Animation Speed",-100,100,40,function(x)
+    ArsoniaTable.Player.Misc.CrouchSpval=1-(x/100)
+end)
+PlayerTabMiscSection:Slider("Uncrouch Animation Speed",-100,100,40,function(x)
+    ArsoniaTable.Player.Misc.CrouchSpunval=1-(x/100)
+end)
 
 
 
@@ -459,6 +528,11 @@ local VisualsTabMainSection=VisualsTab:Section("Main")
 VisualsTabMainSection:Toggle("Enabled",function(x)
     ArsoniaTable.Visuals.Main.Enabled=x
     if not x then
+        for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.GUI.Crosshairs.Crosshair:GetChildren())do
+            if v.Name~="Center1"then
+                v.BackgroundColor3=game:GetService("Players").LocalPlayer.PlayerGui.GUI.Crosshairs.Crosshair.Center1.BackgroundColor3
+            end
+        end
         if game.Workspace:FindFirstChild("Map")then
             if game.Workspace.Map:FindFirstChild("Xcum")then
                 game.Workspace.Map.Xcum:Destroy()
@@ -538,6 +612,9 @@ VisualsTabMainSection:ToggleSlider("X-Ray",0,10,5,function(x,y)
         end
     end
 end)
+VisualsTabMainSection:Color("Color",Color3.new(0,1,1),function(x)
+    ArsoniaTable.Visuals.Main.Crosshaircol=x
+end)
 
 
 
@@ -611,7 +688,7 @@ end)
 VisualsTabESPSection:Toggle("Chams",function(x)
     ArsoniaTable.Visuals.ESP.Chams=x
 end)
-VisualsTabESPSection:ToggleSlider("Visible Player Outline (Chams)",1,10,5,function(x,y)
+VisualsTabESPSection:ToggleSlider("Visible Chams Outline",1,10,5,function(x,y)
     ArsoniaTable.Visuals.ESP.Chamsoutline=x
     ArsoniaTable.Visuals.ESP.ChamsoutlineSize=y/10
 end)
@@ -664,16 +741,20 @@ end)
 
 
 
---[[local VisualsTabAmbienceSection=VisualsTab:Section("Ambience")
+local VisualsTabAmbienceSection=VisualsTab:Section("Ambience")
 VisualsTabAmbienceSection:Toggle("Enabled",function(x)
     ArsoniaTable.Visuals.Worldambience.Enabled=x
     if not x then
+        game.Lighting.Ambient=Color3.new(.5,.5,.5)
+        game.Lighting.OutdoorAmbient=Color3.new(.5,.5,.5)
+        game.Lighting.Brightness=2
+        game.Lighting.ClockTime=12
         for _,v in pairs(game.Workspace:WaitForChild("Map"):WaitForChild("Lighting"):GetChildren())do
-            if game.Lighting[v.Name]then
-                pcall(function()
+            pcall(function()
+                if game.Lighting[v.Name]then
                     game.Lighting[v.Name]=v.Value
-                end)
-            end
+                end
+            end)
         end
     end
 end)
@@ -685,7 +766,7 @@ VisualsTabAmbienceSection:Slider("Time",0,12,12,function(x)
 end)
 VisualsTabAmbienceSection:Slider("Brightness",0,10,2,function(x)
     ArsoniaTable.Visuals.Worldambience.Brightness=x
-end)]]
+end)
 
 
 
@@ -711,6 +792,9 @@ AimbotTabSilentaimSection:Dropdown("Priority Target",ArsoniaTable.Variables.Targ
 end)
 AimbotTabSilentaimSection:Toggle("Only Target Priority",function(x)
     ArsoniaTable.Aimbot.Silentaim.Onlytarget=x
+end)
+AimbotTabSilentaimSection:Toggle("Fake Lock",function(x)
+    ArsoniaTable.Aimbot.Silentaim.Fakelock=x
 end)
 
 
@@ -805,13 +889,10 @@ end)
 CombatTabMainSection:Toggle("Death Kill",function(x)
     ArsoniaTable.Combat.Main.Deathkill=x
 end)
-CombatTabMainSection:Dropdown("Death Kill Method",{"Max Crits","Spoofed"},function(x)
-    ArsoniaTable.Combat.Main.DeathkillMethod=x
-end)
 CombatTabMainSection:Toggle("Kill Aura",function(x)
     ArsoniaTable.Combat.Main.Killaura=x
 end)
-CombatTabMainSection:Dropdown("Kill Aura Method",{"Spoofed","Demote","Goldify","Goldify + Demote","Freeze + Demote","Equipped"},function(x)
+CombatTabMainSection:Dropdown("Kill Aura Method",{"Flamethrower","Acid Spitter"},function(x)
     ArsoniaTable.Combat.Main.KillauraMethod=x
 end)
 CombatTabMainSection:ToggleSlider("Headstomp Aura",1,600,100,function(x,y)
@@ -837,73 +918,57 @@ end)
 CombatTabMainSection:Dropdown("Crit",{"None","Basic","Advanced","Backstab"},function(x)
     ArsoniaTable.Combat.Main.KnifeauraCrit=x
 end)
+CombatTabMainSection:ToggleSlider("Bomb Walk",0,100,25,function(x,y)
+    ArsoniaTable.Combat.Main.Bombwalk=x
+    ArsoniaTable.Combat.Main.BombwalkTime=y
+end)
+CombatTabMainSection:Dropdown("Bomb",{"Basic","Golden","Cherry (Infinite)"},function(x)
+    ArsoniaTable.Combat.Main.BombwalkBomb=x
+end)
 coroutine.wrap(function()
-    while game.RunService.RenderStepped:Wait()do
+    while wait(.5)do
         pcall(function()
             if ArsoniaTable.Combat.Main.Enabled then
-                if ArsoniaTable.Combat.Main.Knifeaura then
-                    for _,v in pairs(ArsoniaTable.Variables.Functions.GetEnemys())do
-                        if(game.Players.LocalPlayer.Character.HumanoidRootPart.Position-v.Character.HumanoidRootPart.Position).Magnitude<=25 then
-                            local knife
-                            if ArsoniaTable.Combat.Main.KnifeauraValue=="Basic"then
-                                knife=game.ReplicatedStorage.Weapons.Knife
-                            else
-                                knife=game.ReplicatedStorage.Weapons["Golden Knife"]
-                            end
-                            local arg1,arg2,arg3=0,0,0
-                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Basic"then
-                                arg1=1
-                            end
-                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Advanced"then
-                                arg2=1
-                            end
-                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Backstab"then
-                                arg3=1
-                            end
-                            game.ReplicatedStorage.Events.ApplyGun:FireServer(knife,false)
-                            local Partpos=v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random())
-                            local Packedstring=string.pack(
-                                ArsoniaTable.Variables.Hitparter,
-                                Partpos.X,
-                                Partpos.Y,
-                                Partpos.Z,
-                                tostring(knife),
-                                arg1,--headshot=1 none=0
-                                0,--unknown
-                                arg3,--backstab=1 none=0
-                                arg2,--forcecrit=1 none=0
-                                0,--morecrit=1 none=0
-                                0,--spoof=2 none=0
-                                0,--unkown
-                                0,--Player Distance
-                                1,--Current Spell
-                                0,--scope=1 noscope=0
-                                ArsoniaTable.Combat.Main.KnifeauraAir--aircrit=1 none=0
-                            )
-                            game.ReplicatedStorage.Events.HitPart:FireServer(v.Character.Head,Packedstring)
-                            if ArsoniaTable.Combat.Main.KnifeauraFakeaim then
-                                local bs={}
-                                for _,v in pairs(game.ReplicatedStorage.Melees[game.Players.LocalPlayer.Data.Melee.Value]:GetChildren())do
-                                    if string.sub(v.Name,1,4)=="Fire"then
-                                        table.insert(bs,v)
-                                    end
-                                end
-                                local c=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.ReplicatedStorage.Melees[game.Players.LocalPlayer.Data.Melee.Value].Idle)
-                                local b=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(bs[math.random(1,#bs)])
-                                c:Play()
-                                b:Play()
-                                c.Looped=false
-                                b.Looped=false
-                                coroutine.wrap(function()
-                                    wait(.8)
-                                    c:Stop()
-                                    b:Stop()
-                                end)()
-                            end
-                            game.ReplicatedStorage.Events.ApplyGun:FireServer(game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value,false)
-                            wait(.4)
-                            break
-                        end
+                if ArsoniaTable.Combat.Main.Bombwalk then
+                    if ArsoniaTable.Combat.Main.BombwalkBomb=="Basic"then
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game:GetService("ReplicatedStorage").Weapons.Bomb
+                        )
+                        game:GetService("ReplicatedStorage").Events.ThrowGrenade:FireServer(
+                            Vector3.new(),
+                            1+math.random(),--unknown
+                            false,--unknown
+                            ArsoniaTable.Combat.Main.BombwalkTime/10--time
+                        )
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value
+                        )
+                    elseif ArsoniaTable.Combat.Main.BombwalkBomb=="Golden"then
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game:GetService("ReplicatedStorage").Weapons["Golden Bomb"]
+                        )
+                        game:GetService("ReplicatedStorage").Events.ThrowGrenade:FireServer(
+                            Vector3.new(),
+                            1+math.random(),--unknown
+                            false,--unknown
+                            ArsoniaTable.Combat.Main.BombwalkTime/10--time
+                        )
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value
+                        )
+                    elseif ArsoniaTable.Combat.Main.BombwalkBomb=="Cherry (Infinite)"then
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game:GetService("ReplicatedStorage").Weapons.Bomb
+                        )
+                        game:GetService("ReplicatedStorage").Events.ThrowGrenade:FireServer(
+                            Vector3.new(),
+                            1+math.random(),--unknown
+                            false,--unknown
+                            math.huge--time
+                        )
+                        game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value
+                        )
                     end
                 end
             end
@@ -1169,6 +1234,9 @@ end)
 CombatTabGunmodsSection:Toggle("Auto Spool",function(x)
     ArsoniaTable.Combat.Gunmods.Autospool=x
 end)
+CombatTabGunmodsSection:Toggle("Infinite Charge",function(x)
+    ArsoniaTable.Combat.Gunmods.Infcharge=x
+end)
 CombatTabGunmodsSection:Toggle("Remove Zoom Effect",function(x)
     ArsoniaTable.Combat.Gunmods.Keepfov=x
 end)
@@ -1191,6 +1259,9 @@ CombatTabGunmodsSection:Toggle("Remove Scope Effect",function(x)
             game:GetService("Players").LocalPlayer.PlayerGui.GUI.Crosshairs.Scope.Scope.Position=UDim2.new()
         end
     end
+end)
+CombatTabGunmodsSection:Toggle("Explosive Bullets",function(x)
+    ArsoniaTable.Combat.Gunmods.ExplosiveBullets=x
 end)
 CombatTabGunmodsSection:Dropdown("Firemode",{"Current","Semi-Automatic","Automatic"},function(x)
     ArsoniaTable.Combat.Gunmods.Firemode=x
@@ -1318,6 +1389,36 @@ end)
 
 
 
+local MiscTabMenuSection=MiscTab:Section("Menu")
+MiscTabMenuSection:Textbox("Menu Title","ARSENAL",function(x)
+    local a=x 
+    local b={}
+    for i=1,#a do
+        table.insert(b,string.sub(a,i,i))
+        if i~=#a then
+            table.insert(b," ")
+        end
+    end
+    local c=""
+    for _,v in pairs(b)do
+        c=c..v
+    end
+    c=string.upper(c)
+    game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.Title.Text=c
+    game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.Title.DropShadow.Text=c
+end)
+MiscTabMenuSection:Textbox("Menu User",game.Players.LocalPlayer.Name,function(x)
+    ArsoniaTable.Variables.Levels.Name=x
+end)
+MiscTabMenuSection:Textbox("Menu Level",ArsoniaTable.Variables.Levels.Level,function(x)
+    ArsoniaTable.Variables.Levels.Level=x
+end)
+MiscTabMenuSection:Slider("XP Bar",0,100,50,function(x)
+    ArsoniaTable.Variables.Levels.StartBar=x
+    ArsoniaTable.Variables.Levels.EndBar=100
+end)
+
+
 local MiscTabTrollingSection=MiscTab:Section("Trolling")
 MiscTabTrollingSection:Toggle("Enabled",function(x)
     ArsoniaTable.Misc.Trolling.Enabled=x
@@ -1327,10 +1428,10 @@ MiscTabTrollingSection:Toggle("Bullet Annoy",function(x)
 end)
 MiscTabTrollingSection:Toggle("Voice Annoy",function(x)
     ArsoniaTable.Misc.Trolling.Voiceannoy=x
-end)
+end)--[[
 MiscTabTrollingSection:Toggle("Fling Aura (BAN RISK)",function(x)
     ArsoniaTable.Misc.Trolling.Flingaura=x
-end)--[[
+end)
 MiscTabTrollingSection:Toggle("Fling All",function(x)
     ArsoniaTable.Misc.Trolling.Flingall=x
 end)
@@ -1427,6 +1528,18 @@ game.Players.LocalPlayer.Character.ChildRemoved:Connect(function(x)
 end)
 --General RS
 game.RunService.RenderStepped:Connect(function()
+    if game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.StartXP.Text~=ArsoniaTable.Variables.Levels.StartXp.." xp"then
+        game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.StartXP.Text=ArsoniaTable.Variables.Levels.StartXp.." xp"
+    end
+    if game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.EndXP.Text~=ArsoniaTable.Variables.Levels.EndXp.." xp"then
+        game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.EndXP.Text=ArsoniaTable.Variables.Levels.EndXp.." xp"
+    end
+    if game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.FILL.FILL.Size~=UDim2.new(ArsoniaTable.Variables.Levels.StartBar/ArsoniaTable.Variables.Levels.EndBar,0,1,0)then
+        game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.LevelMeter.FILL.FILL.Size=UDim2.new(ArsoniaTable.Variables.Levels.StartBar/ArsoniaTable.Variables.Levels.EndBar,0,1,0)
+    end
+    if game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.PlrName.Text~=ArsoniaTable.Variables.Levels.Name.." - Level: "..ArsoniaTable.Variables.Levels.Level then
+        game:GetService("Players").LocalPlayer.PlayerGui.Menew.Main.PlrName.Text=ArsoniaTable.Variables.Levels.Name.." - Level: "..ArsoniaTable.Variables.Levels.Level
+    end
     if tostring(game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value)==game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.melee.Value then
         ArsoniaTable.Variables.IsKnife=true
     else
@@ -1480,131 +1593,141 @@ game.RunService.RenderStepped:Connect(function()
         end
     end
     if ArsoniaTable.Player.Anti_Aim.Enabled then
-        if ArsoniaTable.Player.Anti_Aim.Yaw then
-            local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
-            if ArsoniaTable.Player.Anti_Aim.YawType=="Spinning"then
-                ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw+ArsoniaTable.Player.Anti_Aim.YawValue
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,math.rad(ArsoniaTable.Variables.Yaw),0)
-            elseif ArsoniaTable.Player.Anti_Aim.YawType=="Offset"then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,a+math.rad(ArsoniaTable.Player.Anti_Aim.YawValue),0)
-            elseif ArsoniaTable.Player.Anti_Aim.YawType=="Absolute"then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,math.rad(ArsoniaTable.Player.Anti_Aim.YawValue),0)
-            elseif ArsoniaTable.Player.Anti_Aim.YawType=="Random"then
-                ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw+math.random(-ArsoniaTable.Player.Anti_Aim.YawValue,ArsoniaTable.Player.Anti_Aim.YawValue)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,math.rad(ArsoniaTable.Variables.Yaw),0)
-            elseif ArsoniaTable.Player.Anti_Aim.YawType=="Inverted"then
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,-a,0)
-            end
-        end
-        if ArsoniaTable.Player.Anti_Aim.Wall then
-            --to anyone who is seeing this go fuk urslf
-            local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
-            local b={low={},high={},none={},equal={}}
-            local Ignore=
-            {
-                game.Players.LocalPlayer.Character,
-                game.Workspace.Ray_Ignore,
-                game.Workspace.CurrentCamera,
-                game.Workspace.Destructable,
-            }
-            if game.Workspace:FindFirstChild("Map")then
-                if game.Workspace.Map:FindFirstChild("Ignore")then
-                    table.insert(Ignore,game.Workspace.Map.Ignore)
-                end
-                if game.Workspace.Map:FindFirstChild("Clips")then
-                    table.insert(Ignore,game.Workspace.Map.Clips)
-                end
-            end
-            for _,v in pairs(game.Players:GetChildren())do
-                if v.Character then
-                    table.insert(Ignore,v.Character)
-                end
-            end
-            for i=0,360,15 do
-                if i~=0 and i~=180 and i~=360 then
-                    if i<=180 then
-                        local Ray=Ray.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
-                            (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,a-math.rad(i),0)).LookVector*ArsoniaTable.Player.Anti_Aim.WallDist)
-                        local part,pos,offset=game.Workspace:FindPartOnRayWithIgnoreList(Ray,Ignore)
-                        if part then
-                            table.insert(b.low,{i,pos,offset})
-                        end
-                    else
-                        local Ray=Ray.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
-                            (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,a+math.rad(i-180),0)).LookVector*ArsoniaTable.Player.Anti_Aim.WallDist)
-                        local part,pos,offset=game.Workspace:FindPartOnRayWithIgnoreList(Ray,Ignore)
-                        if part then
-                            table.insert(b.high,{i,pos,offset})
-                        end
-                    end
-                end
-            end
-            for _,v in pairs(b.low)do
-                table.insert(b.equal,v)
-            end
-            for _,v in pairs(b.high)do
-                table.insert(b.equal,v)
-            end
-            local a="none"
-            local rade=math.deg(ArsoniaTable.Player.Anti_Aim.WallValue)
-            if #b.low>#b.high then
-                a="low"
-            elseif #b.low==0 and #b.high==0 then
-                a="none"
-            elseif #b.low==#b.high then
-                a="equal"
-                rade=180
-            else
-                a="high"
-                rade=-rade
-            end
-            if a~="none"then
-                local c=0
-                local d={}
-                for _,v in pairs(b[a])do
-                    if c<(v[2]-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude then
-                        c=(v[2]-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                        d=v
-                    end
-                end
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,game.Players.LocalPlayer.Character.HumanoidRootPart.Position-d[3])*
-                    CFrame.Angles(0,math.rad(rade),0)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),0)
-            end
-        end
-        if ArsoniaTable.Player.Movement.Enabled then
-            if ArsoniaTable.Player.Movement.Autoairstrafe then
-                if game.Players.LocalPlayer.Character.Humanoid.FloorMaterial==Enum.Material.Air then
-                    local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
+        if not ArsoniaTable.Variables.Functions.IsRoundOver()then
+            if ArsoniaTable.Player.Anti_Aim.Yaw then
+                local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
+                if ArsoniaTable.Player.Anti_Aim.YawType=="Spinning"then
+                    ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw+ArsoniaTable.Player.Anti_Aim.YawValue
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
                     CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
-                    CFrame.Angles(0,a,0)
+                    CFrame.Angles(0,math.rad(ArsoniaTable.Variables.Yaw),0)
+                elseif ArsoniaTable.Player.Anti_Aim.YawType=="Offset"then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,a+math.rad(ArsoniaTable.Player.Anti_Aim.YawValue),0)
+                elseif ArsoniaTable.Player.Anti_Aim.YawType=="Absolute"then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,math.rad(ArsoniaTable.Player.Anti_Aim.YawValue),0)
+                elseif ArsoniaTable.Player.Anti_Aim.YawType=="Random"then
+                    ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw+math.random(-ArsoniaTable.Player.Anti_Aim.YawValue,ArsoniaTable.Player.Anti_Aim.YawValue)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,math.rad(ArsoniaTable.Variables.Yaw),0)
+                elseif ArsoniaTable.Player.Anti_Aim.YawType=="Inverted"then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,-a,0)
                 end
             end
-        end
-        if ArsoniaTable.Player.Anti_Aim.Upsidedown and not ArsoniaTable.Variables.IsFall then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
-            CFrame.new(
-                game.Players.LocalPlayer.Character.HumanoidRootPart.Position
-            )*
-            CFrame.Angles(
-                0,
-                math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),
-                math.rad(180)
-            )
+            if ArsoniaTable.Player.Anti_Aim.Wall then
+                local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
+                local b={low={},high={},none={},equal={}}
+                local Ignore=
+                {
+                    game.Players.LocalPlayer.Character,
+                    game.Workspace.Ray_Ignore,
+                    game.Workspace.CurrentCamera,
+                    game.Workspace.Destructable,
+                }
+                if game.Workspace:FindFirstChild("Map")then
+                    if game.Workspace.Map:FindFirstChild("Ignore")then
+                        table.insert(Ignore,game.Workspace.Map.Ignore)
+                    end
+                    if game.Workspace.Map:FindFirstChild("Clips")then
+                        table.insert(Ignore,game.Workspace.Map.Clips)
+                    end
+                end
+                for _,v in pairs(game.Players:GetChildren())do
+                    if v.Character then
+                        table.insert(Ignore,v.Character)
+                    end
+                end
+                for i=0,360,15 do
+                    if i~=0 and i~=180 and i~=360 then
+                        if i<=180 then
+                            local Ray=Ray.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
+                                (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,a-math.rad(i),0)).LookVector*ArsoniaTable.Player.Anti_Aim.WallDist)
+                            local part,pos,offset=game.Workspace:FindPartOnRayWithIgnoreList(Ray,Ignore)
+                            if part then
+                                table.insert(b.low,{i,pos,offset})
+                            end
+                        else
+                            local Ray=Ray.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
+                                (CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*CFrame.Angles(0,a+math.rad(i-180),0)).LookVector*ArsoniaTable.Player.Anti_Aim.WallDist)
+                            local part,pos,offset=game.Workspace:FindPartOnRayWithIgnoreList(Ray,Ignore)
+                            if part then
+                                table.insert(b.high,{i,pos,offset})
+                            end
+                        end
+                    end
+                end
+                for _,v in pairs(b.low)do
+                    table.insert(b.equal,v)
+                end
+                for _,v in pairs(b.high)do
+                    table.insert(b.equal,v)
+                end
+                local a="none"
+                local rade=math.deg(ArsoniaTable.Player.Anti_Aim.WallValue)
+                if #b.low>#b.high then
+                    a="low"
+                elseif #b.low==0 and #b.high==0 then
+                    a="none"
+                elseif #b.low==#b.high then
+                    a="equal"
+                    rade=180
+                else
+                    a="high"
+                    rade=-rade
+                end
+                if a~="none"then
+                    local c=0
+                    local d={}
+                    for _,v in pairs(b[a])do
+                        if c<(v[2]-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude then
+                            c=(v[2]-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                            d=v
+                        end
+                    end
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                        CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,game.Players.LocalPlayer.Character.HumanoidRootPart.Position-d[3])*
+                        CFrame.Angles(0,math.rad(rade),0)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),0)
+                end
+            end
+            if ArsoniaTable.Player.Movement.Enabled then
+                if ArsoniaTable.Player.Movement.Autoairstrafe then
+                    if game.Players.LocalPlayer.Character.Humanoid.FloorMaterial==Enum.Material.Air then
+                        local _,a=game.Workspace.CurrentCamera.CFrame:ToEulerAnglesYXZ()
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                        CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                        CFrame.Angles(0,a,0)
+                    end
+                end
+            end
+            if ArsoniaTable.Aimbot.Silentaim.Enabled then
+                if ArsoniaTable.Aimbot.Silentaim.Fakelock then
+                    if ArsoniaTable.Variables.__SilentAimTarget then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                        CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                        CFrame.Angles(0,ArsoniaTable.Variables.EngluarFix.Y,0)
+                    end
+                end
+            end
+            if ArsoniaTable.Player.Anti_Aim.Upsidedown and not ArsoniaTable.Variables.IsFall then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                CFrame.new(
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+                )*
+                CFrame.Angles(
+                    0,
+                    math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),
+                    math.rad(180)
+                )
+            end
         end
     end
 end)
@@ -1709,7 +1832,9 @@ game.RunService.RenderStepped:Connect(function()
             end
         end
         if ArsoniaTable.Player.Movement.Infdoublejump then
-            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.airjumps.Value=0
+            if game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.airjumps.Value~=0 then
+                game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.airjumps.Value=0
+            end
         end
         if ArsoniaTable.Player.Movement.Autoairstrafe then
             if game.Players.LocalPlayer.Character.Humanoid.FloorMaterial==Enum.Material.Air or ArsoniaTable.Variables.KeysPressed[" "]then
@@ -1719,10 +1844,14 @@ game.RunService.RenderStepped:Connect(function()
             end
         end
         if ArsoniaTable.Player.Movement.Autotakecontrol then
-            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.takecontrol.Value=true
+            if not game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.takecontrol.Value then
+                game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.takecontrol.Value=true
+            end
         end
         if ArsoniaTable.Player.Movement.Anticrouchjumplock then
-            getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client.StepModulesNoDeath.BruhHumanoid).crouchJump=false
+            if getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client.StepModulesNoDeath.BruhHumanoid).crouchJump then
+                getsenv(game.Players.LocalPlayer.PlayerGui.GUI.Client.StepModulesNoDeath.BruhHumanoid).crouchJump=false
+            end
         end
     end
 end)
@@ -1967,6 +2096,11 @@ end)
 --Visuals Main RS
 game.RunService.RenderStepped:Connect(function()
     if ArsoniaTable.Visuals.Main.Enabled then
+        for _,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.GUI.Crosshairs.Crosshair:GetChildren())do
+            if v.Name~="Center1"then
+                v.BackgroundColor3=ArsoniaTable.Visuals.Main.Crosshaircol
+            end
+        end
         game.Workspace.CurrentCamera.CFrame=
         game.Workspace.CurrentCamera.CFrame*
         CFrame.new(ArsoniaTable.Visuals.Main.CameraoffsetX,ArsoniaTable.Visuals.Main.CameraoffsetY,ArsoniaTable.Visuals.Main.CameraoffsetZ)
@@ -2152,6 +2286,17 @@ game.RunService.RenderStepped:Connect(function()
             end
         end
         ArsoniaTable.Variables.__SilentAimTarget=a
+        if ArsoniaTable.Aimbot.Silentaim.Fakelock then
+            ArsoniaTable.Variables.EngluarFix=nil
+            if ArsoniaTable.Variables.__SilentAimTarget then
+                ArsoniaTable.Variables.EngluarFix=Vector3.new(CFrame.new(game.Players.LocalPlayer.Character.Head.Position,ArsoniaTable.Variables.__SilentAimTarget.Position):ToEulerAnglesYXZ())
+                if not ArsoniaTable.Player.Anti_Aim.Enabled then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=
+                    CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)*
+                    CFrame.Angles(0,ArsoniaTable.Variables.EngluarFix.Y,0)
+                end
+            end
+        end
     end
 end)
 --Aimbot Backtrack RS
@@ -2262,7 +2407,7 @@ game.RunService.RenderStepped:Connect(function()
                 if(game.Players.LocalPlayer.Character.HumanoidRootPart.Position-v.Character.HumanoidRootPart.Position).Magnitude<50 then
                     game.ReplicatedStorage.Events.Burn:FireServer(
                         v.Character.Head,
-                        ArsoniaTable.Variables.Killmethods[ArsoniaTable.Combat.Main.KillauraMethod],
+                        game.ReplicatedStorage.Weapons[ArsoniaTable.Combat.Main.KillauraMethod],
                         1,
                         v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random()))
                 end
@@ -2446,6 +2591,9 @@ game.RunService.RenderStepped:Connect(function()
                 game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.Held2.Value=true
             end
         end
+        if ArsoniaTable.Combat.Gunmods.Infcharge then
+            game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.overheat.Value=0
+        end
     end
 end)
 --Misc Main RS
@@ -2583,43 +2731,53 @@ mt.__namecall=newcclosure(function(a,b,c,d,e,...)
     if tostring(method)=="FireServer"then
         if tostring(a)=="ControlTurn"then
             if ArsoniaTable.Player.Anti_Aim.Enabled then
-                if ArsoniaTable.Player.Anti_Aim.Pitch then
-                    if ArsoniaTable.Player.Anti_Aim.PitchType=="Spinning"then
-                        ArsoniaTable.Variables.Pitch=ArsoniaTable.Variables.Pitch+ArsoniaTable.Player.Anti_Aim.PitchValue
-                        b=ArsoniaTable.Variables.Pitch
-                    elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Offset"then
-                        b=b+ArsoniaTable.Player.Anti_Aim.PitchValue
-                    elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Absolute"then
-                        b=ArsoniaTable.Player.Anti_Aim.PitchValue
-                    elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Down"then
-                        b=math.huge
-                    elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Random"then
-                        b=math.rad(math.random(math.deg(ArsoniaTable.Player.Anti_Aim.PitchValue),-math.deg(ArsoniaTable.Player.Anti_Aim.PitchValue)))
-                    elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Inverted"then
-                        b=-b
+                if not ArsoniaTable.Variables.Functions.IsRoundOver()then
+                    if ArsoniaTable.Player.Anti_Aim.Pitch then
+                        if ArsoniaTable.Player.Anti_Aim.PitchType=="Spinning"then
+                            ArsoniaTable.Variables.Pitch=ArsoniaTable.Variables.Pitch+ArsoniaTable.Player.Anti_Aim.PitchValue
+                            b=ArsoniaTable.Variables.Pitch
+                        elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Offset"then
+                            b=b+ArsoniaTable.Player.Anti_Aim.PitchValue
+                        elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Absolute"then
+                            b=ArsoniaTable.Player.Anti_Aim.PitchValue
+                        elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Down"then
+                            b=math.huge
+                        elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Random"then
+                            b=math.rad(math.random(math.deg(ArsoniaTable.Player.Anti_Aim.PitchValue),-math.deg(ArsoniaTable.Player.Anti_Aim.PitchValue)))
+                        elseif ArsoniaTable.Player.Anti_Aim.PitchType=="Inverted"then
+                            b=-b
+                        end
+                    end
+                    if ArsoniaTable.Player.Anti_Aim.Torso then
+                        if ArsoniaTable.Player.Anti_Aim.TorsoType=="Offset"then
+                            c=
+                            (
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*
+                                CFrame.Angles(0,ArsoniaTable.Player.Anti_Aim.TorsoValue,0)
+                            ).LookVector
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Down"then
+                            c=Vector3.new()
+                            b=b*2
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Sideways"then
+                            c=Vector3.new(0,1,0)
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="-Sideways"then
+                            c=Vector3.new(0,-1,0)
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Random"then
+                            c=Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Spinning"then
+                            ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw-ArsoniaTable.Player.Anti_Aim.TorsoValue
+                            c=CFrame.Angles(0,ArsoniaTable.Variables.Yaw,0).LookVector
+                        elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Absolute"then
+                            c=CFrame.Angles(0,ArsoniaTable.Player.Anti_Aim.TorsoValue,0).LookVector
+                        end
                     end
                 end
-                if ArsoniaTable.Player.Anti_Aim.Torso then
-                    if ArsoniaTable.Player.Anti_Aim.TorsoType=="Offset"then
-                        c=
-                        (
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*
-                            CFrame.Angles(0,ArsoniaTable.Player.Anti_Aim.TorsoValue,0)
-                        ).LookVector
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Down"then
-                        c=Vector3.new()
-                        b=b*2
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Sideways"then
-                        c=Vector3.new(0,1,0)
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="-Sideways"then
-                        c=Vector3.new(0,-1,0)
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Random"then
-                        c=Vector3.new(math.random(-10,10),math.random(-10,10),math.random(-10,10))
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Spinning"then
-                        ArsoniaTable.Variables.Yaw=ArsoniaTable.Variables.Yaw-ArsoniaTable.Player.Anti_Aim.TorsoValue
-                        c=CFrame.Angles(0,ArsoniaTable.Variables.Yaw,0).LookVector
-                    elseif ArsoniaTable.Player.Anti_Aim.TorsoType=="Absolute"then
-                        c=CFrame.Angles(0,ArsoniaTable.Player.Anti_Aim.TorsoValue,0).LookVector
+            end
+            if ArsoniaTable.Aimbot.Silentaim.Enabled then
+                if ArsoniaTable.Aimbot.Silentaim.Fakelock then
+                    if ArsoniaTable.Variables.EngluarFix then
+                        b=ArsoniaTable.Variables.EngluarFix.X
+                        c=nil
                     end
                 end
             end
@@ -2730,6 +2888,20 @@ mt.__namecall=newcclosure(function(a,b,c,d,e,...)
                     a:AdjustSpeed(0)
                 end
             end
+        elseif tostring(a)=="CrouchIdle"then
+            if ArsoniaTable.Player.Misc.Enabled then
+                if b==.4 then
+                    b=ArsoniaTable.Player.Misc.CrouchSpval
+                end
+            end
+        end
+    elseif tostring(method)=="Stop"then
+        if tostring(a)=="CrouchIdle"then
+            if ArsoniaTable.Player.Misc.Enabled then
+                if b==.4 then
+                    b=ArsoniaTable.Player.Misc.CrouchSpunval
+                end
+            end
         end
     elseif tostring(method)=="SetPrimaryPartCFrame"then
         if tostring(a)=="Arms"then
@@ -2745,6 +2917,11 @@ mt.__namecall=newcclosure(function(a,b,c,d,e,...)
                 end
             end
             if ArsoniaTable.Visuals.Main.Enabled then
+                if ArsoniaTable.Visuals.Main.Anticrouch then
+                    b=b+Vector3.new(0,ArsoniaTable.Variables.CrouchOffset,0)
+                end
+            end
+            if ArsoniaTable.Visuals.Main.Enabled then
                 b=b*CFrame.new(ArsoniaTable.Visuals.Main.ArmoffsetX,ArsoniaTable.Visuals.Main.ArmoffsetY,ArsoniaTable.Visuals.Main.ArmoffsetZ)
             end
         end
@@ -2754,14 +2931,32 @@ mt.__namecall=newcclosure(function(a,b,c,d,e,...)
             doeshit=true
         end
         if ArsoniaTable.Combat.Gunmods.Enabled then
-            if ArsoniaTable.Combat.Gunmods.Baseballgun then
-                if ArsoniaTable.Variables.Functions.GetPos1FromRay(b)==game.Workspace.CurrentCamera.CFrame.Position then
+            if ArsoniaTable.Variables.Functions.GetPos1FromRay(b)==game.Workspace.CurrentCamera.CFrame.Position then
+                if ArsoniaTable.Combat.Gunmods.Baseballgun then
                     ArsoniaTable.Variables.Functions.SummonBaseBall(ArsoniaTable.Combat.Gunmods.BaseballgunValue,ArsoniaTable.Combat.Gunmods.BaseballgunSpeed)
                 end
-            end
-            if ArsoniaTable.Combat.Gunmods.Lasergun then
-                if ArsoniaTable.Variables.Functions.GetPos1FromRay(b)==game.Workspace.CurrentCamera.CFrame.Position then
+                if ArsoniaTable.Combat.Gunmods.Lasergun then
                     ArsoniaTable.Variables.Functions.SummonLaser(ArsoniaTable.Combat.Gunmods.LasergunCol,ArsoniaTable.Combat.Gunmods.LasergunValue)
+                end
+                if ArsoniaTable.Combat.Gunmods.ExplosiveBullets then
+                    local Raycock=
+                    Ray.new(
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5,0)+Vector3.new(0,game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0),
+                        game.Workspace.CurrentCamera.CFrame.LookVector*5000
+                    )
+                    local part,pos=game.Workspace:FindPartOnRayWithIgnoreList(Raycock,ArsoniaTable.Variables.Functions.GetIgnore())
+                    game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                        game:GetService("ReplicatedStorage").Weapons["Bomb"]
+                    )
+                    game:GetService("ReplicatedStorage").Events.ThrowGrenade:FireServer(
+                        game.Workspace.CurrentCamera.CFrame.LookVector*((game.Workspace.CurrentCamera.CFrame.Position-pos).Magnitude*7.5),
+                        1+math.random(),--unknown
+                        false,--unknown
+                        .1--time
+                    )
+                    game:GetService("ReplicatedStorage").Events.ApplyGun:FireServer(
+                        game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value
+                    )
                 end
             end
         end
@@ -2844,25 +3039,38 @@ mt.__newindex=newcclosure(function(a,b,c)
         end
     end
     if ArsoniaTable.Player.Anti_Aim.Enabled then
-        if ArsoniaTable.Player.Anti_Aim.Upsidedown then
-            if tostring(a)=="Humanoid"and b=="CameraOffset"then
-                return oldnewIndex(a,b,Vector3.new(0,-1.5*2,0))
+        if not ArsoniaTable.Variables.Functions.IsRoundOver()then
+            if ArsoniaTable.Player.Anti_Aim.Upsidedown then
+                if tostring(a)=="Humanoid"and b=="CameraOffset"then
+                    ArsoniaTable.Variables.CrouchOffset=0
+                    return oldnewIndex(a,b,Vector3.new(0,-3,0))
+                end
+            end
+            if ArsoniaTable.Player.Anti_Aim.Yaw or ArsoniaTable.Player.Anti_Aim.Wall then
+                if tostring(a)=="Humanoid"and b=="AutoRotate"then
+                    return oldnewIndex(a,b,false)
+                end
+            end
+            if ArsoniaTable.Player.Anti_Aim.Hip then
+                if tostring(a)=="Humanoid"and b=="HipHeight"then
+                    return oldnewIndex(a,b,ArsoniaTable.Player.Anti_Aim.Hipheight)
+                end
             end
         end
-        if ArsoniaTable.Player.Anti_Aim.Yaw or ArsoniaTable.Player.Anti_Aim.Wall then
-            if tostring(a)=="Humanoid"and b=="AutoRotate"then
-                return oldnewIndex(a,b,false)
-            end
-        end
-        if ArsoniaTable.Player.Anti_Aim.Hip then
-            if tostring(a)=="Humanoid"and b=="HipHeight"then
-                return oldnewIndex(a,b,ArsoniaTable.Player.Anti_Aim.Hipheight)
+    end
+    if ArsoniaTable.Aimbot.Silentaim.Enabled then
+        if ArsoniaTable.Aimbot.Silentaim.Fakelock then
+            if ArsoniaTable.Variables.__SilentAimTarget then
+                if tostring(a)=="Humanoid"and b=="AutoRotate"then
+                    return oldnewIndex(a,b,false)
+                end
             end
         end
     end
     if ArsoniaTable.Visuals.Main.Enabled then
         if ArsoniaTable.Visuals.Main.Anticrouch then
             if tostring(a)=="Humanoid"and b=="CameraOffset"then
+                ArsoniaTable.Variables.CrouchOffset=c.Y
                 return oldnewIndex(a,b,Vector3.new())
             end
         end
@@ -2881,6 +3089,11 @@ mt.__newindex=newcclosure(function(a,b,c)
             if tostring(a)=="Humanoid"and b=="WalkSpeed"then
                 return oldnewIndex(a,b,ArsoniaTable.Player.Movement.Walkspeed)
             end
+        end
+    end
+    if a==game.Players.LocalPlayer.Character.HumanoidRootPart and b~="Size"then
+        if a:FindFirstChild("FakeLag")then
+            a.FakeLag[b]=c
         end
     end
     return oldnewIndex(a,b,c)
@@ -3190,7 +3403,6 @@ coroutine.wrap(function()
         pcall(function()
             if ArsoniaTable.Aimbot.Silentaim.Enabled then
                 if not game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.equipping.Value then
-                    --{"None","Force Fire","Fake Click","Mouse"}
                     if ArsoniaTable.Aimbot.Silentaim.AutoshootMethod=="Force Fire"then
                         if ArsoniaTable.Variables.__SilentAimTarget then
                             require(game.Players.LocalPlayer.PlayerGui.GUI.Client.Functions.Weapons).firebullet()
@@ -3213,68 +3425,230 @@ coroutine.wrap(function()
 end)()
 coroutine.wrap(function()
     while game.RunService.RenderStepped:Wait()do
-        if ArsoniaTable.Player.Anti_Aim.Enabled then
-            if ArsoniaTable.Player.Anti_Aim.Crouchspam then
-                if ArsoniaTable.Variables.IsAlive and not game.Players.LocalPlayer.Character:FindFirstChild("ShuckyHAX")and game.Players.LocalPlayer.Status.Team.Value~="Spectator"and not game.ReplicatedStorage.wkspc.Status.RoundOver.Value and not game.ReplicatedStorage.wkspc.Status.Preparation.Value then
-                    if not ArsoniaTable.Variables.KeysPressed[" "]and game.Players.LocalPlayer.Character.Humanoid.FloorMaterial~=Enum.Material.Air and game.Players.LocalPlayer.Character.Humanoid:GetState()~=3 then
-                        game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.ctrlcrouch.Value=true
-                        if ArsoniaTable.Player.Anti_Aim.CrouchspamVal==0 then
-                            game.RunService.RenderStepped:Wait()
-                        else
-                            wait(ArsoniaTable.Player.Anti_Aim.CrouchspamVal)
+        pcall(function()
+            if ArsoniaTable.Player.Anti_Aim.Enabled then
+                if ArsoniaTable.Player.Anti_Aim.Crouchspam then
+                    if ArsoniaTable.Variables.IsAlive and not game.Players.LocalPlayer.Character:FindFirstChild("ShuckyHAX")and game.Players.LocalPlayer.Status.Team.Value~="Spectator"and not game.ReplicatedStorage.wkspc.Status.RoundOver.Value and not game.ReplicatedStorage.wkspc.Status.Preparation.Value then
+                        if not(ArsoniaTable.Variables.KeysPressed[" "]and ArsoniaTable.Player.Movement.Bunnyhop)and game.Players.LocalPlayer.Character.Humanoid.FloorMaterial~=Enum.Material.Air and game.Players.LocalPlayer.Character.Humanoid:GetState()~=3 or ArsoniaTable.Player.Anti_Aim.Crouchjumpspam then
+                            if ArsoniaTable.Variables.Croucher or ArsoniaTable.Player.Anti_Aim.Crouchon then
+                                game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.ctrlcrouch.Value=true
+                                if ArsoniaTable.Player.Anti_Aim.CrouchspamVal==0 then
+                                    game.RunService.RenderStepped:Wait()
+                                else
+                                    wait(ArsoniaTable.Player.Anti_Aim.CrouchspamVal)
+                                end
+                                game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.ctrlcrouch.Value=false
+                                if ArsoniaTable.Player.Anti_Aim.CrouchspamVal2==0 then
+                                    game.RunService.RenderStepped:Wait()
+                                else
+                                    wait(ArsoniaTable.Player.Anti_Aim.CrouchspamVal2)
+                                end
+                            end
                         end
-                        game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.ctrlcrouch.Value=false
-                        if ArsoniaTable.Player.Anti_Aim.CrouchspamVal2==0 then
-                            game.RunService.RenderStepped:Wait()
-                        else
-                            wait(ArsoniaTable.Player.Anti_Aim.CrouchspamVal2)
-                        end
+                    else
+                        wait(1)
                     end
-                else
-                    wait(1)
                 end
             end
-        end
+        end)
     end
 end)()
 coroutine.wrap(function()
     while wait(.1)do
-        if ArsoniaTable.Misc.Main.Enabled then
-            if ArsoniaTable.Misc.Main.Wallprotect then
-                pcall(function()
-                    ArsoniaTable.Variables.WallTargets={}
-                    for _,v in pairs(ArsoniaTable.Variables.Functions.GetEnemys())do
-                        if v.Character:FindFirstChild("HumanoidRootPart")then
-                            local start=game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5,0)+Vector3.new(0,game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0)
-                            local Raycock=Ray.new(start,v.Character.HumanoidRootPart.Position-start)
-                            local part=game.Workspace:FindPartOnRayWithIgnoreList(Raycock,ArsoniaTable.Variables.Functions.GetIgnore())
-                            if part==v.Character.HumanoidRootPart or part:IsDescendantOf(v.Character)then
-                                table.insert(ArsoniaTable.Variables.WallTargets,v.Character.HumanoidRootPart)
+        pcall(function()
+            if ArsoniaTable.Misc.Main.Enabled then
+                if ArsoniaTable.Misc.Main.Wallprotect then
+                    pcall(function()
+                        ArsoniaTable.Variables.WallTargets={}
+                        for _,v in pairs(ArsoniaTable.Variables.Functions.GetEnemys())do
+                            if v.Character:FindFirstChild("HumanoidRootPart")then
+                                local start=game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(0,1.5,0)+Vector3.new(0,game.Players.LocalPlayer.Character.Humanoid.CameraOffset.Y,0)
+                                local Raycock=Ray.new(start,v.Character.HumanoidRootPart.Position-start)
+                                local part=game.Workspace:FindPartOnRayWithIgnoreList(Raycock,ArsoniaTable.Variables.Functions.GetIgnore())
+                                if part==v.Character.HumanoidRootPart or part:IsDescendantOf(v.Character)then
+                                    table.insert(ArsoniaTable.Variables.WallTargets,v.Character.HumanoidRootPart)
+                                end
                             end
                         end
-                    end
-                end)
-                pcall(function()
-                    if ArsoniaTable.Variables.WallTargets[1]then
-                        local b=math.huge
-                        local wallplayer
-                        for _,v in pairs(ArsoniaTable.Variables.WallTargets)do
-                            if(v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude<b then
-                                b=(v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-                                wallplayer=v
+                    end)
+                    pcall(function()
+                        if ArsoniaTable.Variables.WallTargets[1]then
+                            local b=math.huge
+                            local wallplayer
+                            for _,v in pairs(ArsoniaTable.Variables.WallTargets)do
+                                if(v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude<b then
+                                    b=(v.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+                                    wallplayer=v
+                                end
                             end
+                            game.ReplicatedStorage.Events.BuildWall:FireServer(
+                                game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
+                                CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,wallplayer.Position).LookVector*10000000000)
+                        else
+                            game.ReplicatedStorage.Events.BuildWall:FireServer(
+                                Vector3.new(math.huge,math.huge,math.huge),
+                                Vector3.new(math.huge,math.huge,math.huge))
                         end
-                        game.ReplicatedStorage.Events.BuildWall:FireServer(
-                            game.Players.LocalPlayer.Character.HumanoidRootPart.Position,
-                            CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position,wallplayer.Position).LookVector*10000000000)
-                    else
-                        game.ReplicatedStorage.Events.BuildWall:FireServer(
-                            Vector3.new(math.huge,math.huge,math.huge),
-                            Vector3.new(math.huge,math.huge,math.huge))
-                    end
-                end)
+                    end)
+                end
             end
-        end
+        end)
+    end
+end)()
+coroutine.wrap(function()
+    while game.RunService.RenderStepped:Wait()do
+        pcall(function()
+            if ArsoniaTable.Combat.Main.Enabled then
+                if ArsoniaTable.Combat.Main.Knifeaura then
+                    for _,v in pairs(ArsoniaTable.Variables.Functions.GetEnemys())do
+                        if(game.Players.LocalPlayer.Character.HumanoidRootPart.Position-v.Character.HumanoidRootPart.Position).Magnitude<=25 then
+                            local knife
+                            if ArsoniaTable.Combat.Main.KnifeauraValue=="Basic"then
+                                knife=game.ReplicatedStorage.Weapons.Knife
+                            else
+                                knife=game.ReplicatedStorage.Weapons["Golden Knife"]
+                            end
+                            local arg1,arg2,arg3=0,0,0
+                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Basic"then
+                                arg1=1
+                            end
+                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Advanced"then
+                                arg2=1
+                            end
+                            if ArsoniaTable.Combat.Main.KnifeauraCrit=="Backstab"then
+                                arg3=1
+                            end
+                            game.ReplicatedStorage.Events.ApplyGun:FireServer(knife,false)
+                            local Partpos=v.Character.Head.Position+Vector3.new(math.random(),math.random(),math.random())
+                            local Packedstring=string.pack(
+                                ArsoniaTable.Variables.Hitparter,
+                                Partpos.X,
+                                Partpos.Y,
+                                Partpos.Z,
+                                tostring(knife),
+                                arg1,--headshot=1 none=0
+                                0,--unknown
+                                arg3,--backstab=1 none=0
+                                arg2,--forcecrit=1 none=0
+                                0,--morecrit=1 none=0
+                                0,--spoof=2 none=0
+                                0,--unkown
+                                0,--Player Distance
+                                1,--Current Spell
+                                0,--scope=1 noscope=0
+                                ArsoniaTable.Combat.Main.KnifeauraAir--aircrit=1 none=0
+                            )
+                            game.ReplicatedStorage.Events.HitPart:FireServer(v.Character.Head,Packedstring)
+                            if ArsoniaTable.Combat.Main.KnifeauraFakeaim then
+                                local bs={}
+                                for _,v in pairs(game.ReplicatedStorage.Melees[game.Players.LocalPlayer.Data.Melee.Value]:GetChildren())do
+                                    if string.sub(v.Name,1,4)=="Fire"then
+                                        table.insert(bs,v)
+                                    end
+                                end
+                                local c=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.ReplicatedStorage.Melees[game.Players.LocalPlayer.Data.Melee.Value].Idle)
+                                local b=game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(bs[math.random(1,#bs)])
+                                c:Play()
+                                b:Play()
+                                c.Looped=false
+                                b.Looped=false
+                                coroutine.wrap(function()
+                                    wait(.8)
+                                    c:Stop()
+                                    b:Stop()
+                                end)()
+                            end
+                            game.ReplicatedStorage.Events.ApplyGun:FireServer(game.Players.LocalPlayer.PlayerGui.GUI.Client.Variables.gun.Value,false)
+                            wait(.4)
+                            break
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)()
+coroutine.wrap(function()
+    while game.RunService.RenderStepped:Wait()do
+        pcall(function()
+            if ArsoniaTable.Player.Anti_Aim.Enabled then
+                if ArsoniaTable.Player.Anti_Aim.FakeLag then
+                    if ArsoniaTable.Variables.IsAlive then
+                        if not ArsoniaTable.Variables.Functions.IsRoundOver()then
+                            if ArsoniaTable.Player.Anti_Aim.FakeLagOffTime==1 then
+                                game.RunService.RenderStepped:Wait()
+                            elseif ArsoniaTable.Player.Anti_Aim.FakeLagOffTime~=0 then
+                                wait(ArsoniaTable.Player.Anti_Aim.FakeLagOffTime)
+                            end
+                            if ArsoniaTable.Player.Anti_Aim.FakeLagShow then
+                                if not game.Workspace:FindFirstChild("Character_FAKE")then
+                                    local a=Instance.new("Folder")
+                                    a.Parent=game.Workspace
+                                    a.Name="Character_FAKE"
+                                end
+                                for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants())do
+                                    if v:IsA("BasePart")then
+                                        if v.Transparency~=1 then
+                                            local a=v:Clone()
+                                            a.CanCollide=false
+                                            a.Parent=game.Workspace.Character_FAKE
+                                            a.Anchored=true
+                                            a.Color=ArsoniaTable.Player.Anti_Aim.FakeLagColor
+                                            a.Material=ArsoniaTable.Player.Anti_Aim.FakeLagMaterial
+                                            a.Transparency=ArsoniaTable.Player.Anti_Aim.FakeLagTrans
+                                            a.Reflectance=0
+                                            if a:IsA("MeshPart")then
+                                                a.TextureID=""
+                                            end
+                                            for _,c in pairs(a:GetChildren())do
+                                                if not c:IsA("SpecialMesh")then
+                                                    c:Destroy()
+                                                else
+                                                    c.TextureId=""
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                            local c=Instance.new("Part")
+                            c.Name="FakeLag"
+                            c.Parent=game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                            c.Size=Vector3.new(100,100,100)
+                            c.CFrame=game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+                            c.Velocity=game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Velocity
+                            c.CanCollide=false
+                            c.Transparency=1
+                            local d=Instance.new("Weld")
+                            d.Parent=c
+                            d.Part0=c
+                            d.Part1=game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                            --[[coroutine.wrap(function()
+                                wait(.1)
+                                while game.RunService.RenderStepped:Wait()do
+                                    if c then
+                                        if c.Parent==nil then
+                                            break--fix fake lag
+                                        end
+                                    end
+                                    if c.Size==Vector3.new(100,100,100)then
+                                        c.Size=Vector3.new()
+                                    else
+                                        c.Size=Vector3.new(100,100,100)
+                                        wait(.1)
+                                    end
+                                end
+                            end)()]]
+                            wait(ArsoniaTable.Player.Anti_Aim.FakeLagOnTime)
+                            if game.Workspace:FindFirstChild("Character_FAKE")then
+                                game.Workspace.Character_FAKE:Destroy()
+                            end
+                            c:Destroy()
+                        end
+                    end
+                end
+            end
+        end)
     end
 end)()
 
@@ -3297,11 +3671,31 @@ require(game.ReplicatedStorage.Modules.ClientFunctions).CreateProjectile=functio
         if ArsoniaTable.Variables.__SilentAimTarget then
             if tostring(a)==game.Players.LocalPlayer.Name then
                 if b=="Arrow"then
-                    game.ReplicatedStorage.Events.Burn:FireServer(
+                    --[[game.ReplicatedStorage.Events.Burn:FireServer(
                         ArsoniaTable.Variables.__SilentAimTarget,
                         game.ReplicatedStorage.Weapons.Bow,
                         1,
-                        ArsoniaTable.Variables.__SilentAimTarget.Position)
+                        ArsoniaTable.Variables.__SilentAimTarget.Position)]]
+                    local Partpos=ArsoniaTable.Variables.__SilentAimTarget.Position+Vector3.new(math.random(),math.random(),math.random())
+                    local Packedstring=string.pack(
+                        ArsoniaTable.Variables.Hitparter,
+                        Partpos.X,
+                        Partpos.Y,
+                        Partpos.Z,
+                        "Bow",
+                        0,--headshot=1 none=0
+                        0,--unknown
+                        0,--backstab=1 none=0
+                        0,--forcecrit=1 none=0
+                        0,--morecrit=1 none=0
+                        0,--spoof=2 none=0
+                        0,--unkown
+                        0,--Player Distance
+                        1,--Current Spell
+                        0,--scope=1 noscope=0
+                        0--aircrit=1 none=0
+                    )
+                    game.ReplicatedStorage.Events.HitPart:FireServer(ArsoniaTable.Variables.__SilentAimTarget,Packedstring)
                 else
                     c=750
                     d=ArsoniaTable.Variables.__SilentAimTarget.Position
@@ -3344,3 +3738,9 @@ require(game.ReplicatedStorage.Modules.Spread).calcspread=function(a,...)
     end
     return ArsoniaTable.Variables.Functions.CalculateSpread(a,...)
 end
+
+
+
+--Fixes
+ArsoniaTable.Variables.Levels.StartBar=ArsoniaTable.Variables.Levels_OLD.StartBar
+ArsoniaTable.Variables.Levels.EndBar=ArsoniaTable.Variables.Levels_OLD.EndBar
