@@ -7,11 +7,10 @@
 local ui_options = {
 	main_color = Color3.fromRGB(41, 74, 122),
 	min_size = Vector2.new(400, 300),
-	can_resize = false,
+	toggle_key = Enum.KeyCode.RightShift,
+	can_resize = true,
 }
-pcall(function()
-		ui_options.min_size=_G.Size
-end)
+
 do
 	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
 	if imgui then imgui:Destroy() end
@@ -828,7 +827,7 @@ local checks = {
 }
 
 UIS.InputBegan:Connect(function(input, gameProcessed)
-	if Enum.KeyCode.P or Enum.KeyCode.RightShift then
+	if input.KeyCode == ((typeof(ui_options.toggle_key) == "EnumItem") and ui_options.toggle_key or Enum.KeyCode.RightShift) then
 		if script.Parent then
 			if not checks.binding then
 				script.Parent.Enabled = not script.Parent.Enabled
