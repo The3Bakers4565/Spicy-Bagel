@@ -15,8 +15,8 @@ getgenv().FICIMOA = 0
 getgenv().SpicySettings = {}
 local Library = {
     Theme = {
-        MainColor = _G.UIMainColor or Color3.fromRGB(255,75,75),
-        BackgroundColor = _G.UIBackgroundColor or Color3.fromRGB(35,35,35),
+        MainColor = (_G.Coasting_Settings and _G.Coasting_Settings.MainCol) or Color3.fromRGB(255,75,75),
+        BackgroundColor = (_G.Coasting_Settings and _G.Coasting_Settings.BackgroundCol) or Color3.fromRGB(35,35,35),
         UIToggleKey = Enum.KeyCode.RightControl,
         TextFont = Enum.Font.SourceSansBold,
         EasingStyle = Enum.EasingStyle.Quart
@@ -236,7 +236,7 @@ TabButtonLayout.SortOrder = Enum.SortOrder.LayoutOrder
 TweenService:Create(
     Main,
     TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
-    {Size = UDim2.new(0,675,0,450)}
+    {Size = UDim2.new(0,675,0,(_G.Coasting_Settings and _G.Coasting_Settings.YScale)or 450)}
 ):Play()
 TweenService:Create(
     Border,
@@ -316,7 +316,7 @@ local function ToggleUI()
         TweenService:Create(
             Main,
             TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
-            {Size = UDim2.new(0,675,0,450)}
+            {Size = UDim2.new(0,675,0,(_G.Coasting_Settings and _G.Coasting_Settings.YScale)or 450)}
         ):Play()
         TweenService:Create(
             Border,
