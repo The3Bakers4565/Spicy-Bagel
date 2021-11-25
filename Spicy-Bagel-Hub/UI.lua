@@ -2139,3 +2139,4 @@ function Library:CreateTab(name)
 
     return TabElements
 end
+return Library
