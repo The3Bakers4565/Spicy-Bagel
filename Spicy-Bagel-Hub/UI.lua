@@ -456,7 +456,7 @@ function Library:CreateTab(name)
         NameSection.BackgroundColor3 = Library.Theme.MainColor
         NameSection.BackgroundTransparency = 1.000
         NameSection.Position = UDim2.new(0,0,0.0574162677,0)
-        NameSection.Size = UDim2.new(0,197,0,375)
+        NameSection.Size = UDim2.new(0,197,0,(_G.Coasting_Settings and _G.Coasting_Settings.YScale-75)or 375)
         NameSection.ZIndex = 4
         NameSection.Image = "rbxassetid://3570695787"
         NameSection.ImageColor3 = Library.Theme.BackgroundColor
