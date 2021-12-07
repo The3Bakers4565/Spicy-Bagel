@@ -12,7 +12,7 @@ local CoreGui = game:GetService("CoreGui")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 getgenv().FICIMOA = 0
-getgenv().SpicySettings = {}
+getgenv().CoastingLibSaveTab = {}
 local Library = {
     Theme = {
         MainColor = (_G.Coasting_Settings and _G.Coasting_Settings.MainCol) or Color3.fromRGB(255,75,75),
@@ -755,19 +755,19 @@ function Library:CreateTab(name)
                 end
                 Toggled = state
                 callback(Toggled)
-                getgenv().SpicySettings[anulynummy] = {SetValue = SetState,Value = Toggled}
+                getgenv().CoastingLibSaveTab[anulynummy] = {SetValue = SetState,Value = Toggled}
             end
             Toggle.MouseButton1Down:Connect(
                 function()
                     Toggled = not Toggled
                     SetState(Toggled)
-                    getgenv().SpicySettings[anulynummy] = {SetValue = SetState,Value = Toggled}
+                    getgenv().CoastingLibSaveTab[anulynummy] = {SetValue = SetState,Value = Toggled}
                 end
             )
 
             table.insert(Library.LibraryColorTable,CheckboxOutline)
             table.insert(Library.LibraryColorTable,CheckboxTicked)
-            getgenv().SpicySettings[anulynummy] = {SetValue = SetState,Value = false}
+            getgenv().CoastingLibSaveTab[anulynummy] = {SetValue = SetState,Value = false}
             return {
                 SetState = SetState,
                 funct = callback
@@ -872,7 +872,7 @@ function Library:CreateTab(name)
             Value.TextSize = 14.000
             getgenv().FICIMOA = getgenv().FICIMOA + 1
             local anulnuoom = name .. getgenv().FICIMOA
-            getgenv().SpicySettings[anulnuoom] = {}
+            getgenv().CoastingLibSaveTab[anulnuoom] = {}
 
             local function Sliding(input)
                 local SliderPosition =
@@ -906,7 +906,7 @@ function Library:CreateTab(name)
 
                 Value.Text = tostring(SlidingValue)
                 callback(SlidingValue)
-                getgenv().SpicySettings[anulnuoom].Value = SlidingValue
+                getgenv().CoastingLibSaveTab[anulnuoom].Value = SlidingValue
             end
 
             Value.FocusLost:Connect(
@@ -933,7 +933,7 @@ function Library:CreateTab(name)
                         }
                     ):Play()
                     callback(tonumber(Value.Text))
-                    getgenv().SpicySettings[anulnuoom].Value = tonumber(Value.Text)
+                    getgenv().CoastingLibSaveTab[anulnuoom].Value = tonumber(Value.Text)
                 end
             )
 
@@ -984,12 +984,12 @@ function Library:CreateTab(name)
                     }
                 ):Play()
                 callback(tonumber(Value.Text))
-                getgenv().SpicySettings[anulnuoom].Value = tonumber(Value.Text)
+                getgenv().CoastingLibSaveTab[anulnuoom].Value = tonumber(Value.Text)
             end
 
             callback(StartingValue)
             table.insert(Library.LibraryColorTable,SliderIndicator)
-            getgenv().SpicySettings[anulnuoom] = {SetValue = SetSliderValue,Value = StartingValue}
+            getgenv().CoastingLibSaveTab[anulnuoom] = {SetValue = SetSliderValue,Value = StartingValue}
             return {
                 SetState = SetSliderValue,
                 funct = callback
@@ -1063,11 +1063,11 @@ function Library:CreateTab(name)
                     if old ~= Value.Text then
                         old = Value.Text
                         dothatfunction(Value.Text)
-                        getgenv().SpicySettings[anny] = {SetValue = SetState,Value = Value.Text}
+                        getgenv().CoastingLibSaveTab[anny] = {SetValue = SetState,Value = Value.Text}
                     end
                 end
             )
-            getgenv().SpicySettings[anny] = {SetValue = SetState,Value = startingtext}
+            getgenv().CoastingLibSaveTab[anny] = {SetValue = SetState,Value = startingtext}
             return
         end
 
@@ -1586,7 +1586,7 @@ function Library:CreateTab(name)
                 Color.BackgroundColor3 = color
                 SetRGBValues()
                 callback(Color.BackgroundColor3)
-                getgenv().SpicySettings[anny] = {SetValue = SetValue,Value = Color.BackgroundColor3}
+                getgenv().CoastingLibSaveTab[anny] = {SetValue = SetValue,Value = Color.BackgroundColor3}
             end
             getgenv().FICIMOA = getgenv().FICIMOA + 1
             local anny = name .. getgenv().FICIMOA
@@ -1595,11 +1595,11 @@ function Library:CreateTab(name)
                 function()
                     if old ~= Color.BackgroundColor3 then
                         old = Color.BackgroundColor3
-                        getgenv().SpicySettings[anny] = {SetValue = SetValue,Value = Color.BackgroundColor3}
+                        getgenv().CoastingLibSaveTab[anny] = {SetValue = SetValue,Value = Color.BackgroundColor3}
                     end
                 end
             )
-            getgenv().SpicySettings[anny] = {SetValue = SetValue,Value = presetcolor}
+            getgenv().CoastingLibSaveTab[anny] = {SetValue = SetValue,Value = presetcolor}
             table.insert(Library.LibraryColorTable,CheckboxOutline)
             table.insert(Library.LibraryColorTable,CheckboxTicked)
         end
@@ -1693,7 +1693,7 @@ function Library:CreateTab(name)
             local optiooons = {}
             getgenv().FICIMOA = getgenv().FICIMOA + 1
             local anulynummy = name .. getgenv().FICIMOA
-            getgenv().SpicySettings[anulynummy] = {}
+            getgenv().CoastingLibSaveTab[anulynummy] = {}
             for i,v in pairs(options) do
                 local NameButton = Instance.new("TextButton")
 
@@ -1725,7 +1725,7 @@ function Library:CreateTab(name)
                         {TextColor3 = Library.Theme.MainColor}
                     ):Play()
                     callback(NameButton.Text)
-                    getgenv().SpicySettings[anulynummy].Value = NameButton.Text
+                    getgenv().CoastingLibSaveTab[anulynummy].Value = NameButton.Text
                 end
                 NameButton.MouseButton1Down:Connect(
                     function()
@@ -1738,7 +1738,7 @@ function Library:CreateTab(name)
                             {TextColor3 = Library.Theme.MainColor}
                         ):Play()
                         callback(NameButton.Text)
-                        getgenv().SpicySettings[anulynummy].Value = NameButton.Text
+                        getgenv().CoastingLibSaveTab[anulynummy].Value = NameButton.Text
                     end
                 )
 
@@ -1876,7 +1876,7 @@ function Library:CreateTab(name)
             local function SetState(val)
                 optiooons[val]()
             end
-            getgenv().SpicySettings[anulynummy] = {SetValue = SetState,Value = options[1]}
+            getgenv().CoastingLibSaveTab[anulynummy] = {SetValue = SetState,Value = options[1]}
 
             return {
                 options,
