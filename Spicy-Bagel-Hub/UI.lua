@@ -1763,7 +1763,7 @@ function Library:CreateTab(name)
                     end
                 )
             end
-
+            
             TitleToggle.MouseButton1Down:Connect(
                 function()
                     DropdownToggled = not DropdownToggled
@@ -1803,7 +1803,78 @@ function Library:CreateTab(name)
                     end
                 end
             )
+            local function AddOption(thatonevariable)
+                local NameButton = Instance.new("TextButton")
 
+                NameButton.Name = (thatonevariable .. "DropdownButton")
+                NameButton.Parent = Dropdown
+                NameButton.BackgroundColor3 = Color3.fromRGB(255,255,255)
+                NameButton.BackgroundTransparency = 1.000
+                NameButton.BorderSizePixel = 0
+                NameButton.Size = UDim2.new(0,165,0,25)
+                NameButton.ZIndex = 15
+                NameButton.AutoButtonColor = false
+                NameButton.Font = Library.Theme.TextFont
+                NameButton.Text = thatonevariable
+                NameButton.TextColor3 = Color3.fromRGB(255,255,255)
+                NameButton.TextSize = 15.000
+
+                table.insert(Library.LibraryColorTable,NameButton)
+
+                if thatonevariable == SelectedOption then
+                    NameButton.TextColor3 = Library.Theme.MainColor
+                end
+                optiooons[thatonevariable] = function()
+                    SelectedOption = thatonevariable
+                    ResetAllDropdownItems()
+                    TitleToggle.Text = (name .. " - " .. SelectedOption)
+                    TweenService:Create(
+                        NameButton,
+                        TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                        {TextColor3 = Library.Theme.MainColor}
+                    ):Play()
+                    callback(NameButton.Text)
+                    getgenv().CoastingLibSaveTab[anulynummy].Value = NameButton.Text
+                end
+                NameButton.MouseButton1Down:Connect(
+                    function()
+                        SelectedOption = thatonevariable
+                        ResetAllDropdownItems()
+                        TitleToggle.Text = (name .. " - " .. SelectedOption)
+                        TweenService:Create(
+                            NameButton,
+                            TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {TextColor3 = Library.Theme.MainColor}
+                        ):Play()
+                        callback(NameButton.Text)
+                        getgenv().CoastingLibSaveTab[anulynummy].Value = NameButton.Text
+                    end
+                )
+
+                NameButton.InputBegan:Connect(
+                    function(input)
+                        if input.UserInputType == Enum.UserInputType.MouseMovement then
+                            TweenService:Create(
+                                NameButton,
+                                TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                                {BackgroundTransparency = 0.95}
+                            ):Play()
+                        end
+                    end
+                )
+
+                NameButton.InputEnded:Connect(
+                    function(input)
+                        if input.UserInputType == Enum.UserInputType.MouseMovement then
+                            TweenService:Create(
+                                NameButton,
+                                TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                                {BackgroundTransparency = 1}
+                            ):Play()
+                        end
+                    end
+                )
+            end
             local function Refresh(newoptions,newpresetoption,newcallback)
                 ClearAllDropdownItems()
 
@@ -1878,7 +1949,8 @@ function Library:CreateTab(name)
             return {
                 options=options,
                 callback=callback,
-                Refresh=Refresh
+                Refresh=Refresh,
+                AddOption=AddOption
             }
         end
 
