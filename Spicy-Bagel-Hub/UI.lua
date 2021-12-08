@@ -1874,7 +1874,37 @@ function Library:CreateTab(name)
                         end
                     end
                 )
-                ResetAllDropdownItems()ClearAllDropdownItems()
+                        TweenService:Create(
+                            TitleToggle,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {TextColor3 = Color3.fromRGB(255,255,255)}
+                        ):Play()
+                        TweenService:Create(
+                            NameDropdown,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {Size = UDim2.new(0,197,0,35)}
+                        ):Play()
+                        TweenService:Create(
+                            Dropdown,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {Size = UDim2.new(0,165,0,0)}
+                        ):Play()
+                    
+                        TweenService:Create(
+                            TitleToggle,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {TextColor3 = Color3.fromRGB(185,185,185)}
+                        ):Play()
+                        TweenService:Create(
+                            NameDropdown,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {Size = UDim2.new(0,197,0,35 + DropdownContentLayout.AbsoluteContentSize.Y)}
+                        ):Play()
+                        TweenService:Create(
+                            Dropdown,
+                            TweenInfo.new(0.5,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
+                            {Size = UDim2.new(0,165,0,DropdownContentLayout.AbsoluteContentSize.Y)}
+                        ):Play()
             end
             local function Refresh(newoptions,newpresetoption,newcallback)
                 ClearAllDropdownItems()
