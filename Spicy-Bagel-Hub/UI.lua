@@ -1874,6 +1874,7 @@ function Library:CreateTab(name)
                         end
                     end
                 )
+                ResetAllDropdownItems()ClearAllDropdownItems()
             end
             local function Refresh(newoptions,newpresetoption,newcallback)
                 ClearAllDropdownItems()
