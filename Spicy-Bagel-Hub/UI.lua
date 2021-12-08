@@ -1876,9 +1876,9 @@ function Library:CreateTab(name)
             getgenv().CoastingLibSaveTab[anulynummy] = {SetValue = SetState,Value = options[1]}
 
             return {
-                options,
-                callback,
-                Refresh
+                options=options,
+                callback=callback,
+                Refresh=Refresh
             }
         end
 
