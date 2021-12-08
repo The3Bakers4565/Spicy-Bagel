@@ -990,10 +990,7 @@ function Library:CreateTab(name)
             callback(StartingValue)
             table.insert(Library.LibraryColorTable,SliderIndicator)
             getgenv().CoastingLibSaveTab[anulnuoom] = {SetValue = SetSliderValue,Value = StartingValue}
-            return {
-                SetState = SetSliderValue,
-                funct = callback
-            }
+            return {SetValue = SetSliderValue,Value = StartingValue}
         end
 
         function SectionElements:CreateTextBox(name,startingtext,dothatfunction)
@@ -1068,7 +1065,7 @@ function Library:CreateTab(name)
                 end
             )
             getgenv().CoastingLibSaveTab[anny] = {SetValue = SetState,Value = startingtext}
-            return
+            return {SetValue = SetState,Value = startingtext}
         end
 
         function SectionElements:CreateColorPicker(name,presetcolor,callback)
