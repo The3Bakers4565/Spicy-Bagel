@@ -1629,6 +1629,9 @@ function Library:CreateTab(name)
             TitleToggle.ZIndex = 7
             TitleToggle.Font = Library.Theme.TextFont
             TitleToggle.Text = (name .. " - " .. SelectedOption)
+            if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
             TitleToggle.TextColor3 = Color3.fromRGB(255,255,255)
             TitleToggle.TextSize = 15.000
             TitleToggle.TextXAlignment = Enum.TextXAlignment.Left
