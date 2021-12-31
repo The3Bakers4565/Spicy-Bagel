@@ -1,7 +1,7 @@
 --Coasting UI Lib by : https://v3rmillion.net/member.php?action=profile&uid=1393756
 --Release thread here : https://v3rmillion.net/showthread.php?tid=1071849&pid=7590441
 --UI Modifactions by: The3Bakers#4565
---Modifications Done: Added Ability To Save/Load,Expanded UI X/Y,Added Third Slot To X Collum
+--Modifications Done: Added Ability To Save/Load,Expanded UI X/Y,Added Third Collum,Fixed Dropdown No Name -
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local HttpService = game:GetService("HttpService")
@@ -1716,6 +1716,9 @@ function Library:CreateTab(name)
                     SelectedOption = v
                     ResetAllDropdownItems()
                     TitleToggle.Text = (name .. " - " .. SelectedOption)
+                    if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
                     TweenService:Create(
                         NameButton,
                         TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
@@ -1729,6 +1732,9 @@ function Library:CreateTab(name)
                         SelectedOption = v
                         ResetAllDropdownItems()
                         TitleToggle.Text = (name .. " - " .. SelectedOption)
+                        if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
                         TweenService:Create(
                             NameButton,
                             TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
@@ -1828,6 +1834,9 @@ function Library:CreateTab(name)
                     SelectedOption = thatonevariable
                     ResetAllDropdownItems()
                     TitleToggle.Text = (name .. " - " .. SelectedOption)
+                    if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
                     TweenService:Create(
                         NameButton,
                         TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
@@ -1841,6 +1850,9 @@ function Library:CreateTab(name)
                         SelectedOption = thatonevariable
                         ResetAllDropdownItems()
                         TitleToggle.Text = (name .. " - " .. SelectedOption)
+                        if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
                         TweenService:Create(
                             NameButton,
                             TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
@@ -1911,6 +1923,9 @@ function Library:CreateTab(name)
 
                 local SelectedOption = newoptions[newpresetoption]
                 TitleToggle.Text = (name .. " - " .. SelectedOption)
+                if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
 
                 for i,v in pairs(newoptions) do
                     local NameButton = Instance.new("TextButton")
@@ -1937,6 +1952,9 @@ function Library:CreateTab(name)
                             SelectedOption = v
                             ResetAllDropdownItems()
                             TitleToggle.Text = (name .. " - " .. SelectedOption)
+                            if name==""then
+                        TitleToggle.Text = (SelectedOption)
+                    end
                             TweenService:Create(
                                 NameButton,
                                 TweenInfo.new(0.35,Library.Theme.EasingStyle,Enum.EasingDirection.Out),
