@@ -1,6 +1,7 @@
 --Made by The3Bakers#4565
 --plz join https://discord.gg/yBEzKHB3Qr
 _G.Invisible_Baker=true
+if _G.KnifeAura_Baker then game:Shutdown()end
 local PlayerTable=getupvalue(require(game.ReplicatedStorage.TS).Characters.GetCharacter,1)
 local IsAlive=function()
     if PlayerTable[game.Players.LocalPlayer]then
