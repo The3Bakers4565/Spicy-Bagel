@@ -32,9 +32,16 @@ game.RunService.RenderStepped:Connect(function()
             end
         end
     end
+    local a=math.huge
+    local poses={}
     for _,v in pairs(GetEnemys())do
-        target=v.Root
-        break
+        for _,c in pairs(GetEnemys())do
+            if(v.Root.Position-c.Root.Position).Magnitude~=0 and not poses[(v.Root.Position-c.Root.Position).Magnitude]and(v.Root.Position-c.Root.Position).Magnitude<a then
+                a=(v.Root.Position-c.Root.Position).Magnitude
+                target=v.Root
+                poses[(v.Root.Position-c.Root.Position).Magnitude]=true
+            end
+        end
     end
 end)
 game.Workspace.Throwables.ChildAdded:Connect(function(x)
