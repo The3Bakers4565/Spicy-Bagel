@@ -53,4 +53,17 @@ game.Workspace.Throwables.ChildAdded:Connect(function(x)
         until x==nil or not x:IsDescendantOf(game.Workspace)--stop moving nade when deleted
     end
 end)
+game.Workspace.ChildAdded:Connect(function(x)--fix for new rounds
+    if x.Name=="Throwables"then
+        x.ChildAdded:Connect(function(x)
+            local PrimaryBody=x:WaitForChild("Body"):WaitForChild("BodyPrimary")
+            if target then 
+                repeat  
+                    PrimaryBody.CFrame=target.CFrame
+                    game.RunService.RenderStepped:Wait()
+                until x==nil or not x:IsDescendantOf(game.Workspace)
+            end
+        end)
+    end
+end)
 game:GetService("StarterGui"):SetCore("SendNotification",{Title="Made By: The3Bakers#4565",Text="https://discord.gg/yBEzKHB3Qr",Duration=99999})
