@@ -1,3 +1,4 @@
+local Library={}
 function Library:Window(a, b, c, d, e)
     local f = game:GetService("CoreGui")
     local g = game:GetService("UserInputService")
